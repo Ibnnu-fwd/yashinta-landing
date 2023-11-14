@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hero-pattern {
+    /* make gradient #cb0e26 - #ec1a35 */
+    background-image: linear-gradient(to right, #cb0e26, #ec1a35, #cb0e26);
+}
+
+.text-behind {
+    position: relative;
+    z-index: -1;
+}
