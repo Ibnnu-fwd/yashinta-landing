@@ -9,7 +9,7 @@
 
             <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
                 <div class="mb-4">
-                    <h2 class="text-md">Beranda</h2>
+                    <h2 class="text-sm">Beranda</h2>
                     <hr class="my-2">
 
                     <x-input label="Judul Hero" name="name" value="{{ $profile->name }}" />
@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="mb-4">
-                    <h2 class="text-md">Profil</h2>
+                    <h2 class="text-sm">Profil</h2>
                     <hr class="my-2">
 
                     <x-input label="Judul" name="title_profile_page" value="{{ $profile->title_profile_page }}" />

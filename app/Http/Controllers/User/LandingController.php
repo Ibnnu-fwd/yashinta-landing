@@ -22,6 +22,11 @@ class LandingController extends Controller
         return view('user.landing.news');
     }
 
+    public function newsDetail($slug)
+    {
+        return view('user.landing.news_detail');
+    }
+
     public function faq()
     {
         return view('user.landing.faq');
