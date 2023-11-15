@@ -48,6 +48,13 @@ export default {
             'extra-bold': 800,
             black: 900,
         },
+        // colors
+        colors: {
+            'primary-red': '#EE1935',
+            'secondary-red': '#C40F27',
+            'light-pink': '#FFEFF3',
+            'stone': '#e4e4e4',
+        },
     },
 
     plugins: [require('flowbite/plugin')],
