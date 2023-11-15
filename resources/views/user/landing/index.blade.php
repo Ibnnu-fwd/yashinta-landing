@@ -1,110 +1,100 @@
 <x-guest-layout>
     @section('title', 'Home')
-    {{-- navbar & hero --}}
-    <div class="hero-pattern">
-        {{-- navbar --}}
-        <div class="w-full mx-auto xl:max-w-6xl">
-            <div x-data="{ open: false }"
-                class="relative flex flex-col w-full p-5 py-4 md:py-2 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
-                <div class="flex flex-row items-center justify-between lg:justify-start">
-                    <a class="text-lg focus:outline-none focus:ring lg:text-2xl" href="/">
-                        <img src="{{ asset('asset/logo.png') }}"
-                            class="w-20 h-20 md:w-40 md:h-40 lg:w-52 lg:h-52 object-contain" alt="logo">
-                    </a>
-                    <button @click="open=!open"
-                        class="inline-flex items-center justify-center p-2 text-white hover:text-white focus:outline-none focus:text-white md:hidden">
-                        <svg class="w-7 h-7 md:w-6 md:h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                            <path :class="{ 'hidden': open, 'inline-flex': !open }" class="inline-flex"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16">
-                            </path>
-                            <path :class="{ 'hidden': !open, 'inline-flex': open }" class="hidden"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </div>
-                <nav :class="{ 'flex': open, 'hidden': !open }"
-                    class="flex-col flex-grow hidden py-2 md:flex lg:py-0 md:justify-end md:flex-row">
-                    <ul
-                        class="space-y-2 list-none md:space-y-0 md:items-center md:inline-flex font-bold tracking-wide sm:text-lg lg:text-xl">
-                        <li>
-                            <a href="#"
-                                class="px-2 py-4 text-sm md:text-md lg:text-xl xl:text-xl text-white border-b-2 border-transparent lg:px-6 hover:border-white md:px-3 hover:text-white">
-                                Profil
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="px-2 py-4 text-sm md:text-md lg:text-xl xl:text-xl text-white border-b-2 border-transparent lg:px-6 md:px-3 hover:text-white hover:border-white">
-                                Komitmen
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="px-2 py-4 text-sm md:text-md lg:text-xl xl:text-xl text-white border-b-2 border-transparent lg:px-6 hover:border-white md:px-3 hover:text-white">
-                                Galeri
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="px-2 py-4 text-sm md:text-md lg:text-xl xl:text-xl text-white border-b-2 border-transparent lg:px-6 hover:border-white md:px-3 hover:text-white">
-                                Berita
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="px-2 py-4 text-sm md:text-md lg:text-xl xl:text-xl text-white border-b-2 border-transparent lg:px-6 hover:border-white md:px-3 hover:text-white">
-                                FAQ
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+
+    <!-- Navbar -->
+    <nav class="hero-pattern">
+        <div class="max-w-2xl flex flex-wrap items-center justify-between mx-auto p-4 py-6">
+            <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="{{ asset('asset/logo.png') }}" class="h-12" alt="Flowbite Logo" />
+            </a>
+            <button data-collapse-toggle="navbar-default" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden  focus:outline-none focus:ring-2 text-white"
+                aria-controls="navbar-default" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </button>
+            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                <ul
+                    class="font-medium flex flex-col p-4 md:p-0 mt-4  rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0
+                    ">
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-white bg-primary rounded md:bg-transparent md:text-white md:p-0 "
+                            aria-current="page">Beranda</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Profil</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Komitmen</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Berita</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Galeri</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">FAQ</a>
+                    </li>
+                </ul>
             </div>
         </div>
-        {{-- hero --}}
-        <section class="relative flex items-center w-full h-fit">
-            <div class="relative items-center w-full px-0 mx-auto md:px-12 lg:px-0 max-w-6xl">
-                <div class="relative flex-col items-start m-auto align-middle">
-                    <div class="grid gap-6 grid-cols-2 xl:gap-20">
-                        <div class="order-0 block w-full">
-                            <img class="object-contain object-center mx-auto lg:ml-auto sm:h-[20em] md:h-[20em] lg:h-[25em] xl:h-[30em] md:absolute md:bottom-0 md:left-0"
-                                alt="hero" src="{{ asset('asset/hero.png') }}">
-                        </div>
-                        <div class="relative items-center gap-6 mt-auto mb-auto mr-auto md:inline-flex">
-                            <div class="max-w-xl text-left md:text-behind md:text-xl md:py-20 -ml-4 lg:-ml-6">
-                                <div>
-                                    <p class="text-white font-extra-bold text-2xl md:text-5xl lg:text-6xl xl:text-7xl">
-                                        R.A Yashinta<br>Sekarwangi<br>Mega </p>
-                                    <p
-                                        class="max-w-xl mt-2 md:mt-8 lg:mt-14 font-semibold text-white text-xs md:text-lg lg:text-3xl tracking-wide">
-                                        Calon DPD RI Dapil DIY
-                                    </p>
-                                </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative flex items-center w-full h-fit hero-pattern">
+        <div class="relative items-center w-full px-0 mx-auto md:px-12 lg:px-0 max-w-2xl">
+            <div class="relative flex-col items-start m-auto align-middle">
+                <div class="grid gap-6 grid-cols-2 md:gap-24 xl:gap-20">
+                    <div class="order-0 block w-full">
+                        <img class="object-contain object-center mx-auto lg:ml-auto sm:h-[20em] md:h-[20em] lg:h-[20em] xl:h-[20em] md:absolute md:bottom-0 md:left-0"
+                            alt="hero" src="{{ asset('asset/hero.png') }}">
+                    </div>
+                    <div class="relative items-center gap-6 mt-auto mb-auto mr-auto md:inline-flex">
+                        <div class="max-w-xl text-left md:text-behind md:text-xl md:py-20 -ml-4 lg:-ml-6">
+                            <div>
+                                <p
+                                    class="text-white font-extra-bold text-3xl md:text-4xl lg:text-5xl xl:text-5xl leading-none">
+                                    R.A Yashinta<br>
+                                    <span class="text-[#ffeff2]">Sekarwangi</span>
+                                    <br>Mega
+                                </p>
+                                <p
+                                    class="max-w-xl mt-4 md:mt-8 lg:mt-6 font-semibold text-white text-sm md:text-lg lg:text-xl tracking-wide">
+                                    Calon DPD RI Dapil DIY
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
-    {{-- profile --}}
-    <section class="relative flex items-center w-full h-fit py-6 md:py-14 lg:py-24">
-        <div class="relative items-center w-full px-4 md:px-6 lg:px-12 xl:px-0 max-w-6xl mx-auto">
-            <div class="space-y-4 md:space-y-6 lg:space-y-8 mb-6">
-                <h2
-                    class="text-black text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-6xl font-extra-bold">
-                    Profil Yashinta</h2>
-                <p class="text-sm sm:text-base md:text-lg lg:text-2xl xl:text-3xl leading-snug">
-                    Yashinta Sekarwangi merupakan mahasiswa S2 Universitas Indonesia jurusan Ilmu Komunikasi.
-                    Sebelumnya, ia sudah berhasil menuntaskan pendidikan di Hubungan Internasional UGM dan akhirnya
-                    melanjutkan pendidikan di UI
-                </p>
-            </div>
+    <!-- Profile -->
+    <section class="relative flex items-center w-full h-fit bg-gray-50">
+        <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
+            <h2 class="text-2xl md:text-3xl font-extra-bold text-gray-700">
+                Profil Yashinta
+            </h2>
+            <p class="mt-4 text-md md:text-lg text-gray-600">
+                Yashinta Sekarwangi merupakan mahasiswa S2 Universitas Indonesia jurusan Ilmu Komunikasi.
+                Sebelumnya, ia sudah berhasil menuntaskan pendidikan di Hubungan Internasional UGM dan akhirnya
+                melanjutkan pendidikan di UI
+            </p>
             <button type="button"
-                class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
-                rounded-full px-4 py-2 md:px-6 md:py-3 text-center me-2 mb-2 flex items-center gap-x-2 md:gap-x-4">
+                class="text-md md:text-lg mt-6 text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
+                rounded-full px-4 py-2 md:px-6 md:py-2.5 text-center me-2 mb-2 flex items-center gap-x-2 md:gap-x-4">
                 <span>Kenali lebih dekat</span> <svg class="h-4 sm:h-5 md:h-6" viewBox="0 0 48 48" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -118,140 +108,456 @@
                     </g>
                 </svg>
             </button>
+            <img src="{{ asset('asset/kerator.jpg') }}" class="mt-8 w-full h-auto md:h-[25em] object-cover rounded-2xl"
+                alt="">
+        </div>
+    </section>
 
-            {{-- main image --}}
-            <img class="h-auto lg:h-[40em] w-full rounded-2xl mt-10 object-cover object-center"
-                src="{{ asset('asset/kerator.jpg') }}" alt="image description">
+    <!-- Commitment -->
+    <section class="relative flex items-center w-full h-fit bg-[#ffeff2]">
+        <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
+            <h2 class="text-2xl md:text-3xl font-extra-bold text-primary">
+                Komitmen Yashinta
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8 mt-8 md:mt-20">
+                <div>
+                    <h2 class="text-xl lg:text-2xl font-bold text-gray-700 capitalize">
+                        Harapan ibu dan anak Yogyakarta
+                    </h2>
+                    <p class="text-gray-500 mt-2 md:mt-4 text-sm md:text-md">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit
+                    </p>
+                    <button type="button"
+                        class="hidden md:flex text-sm lg:text-md mt-0 md:mt-8 text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
+                rounded-full px-4 py-2 md:px-4 md:py-2 text-center me-2 mb-2 items-center gap-x-2 md:gap-x-4">
+                        <span>Selengkapnya</span> <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
+                                <path d="M41.9999 24H5.99992" stroke="#ffffff" stroke-width="4"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M30 12L42 24L30 36" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </g>
+                        </svg>
+                    </button>
+                </div>
+                <div class="col-span-2">
+                    <img src="{{ asset('asset/1.jpg') }}" class="w-full h-full object-cover object-center rounded-2xl"
+                        alt="">
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8 mt-8 md:mt-20">
+                <div>
+                    <h2 class="text-xl lg:text-2xl font-bold text-gray-700 capitalize">
+                        Harapan ibu dan anak Yogyakarta
+                    </h2>
+                    <p class="text-gray-500 mt-2 md:mt-4 text-sm md:text-md">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit
+                    </p>
+                    <button type="button"
+                        class="hidden md:flex text-sm lg:text-md mt-0 md:mt-8 text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
+                rounded-full px-4 py-2 md:px-4 md:py-2 text-center me-2 mb-2 items-center gap-x-2 md:gap-x-4">
+                        <span>Selengkapnya</span> <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
+                                <path d="M41.9999 24H5.99992" stroke="#ffffff" stroke-width="4"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M30 12L42 24L30 36" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </g>
+                        </svg>
+                    </button>
+                </div>
+                <div class="col-span-2">
+                    <img src="{{ asset('asset/1.jpg') }}" class="w-full h-full object-cover object-center rounded-2xl"
+                        alt="">
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8 mt-8 md:mt-20">
+                <div>
+                    <h2 class="text-xl lg:text-2xl font-bold text-gray-700 capitalize">
+                        Harapan ibu dan anak Yogyakarta
+                    </h2>
+                    <p class="text-gray-500 mt-2 md:mt-4 text-sm md:text-md">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit
+                    </p>
+                    <button type="button"
+                        class="hidden md:flex text-sm lg:text-md mt-0 md:mt-8 text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
+                rounded-full px-4 py-2 md:px-4 md:py-2 text-center me-2 mb-2 items-center gap-x-2 md:gap-x-4">
+                        <span>Selengkapnya</span> <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
+                                <path d="M41.9999 24H5.99992" stroke="#ffffff" stroke-width="4"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M30 12L42 24L30 36" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </g>
+                        </svg>
+                    </button>
+                </div>
+                <div class="col-span-2">
+                    <img src="{{ asset('asset/1.jpg') }}" class="w-full h-full object-cover object-center rounded-2xl"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact us -->
+    <section class="relative flex items-center w-full h-fit hero-pattern">
+        <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 md:gap-18">
+                <div class="text-white space-y-3">
+                    <h2 class=" text-md md:text-2xl lg:text-3xl font-bold leading-snug">
+                        Sampaikan aspirasimu untuk Daerah Istimewa Yogyakarta
+                    </h2>
+                    <p class="text-lg">
+                        Suaraku aspirasimu!
+                    </p>
+                </div>
+                <div class="col-span-2 mt-6 md:mt-0">
+                    <div>
+                        <input type="text" id="default-input"
+                            class="bg-gray-50 border-none text-gray-500 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 mb-3"
+                            placeholder="Nama Lengkap">
+                        <input type="text" id="default-input"
+                            class="bg-gray-50 border-none text-gray-500 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 mb-3"
+                            placeholder="No. Telepon (opsional)">
+                        <select id="default"
+                            class="bg-gray-50 border-none text-gray-500 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 mb-3">
+                            <option disabled selected>Kabupaten</option>
+                            <option value="Kabupaten Kulon Progo">Kabupaten Kulon Progo</option>
+                            <option value="Kabupaten Bantul">Kabupaten Bantul</option>
+                            <option value="Kabupaten Gunung Kidul">Kabupaten Gunung Kidul</option>
+                            <option value="Kabupaten Sleman">Kabupaten Sleman</option>
+                            <option value="Kota Yogyakarta">Kota Yogyakarta</option>
+                        </select>
+                        <textarea id="message" rows="6"
+                            class="block p-2.5 w-full text-sm text-gray-500 bg-gray-50 rounded-lg border-none focus:ring-red-500 focus:border-red-500 mb-6"
+                            placeholder="Aspirasi"></textarea>
+                        <button type="button"
+                            class="text-md font-normal text-white bg-black focus:ring-4 focus:outline-none 
+                rounded-full px-4 py-2 md:px-6 md:py-2.5 text-center me-2 mb-2 flex items-center gap-x-2 md:gap-x-4">
+                            <span>Kirimkan</span> <svg class="h-4 sm:h-5 md:h-5" viewBox="0 0 48 48" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
+                                    <path d="M41.9999 24H5.99992" stroke="#fff" stroke-width="4"
+                                        stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M30 12L42 24L30 36" stroke="#fff" stroke-width="4"
+                                        stroke-linecap="round" stroke-linejoin="round"></path>
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video -->
+    <section class="relative flex items-center w-full h-fit bg-gray-100">
+        <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
+            <iframe class="w-full h-[25em] max-w-full border border-gray-200 rounded-2xl"
+                src="https://www.youtube.com/embed/4FYbw-oTlmM" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Pictures -->
+    <section class="relative flex items-center w-full h-fit bg-gray-50">
+        <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
+            <h2 class="text-2xl md:text-3xl font-extra-bold text-black mb-8">
+                Foto-fotonya Yashinta
+            </h2>
+            <div id="controls-carousel" class="relative w-full" data-carousel="static">
+                <!-- Carousel wrapper -->
+                <div class="relative h-56 overflow-hidden rounded-2xl md:h-[25em]">
+                    <!-- Item 1 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="{{ asset('asset/1.jpg') }}"
+                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                            alt="...">
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                        <img src="{{ asset('asset/2.jpg') }}"
+                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                            alt="...">
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="{{ asset('asset/3.jpg') }}"
+                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                            alt="...">
+                    </div>
+                </div>
+                <!-- Slider controls -->
+                <button type="button"
+                    class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                    data-carousel-prev>
+                    <span
+                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30  group-hover:bg-white/50  group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M5 1 1 5l4 4" />
+                        </svg>
+                        <span class="sr-only">Previous</span>
+                    </span>
+                </button>
+                <button type="button"
+                    class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                    data-carousel-next>
+                    <span
+                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30  group-hover:bg-white/50  group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="m1 9 4-4-4-4" />
+                        </svg>
+                        <span class="sr-only">Next</span>
+                    </span>
+                </button>
+            </div>
 
         </div>
     </section>
 
-    {{-- commitment --}}
-    <section class="relative flex items-center w-full h-fit py-6 md:py-14 lg:py-24 bg-[#ffeff2]">
-        <div class="relative items-center w-full px-4 md:px-6 lg:px-12 xl:px-0 max-w-6xl mx-auto">
-            <h2
-                class="text-[#cb0e26] text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-6xl font-extra-bold">
-                Profil Yashinta</h2>
+    <!-- News -->
+    <section class="relative flex items-center w-full h-fit bg-gradient-to-br from-[#000] to-[#070707]">
+        <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
+            <h2 class="text-2xl md:text-3xl font-extra-bold text-white mb-8">
+                Berita Terbaru Yashinta
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div class="px-4 py-6 bg-white rounded-2xl">
+                    <p class="text-gray-400 font-medium text-sm mb-4">14 November 2023</p>
+                    <h1 class="text-lg font-bold leading-snug mb-4">
+                        Anak Muda Perlu Meletakan Diri Sebagai Aktor Utama Pembangunan
+                    </h1>
+                    <img src="{{ asset('asset/1.jpg') }}"
+                        class="w-full h-36 object-cover object-center rounded-md mb-4" alt="">
+                    <p class="text-md line-clamp-3 mb-12">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse suscipit earum vitae tempora non
+                        error in assumenda delectus deleniti hic.
+                    </p>
+                    <div class="flex items-center justify-end gap-x-2 font-semibold text-primary text-md">
+                        <p>Baca selengkapnya</p>
+                        <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
+                                <path d="M41.9999 24H5.99992" stroke="#cb0e26" stroke-width="4"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M30 12L42 24L30 36" stroke="#cb0e26" stroke-width="4" stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="px-4 py-6 bg-white rounded-2xl">
+                    <p class="text-gray-400 font-medium text-sm mb-4">14 November 2023</p>
+                    <h1 class="text-lg font-bold leading-snug mb-4">
+                        Anak Muda Perlu Meletakan Diri Sebagai Aktor Utama Pembangunan
+                    </h1>
+                    <img src="{{ asset('asset/1.jpg') }}"
+                        class="w-full h-36 object-cover object-center rounded-md mb-4" alt="">
+                    <p class="text-md line-clamp-3 mb-12">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse suscipit earum vitae tempora non
+                        error in assumenda delectus deleniti hic.
+                    </p>
+                    <div class="flex items-center justify-end gap-x-2 font-semibold text-primary text-md">
+                        <p>Baca selengkapnya</p>
+                        <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
+                                <path d="M41.9999 24H5.99992" stroke="#cb0e26" stroke-width="4"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M30 12L42 24L30 36" stroke="#cb0e26" stroke-width="4" stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <button type="button"
+                    class="hidden md:flex justify-center text-sm lg:text-md mt-0 md:mt-8 text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
+                rounded-full px-4 py-2 md:px-4 md:py-2 text-center me-2 mb-2 items-center gap-x-2 md:gap-x-4">
+                    <span>Lihat berita lainnya</span> <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
+                            <path d="M41.9999 24H5.99992" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            <path d="M30 12L42 24L30 36" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
 
-            <div class="relative flex-col items-start m-auto align-middle mt-6 md:mt-12 lg:mt-24">
-                <div class="grid grid-cols-3 gap-4 md:gap-6 lg:gap-24">
-                    <div>
-                        <div>
-                            <p
-                                class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold tracking-tight leading-tight text-black">
-                                Harapan ibu dan anak Yogyakarta
-                            </p>
-                            <p
-                                class="max-w-xl mt-2 sm:mt-3 md:mt-4 lg:mt-5 xl:mt-6 text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl tracking-tight text-gray-600">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, eius!
-                            </p>
-                        </div>
-                        <div class="col-span-2 gap-2 md:gap-3 lg:gap-4 mt-4 md:mt-6 lg:mt-8">
-                            <button type="button"
-                                class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none rounded-full px-3 sm:px-4 md:px-5 lg:px-6 xl:px-7 py-1 sm:py-1 md:py-2 lg:py-3 xl:py-3 text-center me-2 mb-2 flex items-center gap-x-2 md:gap-x-3 lg:gap-x-4">
-                                <span>Selengkapnya</span> <svg class="h-3 sm:h-4 md:h-5 lg:h-6 xl:h-7"
-                                    viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
-                                    </g>
-                                    <g id="SVGRepo_iconCarrier">
-                                        <rect width="48" height="48" fill="white" fill-opacity="0.01">
-                                        </rect>
-                                        <path d="M41.9999 24H5.99992" stroke="#ffffff" stroke-width="4"
-                                            stroke-linecap="round" stroke-linejoin="round"></path>
-                                        <path d="M30 12L42 24L30 36" stroke="#ffffff" stroke-width="4"
-                                            stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </g>
-                                </svg>
-                            </button>
-                        </div>
+    <!-- Social Media -->
+    <section class="relative flex items-center w-full h-auto hero-pattern">
+        <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-4xl py-6 md:py-0">
+            <div class="relative flex-col items-start m-auto align-middle">
+                <div class="grid gap-6 grid-cols-2 md:gap-12 xl:gap-4">
+                    <div class="order-0 block w-fit">
+                        <img class="object-contain object-center mx-auto lg:ml-auto sm:h-[18em] md:h-[18em] lg:h-[18em] xl:h-[22em] md:absolute md:bottom-0 md:left-0 w-fit"
+                            alt="hero" src="{{ asset('asset/hero.png') }}">
                     </div>
-                    <div class="col-span-2">
-                        <img class="object-cover object-center w-full mx-auto bg-gray-300 lg:ml-auto rounded-2xl"
-                            alt="hero" src="{{ asset('asset/1.jpg') }}">
-                    </div>
-                </div>
-            </div>
-            <div class="relative flex-col items-start m-auto align-middle mt-6 md:mt-12 lg:mt-24">
-                <div class="grid grid-cols-3 gap-4 md:gap-6 lg:gap-24">
-                    <div>
-                        <div>
-                            <p
-                                class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold tracking-tight leading-tight text-black">
-                                Masa Depan Anak Muda Yogyakarta
-                            </p>
-                            <p
-                                class="max-w-xl mt-2 sm:mt-3 md:mt-4 lg:mt-5 xl:mt-6 text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl tracking-tight text-gray-600">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, eius!
-                            </p>
+                    <div class="relative items-center gap-6 mt-auto mb-auto mr-auto md:inline-flex">
+                        <div class="max-w-xl text-left md:text-behind md:text-xl md:py-20 -ml-4 lg:-ml-6">
+                            <div>
+                                <p
+                                    class="text-white font-bold text-3xl md:text-4xl lg:text-5xl xl:text-4xl leading-none">
+                                    Media Sosial
+                                </p>
+                                <div class="grid grid-cols-2 gap-4 mt-6">
+                                    <button type="button"
+                                        class="text-md md:text-md text-gray-700 bg-white hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
+                rounded-full w-full px-5 py-2.5 text-center me-2 flex items-center gap-x-2 md:gap-x-2">
+                                        <img src="{{ asset('asset/instagram-svgrepo-com.svg') }}" class="w-5 h-5"
+                                            alt="">
+                                        <span class="font-medium">y.sekarwangi</span>
+                                    </button>
+                                    <button type="button"
+                                        class="text-md md:text-md text-gray-700 bg-white hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
+                rounded-full w-full px-5 py-2.5 text-center me-2 flex items-center gap-x-2 md:gap-x-2">
+                                        <img src="{{ asset('asset/facebook-svgrepo-com.svg') }}" class="w-7 h-7"
+                                            alt="">
+                                        <span class="font-medium text-sm">
+                                            R.A Yashinta Sekarwangi Mega
+                                        </span>
+                                    </button>
+                                    <button type="button"
+                                        class="text-md md:text-md text-gray-700 bg-white hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
+                rounded-full w-full px-5 py-2.5 text-center me-2 flex items-center gap-x-2 md:gap-x-2">
+                                        <img src="{{ asset('asset/instagram-svgrepo-com.svg') }}" class="w-5 h-5"
+                                            alt="">
+                                        <span class="font-medium">
+                                            Yashinta.Istimewa
+                                        </span>
+                                    </button>
+                                    <button type="button"
+                                        class="text-md md:text-md text-gray-700 bg-white hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
+                rounded-full w-full px-5 py-2.5 text-center me-2 flex items-center gap-x-2 md:gap-x-2">
+                                        <img src="{{ asset('asset/tiktok-svgrepo-com.svg') }}" class="w-6 h-6"
+                                            alt="">
+                                        <span class="font-medium text-sm">
+                                            Mbak Yashinta Sekarwangi
+                                        </span>
+                                    </button>
+                                    <button type="button"
+                                        class="text-md md:text-md text-gray-700 bg-white hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
+                rounded-full w-full px-5 py-2.5 text-center me-2 flex items-center gap-x-2 md:gap-x-2">
+                                        <img src="{{ asset('asset/youtube-168-svgrepo-com.svg') }}" class="w-6 h-6"
+                                            alt="">
+                                        <span class="font-medium">
+                                            Yashinta.Istimewa
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-span-2 gap-2 md:gap-3 lg:gap-4 mt-4 md:mt-6 lg:mt-8">
-                            <button type="button"
-                                class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none rounded-full px-3 sm:px-4 md:px-5 lg:px-6 xl:px-7 py-1 sm:py-1 md:py-2 lg:py-3 xl:py-3 text-center me-2 mb-2 flex items-center gap-x-2 md:gap-x-3 lg:gap-x-4">
-                                <span>Selengkapnya</span> <svg class="h-3 sm:h-4 md:h-5 lg:h-6 xl:h-7"
-                                    viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
-                                    </g>
-                                    <g id="SVGRepo_iconCarrier">
-                                        <rect width="48" height="48" fill="white" fill-opacity="0.01">
-                                        </rect>
-                                        <path d="M41.9999 24H5.99992" stroke="#ffffff" stroke-width="4"
-                                            stroke-linecap="round" stroke-linejoin="round"></path>
-                                        <path d="M30 12L42 24L30 36" stroke="#ffffff" stroke-width="4"
-                                            stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </g>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-span-2">
-                        <img class="object-cover object-center w-full mx-auto bg-gray-300 lg:ml-auto rounded-2xl"
-                            alt="hero" src="{{ asset('asset/2.jpg') }}">
-                    </div>
-                </div>
-            </div>
-            <div class="relative flex-col items-start m-auto align-middle mt-6 md:mt-12 lg:mt-24">
-                <div class="grid grid-cols-3 gap-4 md:gap-6 lg:gap-24">
-                    <div>
-                        <div>
-                            <p
-                                class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold tracking-tight leading-tight text-black">
-                                Yogyakarta Nyaman & Lestari
-                            </p>
-                            <p
-                                class="max-w-xl mt-2 sm:mt-3 md:mt-4 lg:mt-5 xl:mt-6 text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl tracking-tight text-gray-600">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, eius!
-                            </p>
-                        </div>
-                        <div class="col-span-2 gap-2 md:gap-3 lg:gap-4 mt-4 md:mt-6 lg:mt-8">
-                            <button type="button"
-                                class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none rounded-full px-3 sm:px-4 md:px-5 lg:px-6 xl:px-7 py-1 sm:py-1 md:py-2 lg:py-3 xl:py-3 text-center me-2 mb-2 flex items-center gap-x-2 md:gap-x-3 lg:gap-x-4">
-                                <span>Selengkapnya</span> <svg class="h-3 sm:h-4 md:h-5 lg:h-6 xl:h-7"
-                                    viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
-                                    </g>
-                                    <g id="SVGRepo_iconCarrier">
-                                        <rect width="48" height="48" fill="white" fill-opacity="0.01">
-                                        </rect>
-                                        <path d="M41.9999 24H5.99992" stroke="#ffffff" stroke-width="4"
-                                            stroke-linecap="round" stroke-linejoin="round"></path>
-                                        <path d="M30 12L42 24L30 36" stroke="#ffffff" stroke-width="4"
-                                            stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </g>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-span-2">
-                        <img class="object-cover object-center w-full mx-auto bg-gray-300 lg:ml-auto rounded-2xl"
-                            alt="hero" src="{{ asset('asset/3.jpg') }}">
                     </div>
                 </div>
             </div>
         </div>
-
     </section>
 
+    <!-- Address -->
+    <section class="relative flex items-center w-full h-auto bg-gray-100">
+        <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-4xl py-6 md:py-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <div>
+                    <div>
+                        <h3 class="ml-11 font-bold text-xl mb-2">
+                            Bale Rakyat Yashinta
+                        </h3>
+                        <div class="flex items-center gap-x-3">
+                            <img src="{{ asset('asset/location-svgrepo-com.svg') }}" class="w-8 h-8" alt="">
+                            <p>
+                                Jl. Ring Road Utara,Nanggulan, Maguoharjo, Kec. Depok, Kabupaten Sleman, Daerah Istimewa
+                                Yogyakarta 55281
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <h3 class="ml-11 font-bold text-xl mb-2">
+                            Kontak
+                        </h3>
+                        <div class="flex items-center gap-x-3">
+                            <img src="{{ asset('asset/whatsapp-color-svgrepo-com.svg') }}" class="w-8 h-8"
+                                alt="">
+                            <p>
+                                Whatsapp: 0811-2654-066
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="relative flex items-center w-full h-auto bg-white">
+        <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-4xl py-6 md:py-20">
+            <p class="text-center text-lg">
+                R.A Yashinta Sekarwangi Mega | {{ date('Y') }}
+            </p>
+        </div>
+    </section>
+
+    @push('js-internal')
+        <script>
+            const carouselItems = document.querySelectorAll('[data-carousel-item]');
+            let currentIndex = Array.from(carouselItems).findIndex(item => item.getAttribute('data-carousel-item') ===
+                'active');
+            const nextButton = document.querySelector('[data-carousel-next]');
+
+            function slideToItem(index) {
+                carouselItems[currentIndex].classList.replace('active', 'hidden');
+                currentIndex = index;
+                carouselItems[currentIndex].classList.replace('hidden', 'active');
+            }
+
+            document.querySelector('[data-carousel-prev]').addEventListener('click', () => {
+                const prevIndex = currentIndex === 0 ? carouselItems.length - 1 : currentIndex - 1;
+                slideToItem(prevIndex);
+            });
+
+            nextButton.addEventListener('click', () => {
+                const nextIndex = currentIndex === carouselItems.length - 1 ? 0 : currentIndex + 1;
+                slideToItem(nextIndex);
+            });
+
+            setInterval(() => nextButton.click(), 3000);
+        </script>
+    @endpush
 </x-guest-layout>
