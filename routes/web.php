@@ -16,5 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [LandingController::class, 'index'])->name('user.landing.index');
+Route::get('profile', [LandingController::class, 'profile'])->name('user.landing.profile');
+Route::get('news', [LandingController::class, 'news'])->name('user.landing.news');
+Route::get('faq', [LandingController::class, 'faq'])->name('user.landing.faq');
+Route::get('gallery', [LandingController::class, 'gallery'])->name('user.landing.gallery');
 
 require __DIR__ . '/auth.php';

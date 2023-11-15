@@ -11,4 +11,24 @@ class LandingController extends Controller
     {
         return view('user.landing.index');
     }
+
+    public function profile()
+    {
+        return view('user.landing.profile');
+    }
+
+    public function news()
+    {
+        return view('user.landing.news');
+    }
+
+    public function faq()
+    {
+        return view('user.landing.faq');
+    }
+
+    public function gallery()
+    {
+        return view('user.landing.gallery');
+    }
 }

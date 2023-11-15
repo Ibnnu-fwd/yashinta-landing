@@ -2,10 +2,10 @@
     @section('title', 'Home')
 
     <!-- Navbar -->
-    <nav class="hero-pattern">
+    <nav class="hero-pattern z-20">
         <div class="max-w-2xl flex flex-wrap items-center justify-between mx-auto p-4 py-6">
-            <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img src="{{ asset('asset/logo.png') }}" class="h-12" alt="Flowbite Logo" />
+            <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="{{ asset('asset/logo-white.png') }}" class="h-10" alt="Flowbite Logo" />
             </a>
             <button data-collapse-toggle="navbar-default" type="button"
                 class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden  focus:outline-none focus:ring-2 text-white"
@@ -19,32 +19,32 @@
             </button>
             <div class="hidden w-full md:block md:w-auto" id="navbar-default">
                 <ul
-                    class="font-medium flex flex-col p-4 md:p-0 mt-4  rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0
+                    class="font-medium flex flex-col p-4 md:p-0 mt-4  rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 items-center
                     ">
                     <li>
-                        <a href="#"
-                            class="block py-2 px-3 text-white bg-primary rounded md:bg-transparent md:text-white md:p-0 "
+                        <a href="/"
+                            class="block py-2 px-3 text-white bg-transparent rounded md:bg-transparent md:text-white md:p-0 hover:underline"
                             aria-current="page">Beranda</a>
                     </li>
                     <li>
-                        <a href="#"
-                            class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Profil</a>
+                        <a href="{{ route('user.landing.profile') }}"
+                            class="block py-2 px-3 text-white rounded hover:bg-transparent md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Profil</a>
                     </li>
                     <li>
                         <a href="#"
-                            class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Komitmen</a>
+                            class="block py-2 px-3 text-white rounded hover:bg-transparent md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Komitmen</a>
                     </li>
                     <li>
-                        <a href="#"
-                            class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Berita</a>
+                        <a href="{{ route('user.landing.news') }}"
+                            class="block py-2 px-3 text-white rounded hover:bg-transparent md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Berita</a>
                     </li>
                     <li>
-                        <a href="#"
-                            class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Galeri</a>
+                        <a href="{{ route('user.landing.gallery') }}"
+                            class="block py-2 px-3 text-white rounded hover:bg-transparent md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Galeri</a>
                     </li>
                     <li>
-                        <a href="#"
-                            class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">FAQ</a>
+                        <a href="{{ route('user.landing.faq') }}"
+                            class="block py-2 px-3 text-white rounded hover:bg-transparent md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">FAQ</a>
                     </li>
                 </ul>
             </div>
@@ -52,21 +52,20 @@
     </nav>
 
     <!-- Hero -->
-    <section class="relative flex items-center w-full h-fit hero-pattern">
+    <section class="relative flex items-center w-full h-fit hero-pattern z-0">
         <div class="relative items-center w-full px-0 mx-auto md:px-12 lg:px-0 max-w-2xl">
             <div class="relative flex-col items-start m-auto align-middle">
                 <div class="grid gap-6 grid-cols-2 md:gap-24 xl:gap-20">
-                    <div class="order-0 block w-full">
-                        <img class="object-contain object-center mx-auto lg:ml-auto sm:h-[20em] md:h-[20em] lg:h-[20em] xl:h-[20em] md:absolute md:bottom-0 md:left-0"
-                            alt="hero" src="{{ asset('asset/hero.png') }}">
+                    <div class="order-0 block w-full h-fit">
+                        <img class="object-contain object-center mx-auto lg:ml-auto sm:h-[25em] md:h-[22em] lg:h-[22em] xl:h-[22em] md:absolute md:bottom-0 md:left-0"
+                            alt="hero" src="{{ asset('asset/hero-landing.png') }}">
                     </div>
                     <div class="relative items-center gap-6 mt-auto mb-auto mr-auto md:inline-flex">
                         <div class="max-w-xl text-left md:text-behind md:text-xl md:py-20 -ml-4 lg:-ml-6">
                             <div>
                                 <p
                                     class="text-white font-extra-bold text-3xl md:text-4xl lg:text-5xl xl:text-5xl leading-none">
-                                    R.A Yashinta<br>
-                                    <span class="text-[#ffeff2]">Sekarwangi</span>
+                                    R.A Yashinta<br>Sekarwangi
                                     <br>Mega
                                 </p>
                                 <p
@@ -217,7 +216,7 @@
         <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 md:gap-18">
                 <div class="text-white space-y-3">
-                    <h2 class=" text-md md:text-2xl lg:text-3xl font-bold leading-snug">
+                    <h2 class="text-xl md:text-2xl lg:text-3xl font-bold leading-snug">
                         Sampaikan aspirasimu untuk Daerah Istimewa Yogyakarta
                     </h2>
                     <p class="text-lg">
@@ -269,7 +268,7 @@
     <!-- Video -->
     <section class="relative flex items-center w-full h-fit bg-gray-100">
         <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
-            <iframe class="w-full h-[25em] max-w-full border border-gray-200 rounded-2xl"
+            <iframe class="w-full h-[18em] md:h-[25em] max-w-full border border-gray-200 rounded-2xl"
                 src="https://www.youtube.com/embed/4FYbw-oTlmM" title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
@@ -283,26 +282,40 @@
             <h2 class="text-2xl md:text-3xl font-extra-bold text-black mb-8">
                 Foto-fotonya Yashinta
             </h2>
-            <div id="controls-carousel" class="relative w-full" data-carousel="static">
+
+
+            <div id="gallery" class="relative w-full" data-carousel="slide">
                 <!-- Carousel wrapper -->
-                <div class="relative h-56 overflow-hidden rounded-2xl md:h-[25em]">
+                <div class="relative h-56 overflow-hidden rounded-2xl md:h-96">
                     <!-- Item 1 -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="{{ asset('asset/1.jpg') }}"
-                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            alt="...">
+                        <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg"
+                            class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                            alt="">
                     </div>
                     <!-- Item 2 -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                        <img src="{{ asset('asset/2.jpg') }}"
-                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            alt="...">
+                        <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg"
+                            class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                            alt="">
                     </div>
                     <!-- Item 3 -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="{{ asset('asset/3.jpg') }}"
-                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            alt="...">
+                        <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg"
+                            class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                            alt="">
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg"
+                            class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                            alt="">
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg"
+                            class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                            alt="">
                     </div>
                 </div>
                 <!-- Slider controls -->
@@ -310,8 +323,8 @@
                     class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
                     data-carousel-prev>
                     <span
-                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30  group-hover:bg-white/50  group-focus:outline-none">
-                        <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true"
+                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                 stroke-width="2" d="M5 1 1 5l4 4" />
@@ -323,8 +336,8 @@
                     class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
                     data-carousel-next>
                     <span
-                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30  group-hover:bg-white/50  group-focus:outline-none">
-                        <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true"
+                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                 stroke-width="2" d="m1 9 4-4-4-4" />
@@ -420,144 +433,6 @@
         </div>
     </section>
 
-    <!-- Social Media -->
-    <section class="relative flex items-center w-full h-auto hero-pattern">
-        <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-4xl py-6 md:py-0">
-            <div class="relative flex-col items-start m-auto align-middle">
-                <div class="grid gap-6 grid-cols-2 md:gap-12 xl:gap-4">
-                    <div class="order-0 block w-fit">
-                        <img class="object-contain object-center mx-auto lg:ml-auto sm:h-[18em] md:h-[18em] lg:h-[18em] xl:h-[22em] md:absolute md:bottom-0 md:left-0 w-fit"
-                            alt="hero" src="{{ asset('asset/hero.png') }}">
-                    </div>
-                    <div class="relative items-center gap-6 mt-auto mb-auto mr-auto md:inline-flex">
-                        <div class="max-w-xl text-left md:text-behind md:text-xl md:py-20 -ml-4 lg:-ml-6">
-                            <div>
-                                <p
-                                    class="text-white font-bold text-3xl md:text-4xl lg:text-5xl xl:text-4xl leading-none">
-                                    Media Sosial
-                                </p>
-                                <div class="grid grid-cols-2 gap-4 mt-6">
-                                    <button type="button"
-                                        class="text-md md:text-md text-gray-700 bg-white hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
-                rounded-full w-full px-5 py-2.5 text-center me-2 flex items-center gap-x-2 md:gap-x-2">
-                                        <img src="{{ asset('asset/instagram-svgrepo-com.svg') }}" class="w-5 h-5"
-                                            alt="">
-                                        <span class="font-medium">y.sekarwangi</span>
-                                    </button>
-                                    <button type="button"
-                                        class="text-md md:text-md text-gray-700 bg-white hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
-                rounded-full w-full px-5 py-2.5 text-center me-2 flex items-center gap-x-2 md:gap-x-2">
-                                        <img src="{{ asset('asset/facebook-svgrepo-com.svg') }}" class="w-7 h-7"
-                                            alt="">
-                                        <span class="font-medium text-sm">
-                                            R.A Yashinta Sekarwangi Mega
-                                        </span>
-                                    </button>
-                                    <button type="button"
-                                        class="text-md md:text-md text-gray-700 bg-white hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
-                rounded-full w-full px-5 py-2.5 text-center me-2 flex items-center gap-x-2 md:gap-x-2">
-                                        <img src="{{ asset('asset/instagram-svgrepo-com.svg') }}" class="w-5 h-5"
-                                            alt="">
-                                        <span class="font-medium">
-                                            Yashinta.Istimewa
-                                        </span>
-                                    </button>
-                                    <button type="button"
-                                        class="text-md md:text-md text-gray-700 bg-white hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
-                rounded-full w-full px-5 py-2.5 text-center me-2 flex items-center gap-x-2 md:gap-x-2">
-                                        <img src="{{ asset('asset/tiktok-svgrepo-com.svg') }}" class="w-6 h-6"
-                                            alt="">
-                                        <span class="font-medium text-sm">
-                                            Mbak Yashinta Sekarwangi
-                                        </span>
-                                    </button>
-                                    <button type="button"
-                                        class="text-md md:text-md text-gray-700 bg-white hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
-                rounded-full w-full px-5 py-2.5 text-center me-2 flex items-center gap-x-2 md:gap-x-2">
-                                        <img src="{{ asset('asset/youtube-168-svgrepo-com.svg') }}" class="w-6 h-6"
-                                            alt="">
-                                        <span class="font-medium">
-                                            Yashinta.Istimewa
-                                        </span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    @include('layouts.footer')
 
-    <!-- Address -->
-    <section class="relative flex items-center w-full h-auto bg-gray-100">
-        <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-4xl py-6 md:py-20">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                <div>
-                    <div>
-                        <h3 class="ml-11 font-bold text-xl mb-2">
-                            Bale Rakyat Yashinta
-                        </h3>
-                        <div class="flex items-center gap-x-3">
-                            <img src="{{ asset('asset/location-svgrepo-com.svg') }}" class="w-8 h-8" alt="">
-                            <p>
-                                Jl. Ring Road Utara,Nanggulan, Maguoharjo, Kec. Depok, Kabupaten Sleman, Daerah Istimewa
-                                Yogyakarta 55281
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <h3 class="ml-11 font-bold text-xl mb-2">
-                            Kontak
-                        </h3>
-                        <div class="flex items-center gap-x-3">
-                            <img src="{{ asset('asset/whatsapp-color-svgrepo-com.svg') }}" class="w-8 h-8"
-                                alt="">
-                            <p>
-                                Whatsapp: 0811-2654-066
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <section class="relative flex items-center w-full h-auto bg-white">
-        <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-4xl py-6 md:py-20">
-            <p class="text-center text-lg">
-                R.A Yashinta Sekarwangi Mega | {{ date('Y') }}
-            </p>
-        </div>
-    </section>
-
-    @push('js-internal')
-        <script>
-            const carouselItems = document.querySelectorAll('[data-carousel-item]');
-            let currentIndex = Array.from(carouselItems).findIndex(item => item.getAttribute('data-carousel-item') ===
-                'active');
-            const nextButton = document.querySelector('[data-carousel-next]');
-
-            function slideToItem(index) {
-                carouselItems[currentIndex].classList.replace('active', 'hidden');
-                currentIndex = index;
-                carouselItems[currentIndex].classList.replace('hidden', 'active');
-            }
-
-            document.querySelector('[data-carousel-prev]').addEventListener('click', () => {
-                const prevIndex = currentIndex === 0 ? carouselItems.length - 1 : currentIndex - 1;
-                slideToItem(prevIndex);
-            });
-
-            nextButton.addEventListener('click', () => {
-                const nextIndex = currentIndex === carouselItems.length - 1 ? 0 : currentIndex + 1;
-                slideToItem(nextIndex);
-            });
-
-            setInterval(() => nextButton.click(), 3000);
-        </script>
-    @endpush
 </x-guest-layout>
