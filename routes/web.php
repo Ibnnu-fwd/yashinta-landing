@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\User\LandingController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +21,15 @@ Route::get('profile', [LandingController::class, 'profile'])->name('user.landing
 Route::get('news', [LandingController::class, 'news'])->name('user.landing.news');
 Route::get('faq', [LandingController::class, 'faq'])->name('user.landing.faq');
 Route::get('gallery', [LandingController::class, 'gallery'])->name('user.landing.gallery');
+
+// Admin
+Route::group(['prefix'=> 'admin', 'middleware' => ['auth']], function(){
+    Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard.index');
+
+    Route::group(['prefix'=> 'profile'], function(){
+        Route::get('/', [ProfileController::class, 'index'])->name('admin.profile.index');
+        Route::post('/update', [ProfileController::class, 'update'])->name('admin.profile.update');
+    });
+});
 
 require __DIR__ . '/auth.php';
