@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\AspirationController;
 use App\Http\Controllers\Admin\SocialMediaController;
+use App\Http\Controllers\Admin\FaqController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// User
 Route::get('/', [LandingController::class, 'index'])->name('user.landing.index');
 Route::post('/store-aspiration', [LandingController::class, 'storeAspiration'])->name('user.aspiration.store');
 Route::get('profile', [LandingController::class, 'profile'])->name('user.landing.profile');
@@ -33,6 +35,7 @@ Route::get('gallery', [LandingController::class, 'gallery'])->name('user.landing
 Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
     Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard.index');
 
+    // Profile
     Route::group(['prefix' => 'profile'], function () {
         Route::get('/', [ProfileController::class, 'index'])->name('admin.profile.index');
         Route::post('/update', [ProfileController::class, 'update'])->name('admin.profile.update');
@@ -45,7 +48,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
         Route::post('/store', [NewsController::class, 'store'])->name('admin.news.store');
         Route::get('/edit/{id}', [NewsController::class, 'edit'])->name('admin.news.edit');
         Route::post('/update/{id}', [NewsController::class, 'update'])->name('admin.news.update');
-        Route::post('/destroy/{id}', [NewsController::class, 'destroy'])->name('admin.news.destroy');
+        Route::delete('/destroy/{id}', [NewsController::class, 'destroy'])->name('admin.news.destroy');
     });
 
     // Commitment
@@ -55,20 +58,20 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
         Route::post('/store', [CommitmentController::class, 'store'])->name('admin.commitment.store');
         Route::get('/edit/{id}', [CommitmentController::class, 'edit'])->name('admin.commitment.edit');
         Route::post('/update/{id}', [CommitmentController::class, 'update'])->name('admin.commitment.update');
-        Route::post('/destroy/{id}', [CommitmentController::class, 'destroy'])->name('admin.commitment.destroy');
+        Route::delete('/destroy/{id}', [CommitmentController::class, 'destroy'])->name('admin.commitment.destroy');
     });
 
-    //Gallery
+    // Gallery
     Route::group(['prefix' => 'gallery'], function () {
         Route::get('/', [GalleryController::class, 'index'])->name('admin.gallery.index');
         Route::get('/create', [GalleryController::class, 'create'])->name('admin.gallery.create');
         Route::post('/store', [GalleryController::class, 'store'])->name('admin.gallery.store');
         Route::get('/edit/{id}', [GalleryController::class, 'edit'])->name('admin.gallery.edit');
         Route::post('/update/{id}', [GalleryController::class, 'update'])->name('admin.gallery.update');
-        Route::post('/destroy/{id}', [GalleryController::class, 'destroy'])->name('admin.gallery.destroy');
+        Route::delete('/destroy/{id}', [GalleryController::class, 'destroy'])->name('admin.gallery.destroy');
     });
 
-    //Aspiration
+    // Aspiration
     Route::group(['prefix' => 'aspiration'], function () {
         Route::get('/', [AspirationController::class, 'index'])->name('admin.aspiration.index');
         Route::get('/show/{id}', [AspirationController::class, 'show'])->name('admin.aspiration.show');
@@ -81,7 +84,17 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
         Route::post('/store', [SocialMediaController::class, 'store'])->name('admin.social-media.store');
         Route::get('/edit/{id}', [SocialMediaController::class, 'edit'])->name('admin.social-media.edit');
         Route::post('/update/{id}', [SocialMediaController::class, 'update'])->name('admin.social-media.update');
-        Route::post('/destroy/{id}', [SocialMediaController::class, 'destroy'])->name('admin.social-media.destroy');
+        Route::delete('/destroy/{id}', [SocialMediaController::class, 'destroy'])->name('admin.social-media.destroy');
+    });
+
+    // Faq
+    Route::group(['prefix' => 'faq'], function () {
+        Route::get('/', [FaqController::class, 'index'])->name('admin.faq.index');
+        Route::get('/create', [FaqController::class, 'create'])->name('admin.faq.create');
+        Route::post('/store', [FaqController::class, 'store'])->name('admin.faq.store');
+        Route::get('/edit/{id}', [FaqController::class, 'edit'])->name('admin.faq.edit');
+        Route::post('/update/{id}', [FaqController::class, 'update'])->name('admin.faq.update');
+        Route::delete('/destroy/{id}', [FaqController::class, 'destroy'])->name('admin.faq.destroy');
     });
 });
 

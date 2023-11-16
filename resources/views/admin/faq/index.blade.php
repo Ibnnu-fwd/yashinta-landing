@@ -1,12 +1,12 @@
 <x-app-layout>
-    @section('title', 'Berita')
+    @section('title', 'Frequently Asked Question')
 
     <div class="max-w-full">
         <div class="flex justify-between items-center mb-5">
             <h1 class="font-semibold text-lg">
-                Berita
+                Frequently Asked Question (FAQ)
             </h1>
-            <a href="{{ route('admin.news.create') }}"
+            <a href="{{ route('admin.faq.create') }}"
                 class="bg-primary text-white rounded-lg px-4 py-2 hover:bg-secondary-red">
                 Tambah
             </a>
@@ -16,11 +16,8 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Judul</th>
-                    <th>Konten</th>
-                    <th>Penulis</th>
-                    <th>Foto</th>
-                    <th>Tanggal Diunggah</th>
+                    <th>Pertanyaan</th>
+                    <th>Jawaban</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -41,7 +38,7 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                         $.ajax({
-                            url: "{{ route('admin.news.destroy', ':id') }}".replace(':id', id),
+                            url: "{{ route('admin.faq.destroy', ':id') }}".replace(':id', id),
                             type: 'DELETE',
                             data: {
                                 '_token': "{{ csrf_token() }}"
@@ -77,32 +74,19 @@
                     serverSide: true,
                     responsive: true,
                     autoWidth: false,
-                    ajax: "{{ route('admin.news.index') }}",
+                    ajax: "{{ route('admin.faq.index') }}",
                     columns: [{
                             data: 'DT_RowIndex',
                             name: 'DT_RowIndex'
                         },
                         {
-                            data: 'title',
-                            name: 'title'
+                            data: 'question',
+                            name: 'question'
                         },
                         {
-                            data: 'content',
-                            name: 'content',
+                            data: 'answer',
+                            name: 'answer',
                             width: '30%',
-                        },
-                        {
-                            data: 'author',
-                            name: 'author'
-                        },
-                        {
-                            data: 'thumbnail',
-                            name: 'thumbnail'
-                        },
-
-                        {
-                            data: 'published_date',
-                            name: 'published_date'
                         },
                         {
                             data: 'action',

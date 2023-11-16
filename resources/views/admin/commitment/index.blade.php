@@ -41,7 +41,7 @@
                     if (result.isConfirmed) {
                         $.ajax({
                             url: "{{ route('admin.commitment.destroy', ':id') }}".replace(':id', id),
-                            type: 'POST',
+                            type: 'DELETE',
                             data: {
                                 '_token': "{{ csrf_token() }}"
                             },
