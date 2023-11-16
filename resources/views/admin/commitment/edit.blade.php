@@ -39,7 +39,7 @@
 
                 @if ($commitment->thumbnail)
                     $('#thumbnail').parent().append(
-                        `<a href="{{ asset('storage/commitment/' . $commitment->thumbnail) }}" target="_blank" class="block mt-2">
+                        `<a href="{{ asset('storage/commitment/' . $commitment->thumbnail) }}" target="_blank" class="hover:text-secondary-red block mt-2">
                             ` + `{{ $commitment->thumbnail }}` + `    
                         </a>`
                     );

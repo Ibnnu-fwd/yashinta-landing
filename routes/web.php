@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\NewsController as AdminNewsController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\GalleryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,7 +43,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
         Route::post('/store', [NewsController::class, 'store'])->name('admin.news.store');
         Route::get('/edit/{id}', [NewsController::class, 'edit'])->name('admin.news.edit');
         Route::post('/update/{id}', [NewsController::class, 'update'])->name('admin.news.update');
-        Route::get('/delete/{id}', [NewsController::class, 'delete'])->name('admin.news.delete');
+        Route::post('/destroy/{id}', [NewsController::class, 'destroy'])->name('admin.news.destroy');
     });
 
     // Commitment
@@ -53,6 +54,16 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
         Route::get('/edit/{id}', [CommitmentController::class, 'edit'])->name('admin.commitment.edit');
         Route::post('/update/{id}', [CommitmentController::class, 'update'])->name('admin.commitment.update');
         Route::post('/destroy/{id}', [CommitmentController::class, 'destroy'])->name('admin.commitment.destroy');
+    });
+
+    //Gallery
+    Route::group(['prefix' => 'gallery'], function () {
+        Route::get('/', [GalleryController::class, 'index'])->name('admin.gallery.index');
+        Route::get('/create', [GalleryController::class, 'create'])->name('admin.gallery.create');
+        Route::post('/store', [GalleryController::class, 'store'])->name('admin.gallery.store');
+        Route::get('/edit/{id}', [GalleryController::class, 'edit'])->name('admin.gallery.edit');
+        Route::post('/update/{id}', [GalleryController::class, 'update'])->name('admin.gallery.update');
+        Route::post('/destroy/{id}', [GalleryController::class, 'destroy'])->name('admin.gallery.destroy');
     });
 });
 
