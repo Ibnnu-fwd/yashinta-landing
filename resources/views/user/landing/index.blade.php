@@ -70,7 +70,7 @@
                                 </p>
                                 <p
                                     class="max-w-xl mt-4 md:mt-8 lg:mt-6 font-semibold text-white text-sm md:text-lg lg:text-xl tracking-wide">
-                                    Calon DPD RI Dapil DIY
+                                    {{ $profile->title_landing_page }}
                                 </p>
                             </div>
                         </div>
@@ -87,9 +87,7 @@
                 Profil Yashinta
             </h2>
             <p class="mt-4 text-md md:text-lg text-gray-600">
-                Yashinta Sekarwangi merupakan mahasiswa S2 Universitas Indonesia jurusan Ilmu Komunikasi.
-                Sebelumnya, ia sudah berhasil menuntaskan pendidikan di Hubungan Internasional UGM dan akhirnya
-                melanjutkan pendidikan di UI
+                {{ $profile->description_landing_page }}
             </p>
             <a href="{{ route('user.landing.profile') }}" type="button"
                 class="text-md md:text-lg mt-6 w-fit text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
@@ -144,8 +142,8 @@
                     </button>
                 </div>
                 <div class="col-span-2">
-                    <img src="{{ asset('asset/1.jpg') }}" class="w-full h-full object-cover object-center rounded-2xl"
-                        alt="">
+                    <img src="{{ asset('asset/1.jpg') }}"
+                        class="w-full h-full object-cover object-center rounded-2xl" alt="">
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8 mt-8 md:mt-20">
@@ -174,8 +172,8 @@
                     </button>
                 </div>
                 <div class="col-span-2">
-                    <img src="{{ asset('asset/1.jpg') }}" class="w-full h-full object-cover object-center rounded-2xl"
-                        alt="">
+                    <img src="{{ asset('asset/1.jpg') }}"
+                        class="w-full h-full object-cover object-center rounded-2xl" alt="">
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8 mt-8 md:mt-20">
