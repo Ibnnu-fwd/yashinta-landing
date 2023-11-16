@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\AspirationController;
 use App\Http\Controllers\Admin\SocialMediaController;
 use App\Http\Controllers\Admin\FaqController;
+use App\Http\Controllers\Admin\EducationsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -95,6 +96,16 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
         Route::get('/edit/{id}', [FaqController::class, 'edit'])->name('admin.faq.edit');
         Route::post('/update/{id}', [FaqController::class, 'update'])->name('admin.faq.update');
         Route::delete('/destroy/{id}', [FaqController::class, 'destroy'])->name('admin.faq.destroy');
+    });
+
+    // Educations
+    Route::group(['prefix' => 'educations'], function () {
+        Route::get('/', [EducationsController::class, 'index'])->name('admin.educations.index');
+        Route::get('/create', [EducationsController::class, 'create'])->name('admin.educations.create');
+        Route::post('/store', [EducationsController::class, 'store'])->name('admin.educations.store');
+        Route::get('/edit/{id}', [EducationsController::class, 'edit'])->name('admin.educations.edit');
+        Route::post('/update/{id}', [EducationsController::class, 'update'])->name('admin.educations.update');
+        Route::delete('/destroy/{id}', [EducationsController::class, 'destroy'])->name('admin.educations.destroy');
     });
 });
 
