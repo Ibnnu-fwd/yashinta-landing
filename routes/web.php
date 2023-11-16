@@ -52,7 +52,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
         Route::post('/store', [CommitmentController::class, 'store'])->name('admin.commitment.store');
         Route::get('/edit/{id}', [CommitmentController::class, 'edit'])->name('admin.commitment.edit');
         Route::post('/update/{id}', [CommitmentController::class, 'update'])->name('admin.commitment.update');
-        Route::get('/delete/{id}', [CommitmentController::class, 'delete'])->name('admin.commitment.delete');
+        Route::post('/destroy/{id}', [CommitmentController::class, 'destroy'])->name('admin.commitment.destroy');
     });
 });
 

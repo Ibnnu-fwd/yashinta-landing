@@ -69,6 +69,13 @@ class CommitmentController extends Controller
         }
     }
 
+    public function edit($id)
+    {
+        return view('admin.commitment.edit', [
+            'commitment' => $this->commitment->getById($id)
+        ]);
+    }
+
     public function update($id, Request $request)
     {
         $request->validate([
