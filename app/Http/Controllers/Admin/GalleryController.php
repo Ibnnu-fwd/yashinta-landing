@@ -47,6 +47,12 @@ class GalleryController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'title'     => ['required'],
+            'date'   => ['required'],
+            'thumbnail' => ['required', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
+        ]);
+
         $this->gallery->store($request->all());
         return redirect()->route('admin.gallery.index')->with('success', 'Photo added successfully');
     }
@@ -60,6 +66,12 @@ class GalleryController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'title'     => ['required'],
+            'date'   => ['required'],
+            'thumbnail' => ['required', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
+        ]);
+        
         $this->gallery->update($request->all(), $id);
         return redirect()->route('admin.gallery.index')->with('success', 'Photo updated successfully');
     }

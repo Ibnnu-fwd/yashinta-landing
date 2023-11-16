@@ -4,7 +4,6 @@ use App\Http\Controllers\Admin\CommitmentController;
 use App\Http\Controllers\User\LandingController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\NewsController;
-use App\Http\Controllers\Admin\NewsController as AdminNewsController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\GalleryController;
 use Illuminate\Support\Facades\Route;
@@ -38,7 +37,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
 
     // News
     Route::group(['prefix' => 'news'], function () {
-        Route::get('/', [AdminNewsController::class, 'index'])->name('admin.news.index');
+        Route::get('/', [NewsController::class, 'index'])->name('admin.news.index');
         Route::get('/create', [NewsController::class, 'create'])->name('admin.news.create');
         Route::post('/store', [NewsController::class, 'store'])->name('admin.news.store');
         Route::get('/edit/{id}', [NewsController::class, 'edit'])->name('admin.news.edit');
