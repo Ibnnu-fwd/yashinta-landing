@@ -55,40 +55,17 @@
         <section class="relative flex items-center w-full h-fit">
             <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
                 <h2 class="text-2xl md:text-3xl font-extra-bold text-black mb-5 leading-snug">
-                    Anak Muda Perlu Meletakan Diri Sebagai Aktor Utama Pembangunan
+                    {{ $data->title }}
                 </h2>
                 <p class="text-gray-400 text-sm">
-                    Dipublikasikan pada 14 November 2023 oleh Ibnnu
+                    Dipublikasikan pada {{ date('d F Y', strtotime($data->published_date)) }} oleh {{ $data->author }}
                 </p>
 
-                <img src="{{ asset('asset/1.jpg') }}"
-                    class="w-full sm:h-[10em] md:h-[20em] lg:h-[25em] object-cover object-center rounded-2xl shadow-2xl mt-8 mb-8"
+                <img src="{{ asset('storage/news/' . $data->thumbnail) }}"
+                    class="w-full sm:h-[10em] md:h-[20em] lg:h-[25em] object-cover object-center rounded-2xl shadow-xl mt-8 mb-12"
                     alt="">
-
                 <p class="leading-7">
-                    Jakarta, Gatra.com – Keterlibatan aktif anak muda menjadi penentu dalam tercapainya pembangunan
-                    berkelanjutan atau Sustainable Development Goals (SDGs) demi menciptakan tatanan dunia yang lebih
-                    baik pada 2030 nanti.
-
-                    Dari total populasi dunia saat ini yang diperkirakan mencapai 7,5 miliar penduduk, 16% diantaranya
-                    atau sekitar 1,2 miliar penduduk merupakan orang muda berusia antara 15 hingga 24 tahun.
-
-                    Kaum muda ini sangat berperan untuk menghadapi ancaman dan tantangan terburuk bagi pembangunan
-                    berkelanjutan, termasuk dampak perubahan iklim, pengangguran, kemiskinan, ketidaksetaraan gender,
-                    konflik, dan migrasi.
-                </p>
-                <br>
-                <p class="leading-7">
-                    DI Indonesia, jumlah penduduk usia produktif (15-64 tahun) berdasarkan data terbaru Badan Pusat
-                    Statistik (BPS) mencapai 70% dari total penduduk dan diperkirakan akan mencapai puncaknya pada
-                    2028-2030.
-
-                    Pada periode itu, diprediksi akan menjadi puncak fenomena bonus demografi yang dapat dioptimalkan
-                    untuk produktivitas dan kemajuan pembangunan berkelanjutan di Indonesia.
-
-                    Hal tersebut diulas dalam webseries 2 bertema SDGs &Youth: Your Goals, Your Decade yang
-                    diselenggarakan oleh Indonesia Business Council for Sustainable Development (IBCSD), Kamis
-                    (12/11/2020).
+                    {!! $data->content !!}
                 </p>
             </div>
         </section>
@@ -100,22 +77,21 @@
                     Berita Terkait
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                    @for ($i = 0; $i < 2; $i++)
-                        <div class="px-4 py-6 bg-white rounded-2xl">
-                            <p class="text-gray-400 font-medium text-sm mb-4">14 November 2023</p>
-                            <h1 class="text-lg font-bold leading-snug mb-4">
-                                Anak Muda Perlu Meletakan Diri Sebagai Aktor Utama Pembangunan
-                            </h1>
-                            <img src="{{ asset('asset/1.jpg') }}"
-                                class="w-full h-36 object-cover object-center rounded-md mb-4" alt="">
-                            <p class="text-md line-clamp-3 mb-12">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse suscipit earum vitae
-                                tempora
-                                non
-                                error in assumenda delectus deleniti hic.
+                    @foreach ($relateds as $related)
+                        <div class="px-4 py-6 bg-white rounded-2xl shadow-sm">
+                            <p class="text-gray-400 font-medium text-sm mb-4">
+                                {{ date('d F Y', strtotime($related->published_date)) }}
                             </p>
-                            <a href=""
-                                class="flex items-center justify-end gap-x-2 font-semibold text-primary text-md">
+                            <h1 class="text-lg font-bold leading-snug mb-4">
+                                {{ $related->title }}
+                            </h1>
+                            <img src="{{ asset('storage/news/' . $related->thumbnail) }}"
+                                class="w-full h-36 object-cover object-center rounded-md mb-4" alt="">
+                            <div class="line-clamp-3 text-md">
+                                {{ str_replace('&nbsp;', ' ', html_entity_decode(strip_tags($related->content))) }}
+                            </div>
+                            <a href="{{ route('user.landing.news.detail', $related->slug) }}"
+                                class="flex items-center mt-8 justify-end gap-x-2 font-semibold text-primary text-md">
                                 <p>Baca selengkapnya</p>
                                 <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -131,7 +107,7 @@
                                 </svg>
                             </a>
                         </div>
-                    @endfor
+                    @endforeach
                 </div>
             </div>
         </section>

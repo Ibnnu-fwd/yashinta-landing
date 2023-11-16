@@ -21,6 +21,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(\App\Interfaces\EducationsInterface::class, \App\Repositories\EducationsRepository::class);
         $this->app->bind(\App\Interfaces\ExperiencesInterface::class, \App\Repositories\ExperiencesRepository::class);
         $this->app->bind(\App\Interfaces\OrganizationsInterface::class, \App\Repositories\OrganizationsRepository::class);
+        $this->app->bind(\App\Interfaces\SocialActivityInterface::class, \App\Repositories\SocialActivityRepository::class);
     }
 
     /**

@@ -33,6 +33,8 @@ Route::get('news', [LandingController::class, 'news'])->name('user.landing.news'
 Route::get('news/{slug}', [LandingController::class, 'newsDetail'])->name('user.landing.news.detail');
 Route::get('faq', [LandingController::class, 'faq'])->name('user.landing.faq');
 Route::get('gallery', [LandingController::class, 'gallery'])->name('user.landing.gallery');
+Route::get('commitment', [LandingController::class, 'commitment'])->name('user.landing.commitment');
+Route::get('commitment/{slug}', [LandingController::class, 'commitmentDetail'])->name('user.landing.commitment.detail');
 
 // Admin
 Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {

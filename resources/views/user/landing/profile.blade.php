@@ -1,5 +1,5 @@
 <x-guest-layout>
-    @section('title', 'Berita')
+    @section('title', 'Profil')
 
     <div class="bg-gray-50 min-h-screen">
         <!-- Navbar -->
@@ -55,13 +55,13 @@
         <!-- Profile -->
         <section class="relative flex items-center w-full h-fit">
             <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
-                <img src="{{ asset('asset/hero-profile.png') }}" class="w-full h-auto rounded-2xl mb-8" alt="">
+                <img src="{{ asset('storage/profile/' . $data->photo_profile_page) }}"
+                    class="w-full h-auto rounded-2xl mb-8" alt="">
                 <h2 class="text-xl md:text-3xl font-bold text-black mb-4 leading-snug">
-                    R.A Yashinta Sekarwangi Mega Adalah Cicit dari Sri Sultan Hamengkubuwono ke-VIII
+                    {{ $data->title_profile_page }}
                 </h2>
                 <p class="md:text-lg">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi quidem dignissimos dolor minus
-                    distinctio? Exercitationem, itaque. Eum modi inventore placeat.
+                    {{ $data->description_profile_page }}
                 </p>
             </div>
         </section>
@@ -75,30 +75,31 @@
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="space-y-4">
-                        <div>
-                            <h2 class="font-bold text-lg md:text-xl">Universitas Gajah Mada</h2>
-                            <p class="text-md md:text-lg">Sarjana Hukum</p>
-                            <p class="text-md md:text-lg">2010 - 2014</p>
-                        </div>
-                        <div>
-                            <h2 class="font-bold text-lg md:text-xl">Universitas Gajah Mada</h2>
-                            <p class="text-md md:text-lg">Sarjana Hukum</p>
-                            <p class="text-md md:text-lg">2010 - 2014</p>
-                        </div>
-                        <div>
-                            <h2 class="font-bold text-lg md:text-xl">Universitas Gajah Mada</h2>
-                            <p class="text-md md:text-lg">Sarjana Hukum</p>
-                            <p class="text-md md:text-lg">2010 - 2014</p>
-                        </div>
-                        <div>
-                            <h2 class="font-bold text-lg md:text-xl">Universitas Gajah Mada</h2>
-                            <p class="text-md md:text-lg">Sarjana Hukum</p>
-                            <p class="text-md md:text-lg">2010 - 2014</p>
-                        </div>
+                        @foreach ($educations as $education)
+                            <div>
+                                <h2 class="font-bold text-lg md:text-xl">
+                                    {{ $education->university_name }}
+                                </h2>
+                                <p class="text-md md:text-lg">
+                                    {{ $education->study }}
+                                </p>
+                                <p class="text-md md:text-lg">
+                                    @if ($education->start_date && $education->end_date)
+                                        {{ date('Y', strtotime($education->start_date)) }} -
+                                        {{ date('Y', strtotime($education->end_date)) }}
+                                    @elseif ($education->start_date && !$education->end_date)
+                                        {{ date('Y', strtotime($education->start_date)) }} -
+                                        Sekarang
+                                    @else
+                                        -
+                                    @endif
+                                </p>
+                            </div>
+                        @endforeach
                     </div>
                     <div>
-                        <img src="{{ asset('asset/1.jpg') }}"
-                            class="w-full h-full rounded-2xl object-center object-cover" alt="">
+                        <img src="{{ asset('storage/educations/' . $profile->photo_educations) }}"
+                            class="w-full h-[25em] rounded-2xl object-center object-cover" alt="">
                     </div>
                 </div>
             </div>
@@ -113,30 +114,27 @@
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="space-y-4">
-                        <div>
-                            <h2 class="font-bold text-lg md:text-xl">Universitas Gajah Mada</h2>
-                            <p class="text-md md:text-lg">Sarjana Hukum</p>
-                            <p class="text-md md:text-lg">2010 - 2014</p>
-                        </div>
-                        <div>
-                            <h2 class="font-bold text-lg md:text-xl">Universitas Gajah Mada</h2>
-                            <p class="text-md md:text-lg">Sarjana Hukum</p>
-                            <p class="text-md md:text-lg">2010 - 2014</p>
-                        </div>
-                        <div>
-                            <h2 class="font-bold text-lg md:text-xl">Universitas Gajah Mada</h2>
-                            <p class="text-md md:text-lg">Sarjana Hukum</p>
-                            <p class="text-md md:text-lg">2010 - 2014</p>
-                        </div>
-                        <div>
-                            <h2 class="font-bold text-lg md:text-xl">Universitas Gajah Mada</h2>
-                            <p class="text-md md:text-lg">Sarjana Hukum</p>
-                            <p class="text-md md:text-lg">2010 - 2014</p>
-                        </div>
+                        @foreach ($experiences as $data)
+                            <div>
+                                <h2 class="font-bold text-lg md:text-xl">{{ $data->company_name }}</h2>
+                                <p class="text-md md:text-lg">{{ $data->position }}</p>
+                                <p class="text-md md:text-lg">
+                                    @if ($data->start_date && $data->end_date)
+                                        {{ date('Y', strtotime($data->start_date)) }} -
+                                        {{ date('Y', strtotime($data->end_date)) }}
+                                    @elseif ($data->start_date && !$data->end_date)
+                                        {{ date('Y', strtotime($data->start_date)) }} -
+                                        Sekarang
+                                    @else
+                                        -
+                                    @endif
+                                </p>
+                            </div>
+                        @endforeach
                     </div>
                     <div>
-                        <img src="{{ asset('asset/1.jpg') }}"
-                            class="w-full h-full rounded-2xl object-center object-cover" alt="">
+                        <img src="{{ asset('storage/experiences/' . $profile->photo_experiences) }}"
+                            class="w-full h-[25em] rounded-2xl object-center object-cover" alt="">
                     </div>
                 </div>
             </div>
@@ -151,30 +149,27 @@
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="space-y-4">
-                        <div>
-                            <h2 class="font-bold text-lg md:text-xl">Universitas Gajah Mada</h2>
-                            <p class="text-md md:text-lg">Sarjana Hukum</p>
-                            <p class="text-md md:text-lg">2010 - 2014</p>
-                        </div>
-                        <div>
-                            <h2 class="font-bold text-lg md:text-xl">Universitas Gajah Mada</h2>
-                            <p class="text-md md:text-lg">Sarjana Hukum</p>
-                            <p class="text-md md:text-lg">2010 - 2014</p>
-                        </div>
-                        <div>
-                            <h2 class="font-bold text-lg md:text-xl">Universitas Gajah Mada</h2>
-                            <p class="text-md md:text-lg">Sarjana Hukum</p>
-                            <p class="text-md md:text-lg">2010 - 2014</p>
-                        </div>
-                        <div>
-                            <h2 class="font-bold text-lg md:text-xl">Universitas Gajah Mada</h2>
-                            <p class="text-md md:text-lg">Sarjana Hukum</p>
-                            <p class="text-md md:text-lg">2010 - 2014</p>
-                        </div>
+                        @foreach ($organizations as $data)
+                            <div>
+                                <h2 class="font-bold text-lg md:text-xl">{{ $data->name }}</h2>
+                                <p class="text-md md:text-lg">{{ $data->position }}</p>
+                                <p class="text-md md:text-lg">
+                                    @if ($data->start_date && $data->end_date)
+                                        {{ date('Y', strtotime($data->start_date)) }} -
+                                        {{ date('Y', strtotime($data->end_date)) }}
+                                    @elseif ($data->start_date && !$data->end_date)
+                                        {{ date('Y', strtotime($data->start_date)) }} -
+                                        Sekarang
+                                    @else
+                                        -
+                                    @endif
+                                </p>
+                            </div>
+                        @endforeach
                     </div>
                     <div>
-                        <img src="{{ asset('asset/1.jpg') }}"
-                            class="w-full h-full rounded-2xl object-center object-cover" alt="">
+                        <img src="{{ asset('storage/organizations/' . $profile->photo_organizations) }}"
+                            class="w-full h-[25em] rounded-2xl object-center object-cover" alt="">
                     </div>
                 </div>
             </div>
@@ -188,35 +183,24 @@
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="space-y-4">
-                        <div>
-                            <h2 class="font-bold text-lg md:text-xl">Universitas Gajah Mada</h2>
-                            <p class="text-md md:text-lg">Sarjana Hukum</p>
-                            <p class="text-md md:text-lg">2010 - 2014</p>
-                        </div>
-                        <div>
-                            <h2 class="font-bold text-lg md:text-xl">Universitas Gajah Mada</h2>
-                            <p class="text-md md:text-lg">Sarjana Hukum</p>
-                            <p class="text-md md:text-lg">2010 - 2014</p>
-                        </div>
-                        <div>
-                            <h2 class="font-bold text-lg md:text-xl">Universitas Gajah Mada</h2>
-                            <p class="text-md md:text-lg">Sarjana Hukum</p>
-                            <p class="text-md md:text-lg">2010 - 2014</p>
-                        </div>
-                        <div>
-                            <h2 class="font-bold text-lg md:text-xl">Universitas Gajah Mada</h2>
-                            <p class="text-md md:text-lg">Sarjana Hukum</p>
-                            <p class="text-md md:text-lg">2010 - 2014</p>
-                        </div>
+                        @foreach ($socials as $data)
+                            <div>
+                                <h2 class="font-bold text-lg md:text-xl">{{ $data->name }}</h2>
+                                <p class="text-md md:text-lg">{{ $data->description }}</p>
+                                <p class="text-md md:text-lg">
+                                    {{ date('d F Y', strtotime($data->date)) }}
+                                </p>
+                            </div>
+                        @endforeach
                     </div>
                     <div>
-                        <img src="{{ asset('asset/1.jpg') }}"
-                            class="w-full h-full rounded-2xl object-center object-cover" alt="">
+                        <img src="{{ asset('storage/social_activities/' . $profile->photo_social_activities) }}"
+                            class="w-full h-[25em] rounded-2xl object-center object-cover" alt="">
                     </div>
                 </div>
             </div>
         </section>
 
-        @include('layouts.footer')
+
     </div>
 </x-guest-layout>

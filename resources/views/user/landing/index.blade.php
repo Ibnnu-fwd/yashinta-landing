@@ -116,96 +116,37 @@
             <h2 class="text-2xl md:text-3xl font-extra-bold text-primary">
                 Komitmen Yashinta
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8 mt-8 md:mt-20">
-                <div>
-                    <h2 class="text-xl lg:text-2xl font-bold text-gray-700 capitalize">
-                        Harapan ibu dan anak Yogyakarta
-                    </h2>
-                    <p class="text-gray-500 mt-2 md:mt-4 text-sm md:text-md">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit
-                    </p>
-                    <button type="button"
-                        class="hidden md:flex text-sm lg:text-md mt-0 md:mt-8 text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
-                rounded-full px-4 py-2 md:px-4 md:py-2 text-center me-2 mb-2 items-center gap-x-2 md:gap-x-4">
-                        <span>Selengkapnya</span> <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
-                                <path d="M41.9999 24H5.99992" stroke="#ffffff" stroke-width="4"
-                                    stroke-linecap="round" stroke-linejoin="round"></path>
-                                <path d="M30 12L42 24L30 36" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
-                                    stroke-linejoin="round"></path>
-                            </g>
-                        </svg>
-                    </button>
+            @foreach ($commitments as $commitment)
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8 mt-8 md:mt-20">
+                    <div>
+                        <h2 class="text-xl lg:text-2xl font-bold text-gray-700 capitalize">
+                            {{ $commitment->title }}
+                        </h2>
+                        <p class="text-gray-500 mt-2 md:mt-4 text-sm md:text-md line-clamp-3">
+                            {!! Str::limit($commitment->content, 70) !!}
+                        </p>
+                        <a href="{{ route('user.landing.commitment.detail', $commitment->slug) }}"
+                            class="hidden md:flex w-fit text-sm lg:text-md mt-0 md:mt-8 text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none rounded-full px-4 py-2 md:px-4 md:py-2 text-center me-2 mb-2 items-center gap-x-2 md:gap-x-4">
+                            <span>Selengkapnya</span> <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
+                                    <path d="M41.9999 24H5.99992" stroke="#ffffff" stroke-width="4"
+                                        stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M30 12L42 24L30 36" stroke="#ffffff" stroke-width="4"
+                                        stroke-linecap="round" stroke-linejoin="round"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="col-span-2">
+                        <img src="{{ asset('storage/commitment/' . $commitment->thumbnail) }}"
+                            class="w-full h-[20em] object-cover object-center rounded-2xl" alt="">
+                    </div>
                 </div>
-                <div class="col-span-2">
-                    <img src="{{ asset('asset/1.jpg') }}"
-                        class="w-full h-full object-cover object-center rounded-2xl" alt="">
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8 mt-8 md:mt-20">
-                <div>
-                    <h2 class="text-xl lg:text-2xl font-bold text-gray-700 capitalize">
-                        Harapan ibu dan anak Yogyakarta
-                    </h2>
-                    <p class="text-gray-500 mt-2 md:mt-4 text-sm md:text-md">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit
-                    </p>
-                    <button type="button"
-                        class="hidden md:flex text-sm lg:text-md mt-0 md:mt-8 text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
-                rounded-full px-4 py-2 md:px-4 md:py-2 text-center me-2 mb-2 items-center gap-x-2 md:gap-x-4">
-                        <span>Selengkapnya</span> <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
-                                <path d="M41.9999 24H5.99992" stroke="#ffffff" stroke-width="4"
-                                    stroke-linecap="round" stroke-linejoin="round"></path>
-                                <path d="M30 12L42 24L30 36" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
-                                    stroke-linejoin="round"></path>
-                            </g>
-                        </svg>
-                    </button>
-                </div>
-                <div class="col-span-2">
-                    <img src="{{ asset('asset/1.jpg') }}"
-                        class="w-full h-full object-cover object-center rounded-2xl" alt="">
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8 mt-8 md:mt-20">
-                <div>
-                    <h2 class="text-xl lg:text-2xl font-bold text-gray-700 capitalize">
-                        Harapan ibu dan anak Yogyakarta
-                    </h2>
-                    <p class="text-gray-500 mt-2 md:mt-4 text-sm md:text-md">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit
-                    </p>
-                    <button type="button"
-                        class="hidden md:flex text-sm lg:text-md mt-0 md:mt-8 text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
-                rounded-full px-4 py-2 md:px-4 md:py-2 text-center me-2 mb-2 items-center gap-x-2 md:gap-x-4">
-                        <span>Selengkapnya</span> <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
-                                <path d="M41.9999 24H5.99992" stroke="#ffffff" stroke-width="4"
-                                    stroke-linecap="round" stroke-linejoin="round"></path>
-                                <path d="M30 12L42 24L30 36" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
-                                    stroke-linejoin="round"></path>
-                            </g>
-                        </svg>
-                    </button>
-                </div>
-                <div class="col-span-2">
-                    <img src="{{ asset('asset/1.jpg') }}"
-                        class="w-full h-full object-cover object-center rounded-2xl" alt="">
-                </div>
-            </div>
+            @endforeach
         </div>
     </section>
 
@@ -269,7 +210,7 @@
     <section class="relative flex items-center w-full h-fit bg-gray-100">
         <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
             <iframe class="w-full h-[18em] md:h-[25em] max-w-full border border-gray-200 rounded-2xl"
-                src="https://www.youtube.com/embed/4FYbw-oTlmM" title="YouTube video player" frameborder="0"
+                src="{{ $profile->video_link }}" title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
             </iframe>
@@ -287,44 +228,21 @@
             <div id="gallery" class="relative w-full" data-carousel="slide">
                 <!-- Carousel wrapper -->
                 <div class="relative h-56 overflow-hidden rounded-2xl md:h-96">
-                    <!-- Item 1 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg"
-                            class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            alt="">
-                    </div>
-                    <!-- Item 2 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                        <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg"
-                            class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            alt="">
-                    </div>
-                    <!-- Item 3 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg"
-                            class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            alt="">
-                    </div>
-                    <!-- Item 4 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg"
-                            class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            alt="">
-                    </div>
-                    <!-- Item 5 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg"
-                            class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            alt="">
-                    </div>
+                    @foreach ($galleries as $gallery)
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="{{ asset('storage/gallery/' . $gallery->thumbnail) }}"
+                                class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="">
+                        </div>
+                    @endforeach
                 </div>
                 <!-- Slider controls -->
                 <button type="button"
                     class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
                     data-carousel-prev>
                     <span
-                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30  group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                 stroke-width="2" d="M5 1 1 5l4 4" />
@@ -336,8 +254,8 @@
                     class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
                     data-carousel-next>
                     <span
-                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30  group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                 stroke-width="2" d="m1 9 4-4-4-4" />
@@ -357,64 +275,41 @@
                 Berita Terbaru Yashinta
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                <div class="px-4 py-6 bg-white rounded-2xl">
-                    <p class="text-gray-400 font-medium text-sm mb-4">14 November 2023</p>
-                    <h1 class="text-lg font-bold leading-snug mb-4">
-                        Anak Muda Perlu Meletakan Diri Sebagai Aktor Utama Pembangunan
-                    </h1>
-                    <img src="{{ asset('asset/1.jpg') }}"
-                        class="w-full h-36 object-cover object-center rounded-md mb-4" alt="">
-                    <p class="text-md line-clamp-3 mb-12">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse suscipit earum vitae tempora non
-                        error in assumenda delectus deleniti hic.
-                    </p>
-                    <div class="flex items-center justify-end gap-x-2 font-semibold text-primary text-md">
-                        <p>Baca selengkapnya</p>
-                        <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
-                                <path d="M41.9999 24H5.99992" stroke="#cb0e26" stroke-width="4"
-                                    stroke-linecap="round" stroke-linejoin="round"></path>
-                                <path d="M30 12L42 24L30 36" stroke="#cb0e26" stroke-width="4" stroke-linecap="round"
-                                    stroke-linejoin="round"></path>
-                            </g>
-                        </svg>
+                @foreach ($news as $data)
+                    <div class="px-4 py-6 bg-white rounded-2xl">
+                        <p class="text-gray-400 font-medium text-sm mb-4">
+                            {{ date('d F Y', strtotime($data->created_at)) }}
+                        </p>
+                        <h1 class="text-lg font-bold leading-snug mb-4">
+                            {{ $data->title }}
+                        </h1>
+                        <img src="{{ asset('storage/news/' . $data->thumbnail) }}"
+                            class="w-full h-36 object-cover object-center rounded-md mb-4" alt="">
+                        <div class="line-clamp-3 text-md">
+                            {{ str_replace('&nbsp;', ' ', html_entity_decode(strip_tags($data->content))) }}
+                        </div>
+                        <a href="{{ route('user.landing.news.detail', $data->slug) }}"
+                            class="flex mt-8 items-center justify-end gap-x-2 font-semibold text-primary text-md">
+                            <p class="">Baca selengkapnya</p>
+                            <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
+                                    <path d="M41.9999 24H5.99992" stroke="#cb0e26" stroke-width="4"
+                                        stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M30 12L42 24L30 36" stroke="#cb0e26" stroke-width="4"
+                                        stroke-linecap="round" stroke-linejoin="round"></path>
+                                </g>
+                            </svg>
+                        </a>
                     </div>
-                </div>
-                <div class="px-4 py-6 bg-white rounded-2xl">
-                    <p class="text-gray-400 font-medium text-sm mb-4">14 November 2023</p>
-                    <h1 class="text-lg font-bold leading-snug mb-4">
-                        Anak Muda Perlu Meletakan Diri Sebagai Aktor Utama Pembangunan
-                    </h1>
-                    <img src="{{ asset('asset/1.jpg') }}"
-                        class="w-full h-36 object-cover object-center rounded-md mb-4" alt="">
-                    <p class="text-md line-clamp-3 mb-12">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse suscipit earum vitae tempora non
-                        error in assumenda delectus deleniti hic.
-                    </p>
-                    <div class="flex items-center justify-end gap-x-2 font-semibold text-primary text-md">
-                        <p>Baca selengkapnya</p>
-                        <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
-                                <path d="M41.9999 24H5.99992" stroke="#cb0e26" stroke-width="4"
-                                    stroke-linecap="round" stroke-linejoin="round"></path>
-                                <path d="M30 12L42 24L30 36" stroke="#cb0e26" stroke-width="4" stroke-linecap="round"
-                                    stroke-linejoin="round"></path>
-                            </g>
-                        </svg>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <div class="flex justify-center">
-                <button type="button"
-                    class="hidden md:flex justify-center text-sm lg:text-md mt-0 md:mt-8 text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
+                <a href="{{ route('user.landing.news') }}"
+                    class="hidden md:flex w-fit justify-center text-sm lg:text-md mt-0 md:mt-8 text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
                 rounded-full px-4 py-2 md:px-4 md:py-2 text-center me-2 mb-2 items-center gap-x-2 md:gap-x-4">
                     <span>Lihat berita lainnya</span> <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -428,12 +323,10 @@
                                 stroke-linejoin="round"></path>
                         </g>
                     </svg>
-                </button>
+                </a>
             </div>
         </div>
     </section>
-
-    @include('layouts.footer')
 
     @push('js-internal')
         <script>

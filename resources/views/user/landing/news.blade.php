@@ -59,23 +59,22 @@
                     Berita Terbaru Yashinta
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                    @for ($i = 0; $i < 4; $i++)
+                    @foreach ($news as $data)
                         <div class="px-4 py-6 bg-white rounded-2xl">
-                            <p class="text-gray-400 font-medium text-sm mb-4">14 November 2023</p>
-                            <h1 class="text-lg font-bold leading-snug mb-4">
-                                Anak Muda Perlu Meletakan Diri Sebagai Aktor Utama Pembangunan
-                            </h1>
-                            <img src="{{ asset('asset/1.jpg') }}"
-                                class="w-full h-36 object-cover object-center rounded-md mb-4" alt="">
-                            <p class="text-md line-clamp-3 mb-12">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse suscipit earum vitae
-                                tempora
-                                non
-                                error in assumenda delectus deleniti hic.
+                            <p class="text-gray-400 font-medium text-sm mb-4">
+                                {{ date('d F Y', strtotime($data->created_at)) }}
                             </p>
-                            <a href=""
-                                class="flex items-center justify-end gap-x-2 font-semibold text-primary text-md">
-                                <p>Baca selengkapnya</p>
+                            <h1 class="text-lg font-bold leading-snug mb-4">
+                                {{ $data->title }}
+                            </h1>
+                            <img src="{{ asset('storage/news/' . $data->thumbnail) }}"
+                                class="w-full h-36 object-cover object-center rounded-md mb-4" alt="">
+                            <div class="line-clamp-3 text-md">
+                                {{ str_replace('&nbsp;', ' ', html_entity_decode(strip_tags($data->content))) }}
+                            </div>
+                            <a href="{{ route('user.landing.news.detail', $data->slug) }}"
+                                class="flex mt-8 items-center justify-end gap-x-2 font-semibold text-primary text-md">
+                                <p class="">Baca selengkapnya</p>
                                 <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -90,11 +89,11 @@
                                 </svg>
                             </a>
                         </div>
-                    @endfor
+                    @endforeach
                 </div>
             </div>
         </section>
 
-        @include('layouts.footer')
+
     </div>
 </x-guest-layout>

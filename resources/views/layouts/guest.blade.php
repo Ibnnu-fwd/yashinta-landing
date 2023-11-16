@@ -30,6 +30,11 @@
 <body class="font-sans antialiased">
     {{ $slot }}
 
+    <!-- Footer -->
+    @include('layouts.footer', [
+        'socialMedia' => App\Models\SocialMedia::all(),
+    ])
+
     <!-- Flowbite JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
 

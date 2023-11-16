@@ -89,7 +89,7 @@
                         {
                             data: 'content',
                             name: 'content',
-                            width: '30%',
+                            // width: '30%',
                         },
                         {
                             data: 'author',
