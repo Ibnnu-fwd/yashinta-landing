@@ -25,5 +25,6 @@ class Profile extends Model
         'photo_experiences',
         'photo_organizations',
         'photo_social_activities',
+        'photo_profile_on_landing',
     ];
 }

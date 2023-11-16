@@ -210,7 +210,7 @@
     </section>
 
     <!-- Contact us -->
-    <section class="relative flex items-center w-full h-fit hero-pattern">
+    <section id="aspiration-form" class="relative flex items-center w-full h-fit hero-pattern">
         <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 md:gap-18">
                 <div class="text-white space-y-3">
@@ -222,14 +222,16 @@
                     </p>
                 </div>
                 <div class="col-span-2 mt-6 md:mt-0">
-                    <div>
-                        <input type="text" id="default-input"
+                    <form action="{{ route('user.aspiration.store') }}" method="POST"
+                        enctype="multipart/form-data">
+                        @csrf
+                        <input type="text" id="default-input" name="name"
                             class="bg-gray-50 border-none text-gray-500 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 mb-3"
                             placeholder="Nama Lengkap">
-                        <input type="text" id="default-input"
+                        <input type="text" id="default-input" name="phone_number" type="number"
                             class="bg-gray-50 border-none text-gray-500 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 mb-3"
                             placeholder="No. Telepon (opsional)">
-                        <select id="default"
+                        <select id="default" name="city"
                             class="bg-gray-50 border-none text-gray-500 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 mb-3">
                             <option disabled selected>Kabupaten</option>
                             <option value="Kabupaten Kulon Progo">Kabupaten Kulon Progo</option>
@@ -238,10 +240,10 @@
                             <option value="Kabupaten Sleman">Kabupaten Sleman</option>
                             <option value="Kota Yogyakarta">Kota Yogyakarta</option>
                         </select>
-                        <textarea id="message" rows="6"
+                        <textarea id="message" rows="6" name="message"
                             class="block p-2.5 w-full text-sm text-gray-500 bg-gray-50 rounded-lg border-none focus:ring-red-500 focus:border-red-500 mb-6"
                             placeholder="Aspirasi"></textarea>
-                        <button type="button"
+                        <button type="submit"
                             class="text-md font-normal text-white bg-black focus:ring-4 focus:outline-none 
                 rounded-full px-4 py-2 md:px-6 md:py-2.5 text-center me-2 mb-2 flex items-center gap-x-2 md:gap-x-4">
                             <span>Kirimkan</span> <svg class="h-4 sm:h-5 md:h-5" viewBox="0 0 48 48" fill="none"
@@ -257,7 +259,7 @@
                                 </g>
                             </svg>
                         </button>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -433,4 +435,29 @@
 
     @include('layouts.footer')
 
+    @push('js-internal')
+        <script>
+            @if (Session::has('success'))
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Berhasil',
+                    text: '{{ Session::get('success') }}',
+                    showConfirmButton: false,
+                    timer: 1500
+                }).then(() => {
+                    $('.rowTable').DataTable().ajax.reload();
+                });
+            @endif
+
+            @if (Session::has('error'))
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Gagal',
+                    text: '{{ Session::get('error') }}',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            @endif
+        </script>
+    @endpush
 </x-guest-layout>

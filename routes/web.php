@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Admin\AspirationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [LandingController::class, 'index'])->name('user.landing.index');
+Route::post('/store-aspiration', [LandingController::class, 'storeAspiration'])->name('user.aspiration.store');
 Route::get('profile', [LandingController::class, 'profile'])->name('user.landing.profile');
 Route::get('news', [LandingController::class, 'news'])->name('user.landing.news');
 Route::get('news/{slug}', [LandingController::class, 'newsDetail'])->name('user.landing.news.detail');
@@ -64,6 +66,12 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
         Route::post('/update/{id}', [GalleryController::class, 'update'])->name('admin.gallery.update');
         Route::post('/destroy/{id}', [GalleryController::class, 'destroy'])->name('admin.gallery.destroy');
     });
+
+    //Aspiration
+    Route::group(['prefix' => 'aspiration'], function () {
+        Route::get('/', [AspirationController::class, 'index'])->name('admin.aspiration.index');
+        Route::get('/show/{id}', [AspirationController::class, 'show'])->name('admin.aspiration.show');
+        });
 });
 
 require __DIR__ . '/auth.php';
