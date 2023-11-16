@@ -10,6 +10,8 @@ use App\Http\Controllers\Admin\AspirationController;
 use App\Http\Controllers\Admin\SocialMediaController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\EducationsController;
+use App\Http\Controllers\Admin\ExperiencesController;
+use App\Http\Controllers\Admin\OrganizationsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -106,6 +108,26 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
         Route::get('/edit/{id}', [EducationsController::class, 'edit'])->name('admin.educations.edit');
         Route::post('/update/{id}', [EducationsController::class, 'update'])->name('admin.educations.update');
         Route::delete('/destroy/{id}', [EducationsController::class, 'destroy'])->name('admin.educations.destroy');
+    });
+
+    // Experiences
+    Route::group(['prefix' => 'experiences'], function () {
+        Route::get('/', [ExperiencesController::class, 'index'])->name('admin.experiences.index');
+        Route::get('/create', [ExperiencesController::class, 'create'])->name('admin.experiences.create');
+        Route::post('/store', [ExperiencesController::class, 'store'])->name('admin.experiences.store');
+        Route::get('/edit/{id}', [ExperiencesController::class, 'edit'])->name('admin.experiences.edit');
+        Route::post('/update/{id}', [ExperiencesController::class, 'update'])->name('admin.experiences.update');
+        Route::delete('/destroy/{id}', [ExperiencesController::class, 'destroy'])->name('admin.experiences.destroy');
+    });
+
+    // Organizations
+    Route::group(['prefix' => 'organizations'], function () {
+        Route::get('/', [OrganizationsController::class, 'index'])->name('admin.organizations.index');
+        Route::get('/create', [OrganizationsController::class, 'create'])->name('admin.organizations.create');
+        Route::post('/store', [OrganizationsController::class, 'store'])->name('admin.organizations.store');
+        Route::get('/edit/{id}', [OrganizationsController::class, 'edit'])->name('admin.organizations.edit');
+        Route::post('/update/{id}', [OrganizationsController::class, 'update'])->name('admin.organizations.update');
+        Route::delete('/destroy/{id}', [OrganizationsController::class, 'destroy'])->name('admin.organizations.destroy');
     });
 });
 

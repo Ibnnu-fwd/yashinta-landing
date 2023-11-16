@@ -1,12 +1,12 @@
 <x-app-layout>
-    @section('title', 'Pendidikan')
+    @section('title', 'Pengalaman Kerja')
 
     <div class="max-w-full">
         <div class="flex justify-between items-center mb-5">
             <h1 class="font-semibold text-lg">
-                Pendidikan
+                Pengalaman Kerja
             </h1>
-            <a href="{{ route('admin.educations.create') }}"
+            <a href="{{ route('admin.experiences.create') }}"
                 class="bg-primary text-white rounded-lg px-4 py-2 hover:bg-secondary-red">
                 Tambah
             </a>
@@ -17,7 +17,7 @@
                 <tr>
                     <th>#</th>
                     <th>Instansi</th>
-                    <th>Program Studi</th>
+                    <th>Posisi</th>
                     <th>Periode</th>
                     <th>Aksi</th>
                 </tr>
@@ -39,7 +39,7 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                         $.ajax({
-                            url: "{{ route('admin.educations.destroy', ':id') }}".replace(':id', id),
+                            url: "{{ route('admin.experiences.destroy', ':id') }}".replace(':id', id),
                             type: 'DELETE',
                             data: {
                                 '_token': "{{ csrf_token() }}"
@@ -75,18 +75,18 @@
                     serverSide: true,
                     responsive: true,
                     autoWidth: false,
-                    ajax: "{{ route('admin.educations.index') }}",
+                    ajax: "{{ route('admin.experiences.index') }}",
                     columns: [{
                             data: 'DT_RowIndex',
                             name: 'DT_RowIndex'
                         },
                         {
-                            data: 'university_name',
-                            name: 'university_name'
+                            data: 'company_name',
+                            name: 'company_name'
                         },
                         {
-                            data: 'study',
-                            name: 'study'
+                            data: 'position',
+                            name: 'position'
                         },
                         {
                             data: 'period',
