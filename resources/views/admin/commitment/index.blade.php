@@ -2,11 +2,17 @@
     @section('title', 'Komitmen')
 
     <div class="max-w-full">
-        <h1 class="font-semibold text-lg mb-5">
-            Komitmen
-        </h1>
+        <div class="flex justify-between items-center mb-5">
+            <h1 class="font-semibold text-lg">
+                Komitmen
+            </h1>
+            <a href="{{ route('admin.commitment.create') }}"
+                class="bg-primary text-white rounded-lg px-4 py-2 hover:bg-secondary-red">
+                Tambah
+            </a>
+        </div>
 
-        <table id="rowTable">
+        <table class="rowTable">
             <thead>
                 <tr>
                     <th>#</th>
@@ -24,7 +30,7 @@
     @push('js-internal')
         <script>
             $(function() {
-                $('#rowTable').DataTable({
+                $('.rowTable').DataTable({
                     processing: true,
                     serverSide: true,
                     responsive: true,
@@ -44,11 +50,12 @@
                         },
                         {
                             data: 'content',
-                            name: 'content'
+                            name: 'content',
+                            width: '30%',
                         },
                         {
-                            data: 'image',
-                            name: 'image'
+                            data: 'thumbnail',
+                            name: 'thumbnail'
                         },
                         {
                             data: 'action',
@@ -59,6 +66,29 @@
                     ]
                 })
             });
+
+
+            @if (Session::has('success'))
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Berhasil',
+                    text: '{{ Session::get('success') }}',
+                    showConfirmButton: false,
+                    timer: 1500
+                }).then(() => {
+                    $('.rowTable').DataTable().ajax.reload();
+                });
+            @endif
+
+            @if (Session::has('error'))
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Gagal',
+                    text: '{{ Session::get('error') }}',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            @endif
         </script>
     @endpush
 </x-app-layout>

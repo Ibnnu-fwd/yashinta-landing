@@ -7,7 +7,7 @@
 ])
 
 <div class="mb-4">
-    <label class="block mb-2 text-xs font-medium text-gray-900 " for="{{ $id }}">
+    <label class="block mb-2 text-sm font-medium text-gray-900 " for="{{ $id }}">
         {{ $label }} {!! $required ? '<span class="text-primary-red">*</span>' : '' !!}
     </label>
     <input @if ($required) required @endif value="{{ $value }}"
@@ -15,6 +15,6 @@
         id="{{ $id }}" name="{{ $name }}" type="file">
 
     @error($name)
-        <p class="text-primary-red text-xs mt-1">{{ $message }}</p>
+        <p class="text-primary-red text-sm mt-1">{{ $message }}</p>
     @enderror
 </div>

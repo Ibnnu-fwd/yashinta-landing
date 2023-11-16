@@ -27,10 +27,13 @@ class CommitmentController extends Controller
                     return $data->slug;
                 })
                 ->addColumn('content', function ($data) {
-                    return $data->content;
+                    return view('admin.commitment.column.content', compact('data'));
                 })
                 ->addColumn('thumbnail', function ($data) {
                     return view('admin.commitment.column.thumbnail', compact('data'));
+                })
+                ->addColumn('action', function ($data) {
+                    return view('admin.commitment.column.action', compact('data'));
                 })
                 ->addIndexColumn()
                 ->make(true);
@@ -44,11 +47,15 @@ class CommitmentController extends Controller
         return $this->commitment->getById($id);
     }
 
+    public function create()
+    {
+        return view('admin.commitment.create');
+    }
+
     public function store(Request $request)
     {
         $request->validate([
             'title'     => ['required'],
-            'slug'      => ['required'],
             'content'   => ['required'],
             'thumbnail' => ['required', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
         ]);
@@ -57,6 +64,7 @@ class CommitmentController extends Controller
             $this->commitment->store($request->all());
             return redirect()->route('admin.commitment.index')->with('success', 'Berhasil menambahkan data');
         } catch (\Throwable $th) {
+            dd($th->getMessage());
             return redirect()->route('admin.commitment.index')->with('error', 'Gagal menambahkan data');
         }
     }
@@ -65,7 +73,6 @@ class CommitmentController extends Controller
     {
         $request->validate([
             'title'     => ['required'],
-            'slug'      => ['required'],
             'content'   => ['required'],
             'thumbnail' => ['image', 'mimes:jpeg,png,jpg', 'max:2048'],
         ]);

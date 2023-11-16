@@ -33,7 +33,26 @@ class CommitmentRepository implements CommitmentInterface
             $data['thumbnail'] = $filename;
         }
 
+        $data['slug'] = $this->generateThumbnail($data['title']);
+
         return $this->commitment->create($data);
+    }
+
+    /**
+     * Generate a thumbnail slug based on the given title.
+     *
+     * @param string $title The title to generate the slug from.
+     * @return string The generated slug.
+     */
+    private function generateThumbnail($title)
+    {
+        $slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', strtolower($title)));
+        $commitment = $this->commitment->where('slug', $slug)->first();
+        if ($commitment) {
+            $slug = $slug . '-' . uniqid();
+        }
+
+        return $slug;
     }
 
     public function update($id, $data)
@@ -49,6 +68,8 @@ class CommitmentRepository implements CommitmentInterface
                 Storage::delete('public/commitment/' . $commitment->thumbnail);
             }
         }
+
+        $data['slug'] = $this->generateThumbnail($data['title']);
 
         return $commitment->update($data);
     }
