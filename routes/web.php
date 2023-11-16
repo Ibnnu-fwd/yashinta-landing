@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\AspirationController;
+use App\Http\Controllers\Admin\SocialMediaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -71,7 +72,17 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
     Route::group(['prefix' => 'aspiration'], function () {
         Route::get('/', [AspirationController::class, 'index'])->name('admin.aspiration.index');
         Route::get('/show/{id}', [AspirationController::class, 'show'])->name('admin.aspiration.show');
-        });
+    });
+
+    // Social Media
+    Route::group(['prefix' => 'social-media'], function () {
+        Route::get('/', [SocialMediaController::class, 'index'])->name('admin.social-media.index');
+        Route::get('/create', [SocialMediaController::class, 'create'])->name('admin.social-media.create');
+        Route::post('/store', [SocialMediaController::class, 'store'])->name('admin.social-media.store');
+        Route::get('/edit/{id}', [SocialMediaController::class, 'edit'])->name('admin.social-media.edit');
+        Route::post('/update/{id}', [SocialMediaController::class, 'update'])->name('admin.social-media.update');
+        Route::post('/destroy/{id}', [SocialMediaController::class, 'destroy'])->name('admin.social-media.destroy');
+    });
 });
 
 require __DIR__ . '/auth.php';

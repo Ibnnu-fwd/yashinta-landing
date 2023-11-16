@@ -16,6 +16,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(\App\Interfaces\GalleryInterface::class, \App\Repositories\GalleryRepository::class);
         $this->app->bind(\App\Interfaces\NewsInterface::class, \App\Repositories\NewsRepository::class);
         $this->app->bind(\App\Interfaces\AspirationInterface::class, \App\Repositories\AspirationRepository::class);
+        $this->app->bind(\App\Interfaces\SocialMediaInterface::class, \App\Repositories\SocialMediaRepository::class);
     }
 
     /**
