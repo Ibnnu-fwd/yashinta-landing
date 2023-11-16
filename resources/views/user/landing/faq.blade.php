@@ -22,7 +22,7 @@
                     ">
                     <li>
                         <a href="/"
-                            class="block py-2 px-3 text-white bg-primary rounded md:bg-transparent md:text-white md:p-0 "
+                            class="block py-2 px-3 text-primary bg-white rounded md:bg-transparent md:text-white md:p-0 "
                             aria-current="page">Beranda</a>
                     </li>
                     <li>
@@ -81,36 +81,36 @@
 
     <!-- Faq -->
     <section class="relative items-center w-full h-fit hero-pattern">
-        <div class="bg-[#ffeff2] py-16 relative items-center w-full px-0">
+        <div class="bg-[#ffeff2] py-16 relative items-center w-full  px-8 lg:px-0">
             <div class="mx-auto md:px-12 lg:px-0 max-w-2xl">
-                <h1 class="font-bold text-xl">
+                <h1 class="font-bold text-lg md:text-xl">
                     1. Apakah Yashinta Asli Yogyakarta?
                 </h1>
-                <p class="text-lg mt-2">
+                <p class="md:text-lg mt-2">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. At delectus officia nesciunt doloribus
                     praesentium beatae, culpa maiores nisi quam assumenda voluptate alias dignissimos hic repellendus
                     cum fugiat incidunt nobis amet.
                 </p>
             </div>
         </div>
-        <div class="bg-white py-16 relative items-center w-full px-0">
+        <div class="bg-white py-16 relative items-center w-full  px-8 lg:px-0">
             <div class="mx-auto md:px-12 lg:px-0 max-w-2xl">
-                <h1 class="font-bold text-xl">
+                <h1 class="font-bold text-lg md:text-xl">
                     2. Apakah Yashinta Tidak Tinggal Di Yogyakarta?
                 </h1>
-                <p class="text-lg mt-2">
+                <p class="md:text-lg mt-2">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. At delectus officia nesciunt doloribus
                     praesentium beatae, culpa maiores nisi quam assumenda voluptate alias dignissimos hic repellendus
                     cum fugiat incidunt nobis amet.
                 </p>
             </div>
         </div>
-        <div class="bg-[#ffeff2] py-16 relative items-center w-full px-0">
+        <div class="bg-[#ffeff2] py-16 relative items-center w-full  px-8 lg:px-0">
             <div class="mx-auto md:px-12 lg:px-0 max-w-2xl">
-                <h1 class="font-bold text-xl">
+                <h1 class="font-bold text-lg md:text-xl">
                     3. Apakah Setelah Lulus Yashinta Langsung Nyaleg?
                 </h1>
-                <p class="text-lg mt-2">
+                <p class="md:text-lg mt-2">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. At delectus officia nesciunt doloribus
                     praesentium beatae, culpa maiores nisi quam assumenda voluptate alias dignissimos hic repellendus
                     cum fugiat incidunt nobis amet.
