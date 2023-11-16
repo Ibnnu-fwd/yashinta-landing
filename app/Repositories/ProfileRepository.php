@@ -31,6 +31,7 @@ class ProfileRepository implements ProfileInterface
                 'photo_experiences' => null,
                 'photo_organizations' => null,
                 'photo_social_activities' => null,
+                'photo_profile_on_landing' => null,
             ]);
         }
 
@@ -117,6 +118,16 @@ class ProfileRepository implements ProfileInterface
 
             if ($profile->photo_social_activities != null) {
                 Storage::delete('public/social_activities/' . $profile->photo_social_activities);
+            }
+        }
+
+        if(isset($data['photo_profile_on_landing'])){
+            $filename = uniqid() . '.' . $data['photo_profile_on_landing']->extension();
+            $data['photo_profile_on_landing']->storeAs('public/profile', $filename);
+            $data['photo_profile_on_landing'] = $filename;
+
+            if ($profile->photo_profile_on_landing != null) {
+                Storage::delete('public/profile/' . $profile->photo_profile_on_landing);
             }
         }
 

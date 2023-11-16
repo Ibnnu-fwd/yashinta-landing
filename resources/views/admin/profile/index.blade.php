@@ -5,12 +5,12 @@
             @csrf
             @method('POST')
 
-            <h1 class="font-semibold text-lg mb-5">Pengaturan Profil</h1>
+            <h1 class="font-semibold text-lg mb-5">Pengaturan</h1>
 
             <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
 
                 <div class="mb-4">
-                    <h2 class="text-sm">Profil</h2>
+                    <h2 class="font-semibold text-sm">Profil</h2>
                     <hr class="my-2">
 
                     <x-input label="Judul" name="title_profile_page" value="{{ $profile->title_profile_page }}" />
@@ -64,7 +64,7 @@
                 </div>
 
                 <div class="mb-4">
-                    <h2 class="text-sm">Beranda</h2>
+                    <h2 class="font-semibold text-sm">Beranda</h2>
                     <hr class="my-2">
 
                     <x-input label="Judul Hero" name="name" value="{{ $profile->name }}" />
@@ -79,6 +79,15 @@
                         <div class="col-span-6">
                             <x-input-file label="Foto Hero Beranda" name="photo_landing_page"
                                 value="{{ $profile->photo_landing_page }}" />
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-7 gap-4 mb-1">
+                        <img class="aspect-square w-full object-cover rounded-lg"
+                            src="{{ $profile->photo_profile_on_landing != null ? asset('storage/profile/' . $profile->photo_profile_on_landing) : 'https://via.placeholder.com/150' }}"
+                            alt="">
+                        <div class="col-span-6">
+                            <x-input-file label="Foto Bagian Profil" name="photo_profile_on_landing"
+                                value="{{ $profile->photo_profile_on_landing }}" />
                         </div>
                     </div>
                     <div class="grid grid-cols-7 gap-4 mb-1">
@@ -100,10 +109,12 @@
                         </div>
                     </div>
 
-                    <button type="submit"
-                        class="bg-primary-red text-white rounded-lg px-4 py-2 mt-4 hover:bg-secondary-red">Simpan</button>
                 </div>
 
+            </div>
+            <div class="flex justify-center">
+                <button type="submit"
+                    class="bg-primary-red text-white rounded-lg px-4 py-2 mt-4 hover:bg-secondary-red">Simpan</button>
             </div>
         </form>
     </div>
