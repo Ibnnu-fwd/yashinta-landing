@@ -91,8 +91,8 @@
                 Sebelumnya, ia sudah berhasil menuntaskan pendidikan di Hubungan Internasional UGM dan akhirnya
                 melanjutkan pendidikan di UI
             </p>
-            <button type="button"
-                class="text-md md:text-lg mt-6 text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
+            <a href="{{ route('user.landing.profile') }}" type="button"
+                class="text-md md:text-lg mt-6 w-fit text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
                 rounded-full px-4 py-2 md:px-6 md:py-2.5 text-center me-2 mb-2 flex items-center gap-x-2 md:gap-x-4">
                 <span>Kenali lebih dekat</span> <svg class="h-4 sm:h-5 md:h-6" viewBox="0 0 48 48" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -106,7 +106,7 @@
                             stroke-linejoin="round"></path>
                     </g>
                 </svg>
-            </button>
+            </a>
             <img src="{{ asset('asset/kerator.jpg') }}" class="mt-8 w-full h-auto md:h-[25em] object-cover rounded-2xl"
                 alt="">
         </div>
@@ -204,8 +204,8 @@
                     </button>
                 </div>
                 <div class="col-span-2">
-                    <img src="{{ asset('asset/1.jpg') }}" class="w-full h-full object-cover object-center rounded-2xl"
-                        alt="">
+                    <img src="{{ asset('asset/1.jpg') }}"
+                        class="w-full h-full object-cover object-center rounded-2xl" alt="">
                 </div>
             </div>
         </div>

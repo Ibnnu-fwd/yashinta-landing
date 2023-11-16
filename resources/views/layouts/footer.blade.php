@@ -16,14 +16,14 @@
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6">
                                 <div type="button"
                                     class="text-md md:text-md text-gray-700 bg-white hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
-                rounded-full w-full px-5 py-2.5 text-center me-2 flex items-center gap-x-2 md:gap-x-2">
+                rounded-full w-full px-5 py-2.5 text-center flex items-center gap-x-2 md:gap-x-2">
                                     <img src="{{ asset('asset/instagram-svgrepo-com.svg') }}" class="w-5 h-5"
                                         alt="">
                                     <span class="font-medium">y.sekarwangi</span>
                                 </div>
                                 <div type="button"
                                     class="text-md md:text-md text-gray-700 bg-white hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
-                rounded-full w-full px-5 py-2.5 text-center me-2 flex items-center gap-x-2 md:gap-x-2">
+                rounded-full w-full px-5 py-2.5 text-center flex items-center gap-x-2 md:gap-x-2">
                                     <img src="{{ asset('asset/facebook-svgrepo-com.svg') }}" class="w-7 h-7"
                                         alt="">
                                     <span class="font-medium text-sm">
@@ -32,7 +32,7 @@
                                 </div>
                                 <div type="button"
                                     class="text-md md:text-md text-gray-700 bg-white hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
-                rounded-full w-full px-5 py-2.5 text-center me-2 flex items-center gap-x-2 md:gap-x-2">
+                rounded-full w-full px-5 py-2.5 text-center flex items-center gap-x-2 md:gap-x-2">
                                     <img src="{{ asset('asset/instagram-svgrepo-com.svg') }}" class="w-5 h-5"
                                         alt="">
                                     <span class="font-medium">
@@ -41,7 +41,7 @@
                                 </div>
                                 <div type="button"
                                     class="text-md md:text-md text-gray-700 bg-white hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
-                rounded-full w-full px-5 py-2.5 text-center me-2 flex items-center gap-x-2 md:gap-x-2">
+                rounded-full w-full px-5 py-2.5 text-center flex items-center gap-x-2 md:gap-x-2">
                                     <img src="{{ asset('asset/tiktok-svgrepo-com.svg') }}" class="w-6 h-6"
                                         alt="">
                                     <span class="font-medium text-sm">
@@ -50,7 +50,7 @@
                                 </div>
                                 <div type="button"
                                     class="text-md md:text-md text-gray-700 bg-white hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
-                rounded-full w-full px-5 py-2.5 text-center me-2 flex items-center gap-x-2 md:gap-x-2">
+                rounded-full w-full px-5 py-2.5 text-center flex items-center gap-x-2 md:gap-x-2">
                                     <img src="{{ asset('asset/youtube-168-svgrepo-com.svg') }}" class="w-6 h-6"
                                         alt="">
                                     <span class="font-medium">
