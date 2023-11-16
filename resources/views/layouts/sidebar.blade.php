@@ -23,7 +23,7 @@
             </li>
             <li>
                 <a href="{{ route('admin.profile.index') }}"
-                    class="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100  group">
+                    class="{{ request()->routeIs('admin.profile.*') ? 'bg-gray-100' : '' }} flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100  group">
                     <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75  group-hover:text-gray-900"
                         viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -39,7 +39,7 @@
             </li>
             <li>
                 <a href="{{ route('admin.commitment.index') }}"
-                    class="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100  group">
+                    class="{{ request()->routeIs('admin.commitment.*') ? 'bg-gray-100' : '' }} flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100  group">
                     <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75  group-hover:text-gray-900"
                         viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -57,7 +57,8 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100  group">
+                <a href="{{ route('admin.gallery.index') }}"
+                    class="{{ request()->routeIs('admin.gallery.*') ? 'bg-gray-100' : '' }} flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100  group">
                     <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75  group-hover:text-gray-900"
                         viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -73,7 +74,7 @@
             </li>
             <li>
                 <a href="{{ route('admin.news.index') }}"
-                    class="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100  group">
+                    class="{{ request()->routeIs('admin.news.*') ? 'bg-gray-100' : '' }} flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100  group">
                     <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75  group-hover:text-gray-900"
                         viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
