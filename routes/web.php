@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CommitmentController;
 use App\Http\Controllers\User\LandingController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\NewsController;
@@ -42,6 +43,16 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
         Route::get('/edit/{id}', [NewsController::class, 'edit'])->name('admin.news.edit');
         Route::post('/update/{id}', [NewsController::class, 'update'])->name('admin.news.update');
         Route::get('/delete/{id}', [NewsController::class, 'delete'])->name('admin.news.delete');
+    });
+
+    // Commitment
+    Route::group(['prefix' => 'commitment'], function () {
+        Route::get('/', [CommitmentController::class, 'index'])->name('admin.commitment.index');
+        Route::get('/create', [CommitmentController::class, 'create'])->name('admin.commitment.create');
+        Route::post('/store', [CommitmentController::class, 'store'])->name('admin.commitment.store');
+        Route::get('/edit/{id}', [CommitmentController::class, 'edit'])->name('admin.commitment.edit');
+        Route::post('/update/{id}', [CommitmentController::class, 'update'])->name('admin.commitment.update');
+        Route::get('/delete/{id}', [CommitmentController::class, 'delete'])->name('admin.commitment.delete');
     });
 });
 

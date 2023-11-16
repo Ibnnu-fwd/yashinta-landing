@@ -17,3 +17,25 @@
     font-weight: 900 !important;
     color: #fff;
 }
+
+#DataTables_Table_0_length>label>select {
+    @apply text-sm;
+    width: 53px;
+    margin: 0 5px;
+}
+
+.swal2-title {
+    @apply text-lg;
+}
+
+#swal2-html-container {
+    @apply text-sm;
+}
+
+.swal2-actions {
+    @apply text-sm;
+}
+
+body>div.swal2-container.swal2-center.swal2-backdrop-show>div>div.swal2-actions>button.swal2-confirm.swal2-styled {
+    @apply text-sm bg-black;
+}
