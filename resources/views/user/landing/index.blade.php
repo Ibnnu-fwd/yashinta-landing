@@ -159,7 +159,7 @@
                         Sampaikan aspirasimu untuk Daerah Istimewa Yogyakarta
                     </h2>
                     <p class="text-lg">
-                        Suaraku aspirasimu!
+                        Suarakan aspirasimu!
                     </p>
                 </div>
                 <div class="col-span-2 mt-6 md:mt-0">
