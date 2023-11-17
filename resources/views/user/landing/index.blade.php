@@ -105,7 +105,7 @@
                     </g>
                 </svg>
             </a>
-            <img src="{{ asset('storage/profile' . $profile->photo_profile_on_landing) }}"
+            <img src="{{ asset('storage/profile/' . $profile->photo_profile_on_landing) }}"
                 class="mt-8 w-full h-auto md:h-[25em] object-cover rounded-2xl" alt="">
         </div>
     </section>
