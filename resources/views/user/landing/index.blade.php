@@ -31,7 +31,7 @@
                             class="block py-2 px-3 text-white rounded hover:bg-transparent md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Profil</a>
                     </li>
                     <li>
-                        <a href="#"
+                        <a href="{{ route('user.landing.commitment') }}"
                             class="block py-2 px-3 text-white rounded hover:bg-transparent md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Komitmen</a>
                     </li>
                     <li>
@@ -209,8 +209,13 @@
     <!-- Video -->
     <section class="relative flex items-center w-full h-fit bg-gray-100">
         <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
+            @php
+                parse_str(parse_url($profile->video_link, PHP_URL_QUERY), $vars);
+                $videoId = $vars['v'];
+            @endphp
+
             <iframe class="w-full h-[18em] md:h-[25em] max-w-full border border-gray-200 rounded-2xl"
-                src="{{ $profile->video_link }}" title="YouTube video player" frameborder="0"
+                src="https://www.youtube.com/embed/{{ $videoId }}" title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
             </iframe>

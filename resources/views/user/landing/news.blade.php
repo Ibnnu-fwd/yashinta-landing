@@ -32,7 +32,8 @@
                                 class="block py-2 px-3 text-red-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Profil</a>
                         </li>
                         <li>
-                            <a href="#"
+
+                            <a href="{{ route('user.landing.commitment') }}"
                                 class="block py-2 px-3 text-red-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Komitmen</a>
                         </li>
                         <li>

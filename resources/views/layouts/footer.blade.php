@@ -16,7 +16,7 @@
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-12">
                                 @foreach ($socialMedia as $data)
                                     <a href="{{ $data->link }}" target="_blank"
-                                        class="text-md md:text-md text-gray-700 bg-white hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
+                                        class="text-md md:text-md text-gray-700 bg-white hover:bg-gradient-to-bl focus:outline-none 
                 rounded-full w-full px-5 py-2.5 text-center flex items-center gap-x-2 md:gap-x-2">
                                         <img src="{{ asset('storage/social-media/' . $data->icon) }}" class="w-5 h-5"
                                             alt="">

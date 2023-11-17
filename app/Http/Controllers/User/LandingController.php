@@ -90,7 +90,9 @@ class LandingController extends Controller
 
     public function gallery()
     {
-        return view('user.landing.gallery');
+        return view('user.landing.gallery', [
+            'galleries' => $this->gallery->getAll()
+        ]);
     }
 
     public function storeAspiration(Request $request)
@@ -113,7 +115,9 @@ class LandingController extends Controller
 
     public function commitment()
     {
-        return view('user.landing.commitment');
+        return view('user.landing.commitment', [
+            'commitments' => $this->commitment->getAll()
+        ]);
     }
 
     public function commitmentDetail($slug)
