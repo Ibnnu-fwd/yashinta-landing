@@ -215,7 +215,8 @@
             @endphp
 
             <iframe class="w-full h-[18em] md:h-[25em] max-w-full border border-gray-200 rounded-2xl"
-                src="https://www.youtube.com/embed/{{ $videoId }}" title="YouTube video player" frameborder="0"
+                src="https://www.youtube.com/embed/{{ $videoId }}?modestbranding=1" title="YouTube video player"
+                frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
             </iframe>

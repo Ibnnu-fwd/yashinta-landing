@@ -46,7 +46,7 @@
                     <div class="flex items-center gap-x-3">
                         <img src="{{ asset('asset/location-svgrepo-com.svg') }}" class="w-8 h-8" alt="">
                         <p>
-                            Jl. Ring Road Utara,Nanggulan, Maguoharjo, Kec. Depok, Kabupaten Sleman, Daerah Istimewa
+                            Jl. Ring Road Utara, Nanggulan, Maguoharjo, Kec. Depok, Kabupaten Sleman, Daerah Istimewa
                             Yogyakarta 55281
                         </p>
                     </div>
