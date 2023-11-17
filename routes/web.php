@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\EducationsController;
 use App\Http\Controllers\Admin\ExperiencesController;
 use App\Http\Controllers\Admin\OrganizationsController;
+use App\Http\Controllers\Admin\SocialActivityController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -130,6 +131,16 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
         Route::get('/edit/{id}', [OrganizationsController::class, 'edit'])->name('admin.organizations.edit');
         Route::post('/update/{id}', [OrganizationsController::class, 'update'])->name('admin.organizations.update');
         Route::delete('/destroy/{id}', [OrganizationsController::class, 'destroy'])->name('admin.organizations.destroy');
+    });
+
+    // Social Activity
+    Route::group(['prefix' => 'social-activity'], function () {
+        Route::get('/', [SocialActivityController::class, 'index'])->name('admin.social-activity.index');
+        Route::get('/create', [SocialActivityController::class, 'create'])->name('admin.social-activity.create');
+        Route::post('/store', [SocialActivityController::class, 'store'])->name('admin.social-activity.store');
+        Route::get('/edit/{id}', [SocialActivityController::class, 'edit'])->name('admin.social-activity.edit');
+        Route::post('/update/{id}', [SocialActivityController::class, 'update'])->name('admin.social-activity.update');
+        Route::delete('/destroy/{id}', [SocialActivityController::class, 'destroy'])->name('admin.social-activity.destroy');
     });
 });
 
