@@ -85,11 +85,15 @@
                                 </p>
                                 <p class="text-md md:text-lg">
                                     @if ($education->start_date && $education->end_date)
-                                        {{ date('Y', strtotime($education->start_date)) }} -
-                                        {{ date('Y', strtotime($education->end_date)) }}
+                                        @if (date('Y', strtotime($education->start_date)) == date('Y', strtotime($education->end_date)))
+                                            {{ date('Y', strtotime($education->start_date)) }}
+                                        @else
+                                            {{ date('Y', strtotime($education->start_date)) }} -
+                                            {{ date('Y', strtotime($education->end_date)) }}
+                                        @endif
                                     @elseif ($education->start_date && !$education->end_date)
                                         {{ date('Y', strtotime($education->start_date)) }} -
-                                        Sekarang
+                                        sekarang
                                     @else
                                         -
                                     @endif
@@ -120,11 +124,15 @@
                                 <p class="text-md md:text-lg">{{ $data->position }}</p>
                                 <p class="text-md md:text-lg">
                                     @if ($data->start_date && $data->end_date)
-                                        {{ date('Y', strtotime($data->start_date)) }} -
-                                        {{ date('Y', strtotime($data->end_date)) }}
+                                        @if (date('Y', strtotime($data->start_date)) == date('Y', strtotime($data->end_date)))
+                                            {{ date('Y', strtotime($data->start_date)) }}
+                                        @else
+                                            {{ date('Y', strtotime($data->start_date)) }} -
+                                            {{ date('Y', strtotime($data->end_date)) }}
+                                        @endif
                                     @elseif ($data->start_date && !$data->end_date)
                                         {{ date('Y', strtotime($data->start_date)) }} -
-                                        Sekarang
+                                        sekarang
                                     @else
                                         -
                                     @endif
@@ -155,11 +163,15 @@
                                 <p class="text-md md:text-lg">{{ $data->position }}</p>
                                 <p class="text-md md:text-lg">
                                     @if ($data->start_date && $data->end_date)
-                                        {{ date('Y', strtotime($data->start_date)) }} -
-                                        {{ date('Y', strtotime($data->end_date)) }}
+                                        @if (date('Y', strtotime($data->start_date)) == date('Y', strtotime($data->end_date)))
+                                            {{ date('Y', strtotime($data->start_date)) }}
+                                        @else
+                                            {{ date('Y', strtotime($data->start_date)) }} -
+                                            {{ date('Y', strtotime($data->end_date)) }}
+                                        @endif
                                     @elseif ($data->start_date && !$data->end_date)
                                         {{ date('Y', strtotime($data->start_date)) }} -
-                                        Sekarang
+                                        sekarang
                                     @else
                                         -
                                     @endif
@@ -185,11 +197,11 @@
                     <div class="space-y-4">
                         @foreach ($socials as $data)
                             <div>
-                                <h1 class="font-bold text-lg md:text-xl">{{ $data->name }}</h1>
-                                <p class="text-md md:text-lg">{{ $data->description }}</p>
-                                <p class="text-md md:text-lg">
+                                {{-- <h1 class="font-bold text-lg md:text-xl">{{ $data->name }}</h1> --}}
+                                <p class="text-md md:text-lg">{!! $data->description !!}</p>
+                                {{-- <p class="text-md md:text-lg">
                                     {{ date('d F Y', strtotime($data->date)) }}
-                                </p>
+                                </p> --}}
                             </div>
                         @endforeach
                     </div>

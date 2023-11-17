@@ -18,7 +18,7 @@
                         class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-gray-500 focus:border-gray-500"
                         placeholder=""></textarea>
                 </div>
-                <x-input :value="$socialActivity->date" id="date" label="Tanggal" name="date" required />
+                <x-input :value="$socialActivity->date" id="date" label="Tanggal" name="date" type="date" required />
                 <button type="submit" class="bg-primary text-white rounded-md px-4 py-2.5 mt-5 hover:bg-secondary-red">
                     Simpan
                 </button>
