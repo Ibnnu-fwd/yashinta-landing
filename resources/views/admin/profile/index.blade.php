@@ -108,7 +108,7 @@
                                 value="{{ $profile->photo_faq_page }}" />
                         </div>
                     </div>
-
+                    <x-input label="video_link" name="video_link" value="{{ $profile->video_link }}" />
                 </div>
 
             </div>

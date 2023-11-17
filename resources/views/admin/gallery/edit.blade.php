@@ -1,9 +1,9 @@
 <x-app-layout>
-    @section('title', 'Edit Foto')
+    @section('title', 'Ubah Foto')
 
     <div class="max-w-full">
         <h1 class="font-semibold text-lg mb-5">
-            Edit Foto
+            Ubah Foto
         </h1>
 
         <div class="max-w-2xl">

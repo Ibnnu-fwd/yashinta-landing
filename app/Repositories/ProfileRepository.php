@@ -34,6 +34,7 @@ class ProfileRepository implements ProfileInterface
                 'photo_organizations'      => null,
                 'photo_social_activities'  => null,
                 'photo_profile_on_landing' => null,
+                'video_link' => 'https://.youtube.com/'
             ]);
         }
 
