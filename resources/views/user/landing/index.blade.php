@@ -126,7 +126,7 @@
                             {!! Str::limit($commitment->content, 70) !!}
                         </p>
                         <a href="{{ route('user.landing.commitment.detail', $commitment->slug) }}"
-                            class="flex w-fit text-sm lg:text-md mt-2 md:mt-8 text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none rounded-full px-4 py-2 md:px-4 md:py-2 text-center me-2 mb-2 items-center gap-x-2 md:gap-x-4">
+                            class="flex w-fit text-sm lg:text-md mt-4 md:mt-8 text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none rounded-full px-4 py-2 md:px-4 md:py-2 text-center me-2 mb-2 items-center gap-x-2 md:gap-x-4">
                             <span>Selengkapnya</span> <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -214,8 +214,8 @@
                 $videoId = $vars['v'];
             @endphp
 
-            <iframe class="w-full h-fit aspect-video max-w-full border border-gray-200 rounded-2xl"
-                src="https://www.youtube.com/embed/{{ $videoId }}?controls=0" title="YouTube video player"
+            <iframe class="w-full h-[18em] md:h-[25em] max-w-full border border-gray-200 rounded-2xl"
+                src="https://www.youtube.com/embed/{{ $videoId }}?modestbranding=1" title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
