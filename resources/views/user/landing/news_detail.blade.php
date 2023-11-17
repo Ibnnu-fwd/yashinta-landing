@@ -1,5 +1,12 @@
 <x-guest-layout>
     @section('title', 'Berita')
+    @section('meta')
+        <meta property="og:title" content="{{ $data->title }}" />
+        <meta property="og:description" content="Berita Terbaru Yashinta" />
+        <meta property="og:image" content="{{ asset('storage/news/' . $data->thumbnail) }}" />
+        <meta property="og:url" content="{{ Request::url() }}" />
+    @endsection
+
     <div class="bg-gray-50 min-h-screen">
         <!-- Navbar -->
         <nav>
