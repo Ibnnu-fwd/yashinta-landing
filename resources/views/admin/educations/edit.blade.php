@@ -32,11 +32,10 @@
 
     @push('js-internal')
         <script>
-            $('#end_date_container').hide();
-
             $('#is_graduated').change(function() {
                 if (this.checked) {
                     $('#end_date_container').hide();
+                    $('#end_date').val(null);
                 } else {
                     $('#end_date_container').show();
                 }
