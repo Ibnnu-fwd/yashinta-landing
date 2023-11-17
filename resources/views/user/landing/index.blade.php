@@ -1,5 +1,5 @@
 <x-guest-layout>
-    @section('title', 'Home')
+    @section('title', 'Teras')
 
     <!-- Navbar -->
     <nav class="hero-pattern z-20">
@@ -24,7 +24,7 @@
                     <li>
                         <a href="/"
                             class="block py-2 px-3 text-white bg-transparent rounded md:bg-transparent md:text-white md:p-0 hover:underline"
-                            aria-current="page">Beranda</a>
+                            aria-current="page">Teras</a>
                     </li>
                     <li>
                         <a href="{{ route('user.landing.profile') }}"
@@ -119,9 +119,9 @@
             @foreach ($commitments as $commitment)
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8 mt-8 md:mt-20">
                     <div>
-                        <h2 class="text-xl lg:text-2xl font-bold text-gray-700 capitalize">
+                        <h1 class="text-xl lg:text-2xl font-bold text-gray-700 capitalize">
                             {{ $commitment->title }}
-                        </h2>
+                        </h1>
                         <p class="text-gray-500 mt-2 md:mt-4 text-sm md:text-md line-clamp-3">
                             {!! Str::limit($commitment->content, 70) !!}
                         </p>

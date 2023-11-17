@@ -8,6 +8,9 @@
 
     @yield('meta')
 
+    <!-- icon tab -->
+    <link rel="icon" href="{{ asset('asset/logo-tab-red.png') }}">
+
     <title>{{ config('app.name', 'Laravel') }} | @yield('title')</title>
 
     <!-- Fonts -->

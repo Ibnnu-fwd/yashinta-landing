@@ -20,12 +20,12 @@
                 </button>
                 <div class="hidden w-full md:block md:w-auto" id="navbar-default">
                     <ul
-                        class="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0
+                        class="font-medium flex items-center flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0
                     ">
                         <li>
                             <a href="/"
                                 class="block py-2 px-3 text-white bg-primary rounded md:bg-transparent md:text-red-900 md:p-0 hover:underline"
-                                aria-current="page">Beranda</a>
+                                aria-current="page">Teras</a>
                         </li>
                         <li>
                             <a href="{{ route('user.landing.profile') }}"
@@ -57,9 +57,9 @@
             <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
                 <img src="{{ asset('storage/profile/' . $data->photo_profile_page) }}"
                     class="w-full h-auto rounded-2xl mb-8" alt="">
-                <h2 class="text-xl md:text-3xl font-bold text-black mb-4 leading-snug">
+                <h1 class="text-xl md:text-3xl font-bold text-black mb-4 leading-snug">
                     {{ $data->title_profile_page }}
-                </h2>
+                </h1>
                 <p class="md:text-lg">
                     {{ $data->description_profile_page }}
                 </p>
@@ -77,9 +77,9 @@
                     <div class="space-y-4">
                         @foreach ($educations as $education)
                             <div>
-                                <h2 class="font-bold text-lg md:text-xl">
+                                <h1 class="font-bold text-lg md:text-xl">
                                     {{ $education->university_name }}
-                                </h2>
+                                </h1>
                                 <p class="text-md md:text-lg">
                                     {{ $education->study }}
                                 </p>
@@ -116,7 +116,7 @@
                     <div class="space-y-4">
                         @foreach ($experiences as $data)
                             <div>
-                                <h2 class="font-bold text-lg md:text-xl">{{ $data->company_name }}</h2>
+                                <h1 class="font-bold text-lg md:text-xl">{{ $data->company_name }}</h1>
                                 <p class="text-md md:text-lg">{{ $data->position }}</p>
                                 <p class="text-md md:text-lg">
                                     @if ($data->start_date && $data->end_date)
@@ -151,7 +151,7 @@
                     <div class="space-y-4">
                         @foreach ($organizations as $data)
                             <div>
-                                <h2 class="font-bold text-lg md:text-xl">{{ $data->name }}</h2>
+                                <h1 class="font-bold text-lg md:text-xl">{{ $data->name }}</h1>
                                 <p class="text-md md:text-lg">{{ $data->position }}</p>
                                 <p class="text-md md:text-lg">
                                     @if ($data->start_date && $data->end_date)
@@ -185,7 +185,7 @@
                     <div class="space-y-4">
                         @foreach ($socials as $data)
                             <div>
-                                <h2 class="font-bold text-lg md:text-xl">{{ $data->name }}</h2>
+                                <h1 class="font-bold text-lg md:text-xl">{{ $data->name }}</h1>
                                 <p class="text-md md:text-lg">{{ $data->description }}</p>
                                 <p class="text-md md:text-lg">
                                     {{ date('d F Y', strtotime($data->date)) }}

@@ -26,12 +26,12 @@
                 </button>
                 <div class="hidden w-full md:block md:w-auto" id="navbar-default">
                     <ul
-                        class="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0
+                        class="font-medium flex flex-col items-center p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0
                     ">
                         <li>
                             <a href="/"
                                 class="block py-2 px-3 text-white bg-primary rounded md:bg-transparent md:text-red-900 md:p-0 hover:underline"
-                                aria-current="page">Beranda</a>
+                                aria-current="page">Teras</a>
                         </li>
                         <li>
                             <a href="{{ route('user.landing.profile') }}"
@@ -61,9 +61,9 @@
         <!-- News -->
         <section class="relative flex items-center w-full h-fit">
             <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
-                <h2 class="text-2xl md:text-3xl font-extra-bold text-black mb-5 leading-snug">
+                <h1 class="text-2xl md:text-3xl font-extra-bold text-black mb-5 leading-snug">
                     {{ $data->title }}
-                </h2>
+                </h1>
                 <p class="text-gray-400 text-sm">
                     Dipublikasikan pada {{ date('d F Y', strtotime($data->published_date)) }} oleh {{ $data->author }}
                 </p>
