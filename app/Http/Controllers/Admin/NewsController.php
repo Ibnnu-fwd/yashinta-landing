@@ -10,16 +10,16 @@ class NewsController extends Controller
 {
     private $news;
 
-    public function __construct(NewsInterface $news){
+    public function __construct(NewsInterface $news)
+    {
         $this->news = $news;
     }
 
     public function index(Request $request)
-    {   
+    {
         $results = $this->news->getAll();
 
-        if ($request->ajax())
-        {
+        if ($request->ajax()) {
             return datatables()->of($results)
                 ->addColumn('title', function ($data) {
                     return $data->title;
@@ -93,6 +93,6 @@ class NewsController extends Controller
     public function destroy($id)
     {
         $this->news->delete($id);
-        return redirect()->route('admin.news.index')->with('success', 'News deleted successfully');
+        return response()->json(true);
     }
 }

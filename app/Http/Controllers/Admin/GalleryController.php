@@ -10,16 +10,16 @@ class GalleryController extends Controller
 {
     private $gallery;
 
-    public function __construct(GalleryInterface $gallery){
+    public function __construct(GalleryInterface $gallery)
+    {
         $this->gallery = $gallery;
     }
 
     public function index(Request $request)
-    {   
+    {
         $results = $this->gallery->getAll();
 
-        if ($request->ajax())
-        {
+        if ($request->ajax()) {
             return datatables()->of($results)
                 ->addColumn('title', function ($data) {
                     return $data->title;
@@ -71,7 +71,7 @@ class GalleryController extends Controller
             'date'   => ['required'],
             'thumbnail' => ['required', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
         ]);
-        
+
         $this->gallery->update($request->all(), $id);
         return redirect()->route('admin.gallery.index')->with('success', 'Photo updated successfully');
     }
@@ -79,7 +79,6 @@ class GalleryController extends Controller
     public function destroy($id)
     {
         $this->gallery->delete($id);
-        return redirect()->route('admin.gallery.index')->with('success', 'Photo deleted successfully');
+        return response()->json(true);
     }
-
 }

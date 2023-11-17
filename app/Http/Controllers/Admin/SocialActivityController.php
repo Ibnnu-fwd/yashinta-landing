@@ -53,10 +53,10 @@ class SocialActivityController extends Controller
             'date' => ['required'],
         ]);
 
-        try{
+        try {
             $this->socialActivity->store($request->all());
             return redirect()->route('admin.social-activity.index')->with('success', 'Data berhasil ditambahkan');
-        }catch(\Exception $e){
+        } catch (\Exception $e) {
             return redirect()->route('admin.social-activity.index')->with('error', 'Data gagal ditambahkan');
         }
     }
@@ -75,21 +75,17 @@ class SocialActivityController extends Controller
             'date' => ['required'],
         ]);
 
-        try{
+        try {
             $this->socialActivity->update($id, $request->all());
             return redirect()->route('admin.social-activity.index')->with('success', 'Data berhasil diubah');
-        }catch(\Exception $e){
+        } catch (\Exception $e) {
             return redirect()->route('admin.social-activity.index')->with('error', 'Data gagal diubah');
         }
     }
 
     public function destroy($id)
     {
-        try{
-            $this->socialActivity->destroy($id);
-            return redirect()->route('admin.social-activity.index')->with('success', 'Data berhasil dihapus');
-        }catch(\Exception $e){
-            return redirect()->route('admin.social-activity.index')->with('error', 'Data gagal dihapus');
-        }
+        $this->socialActivity->destroy($id);
+        return response()->json(true);
     }
 }

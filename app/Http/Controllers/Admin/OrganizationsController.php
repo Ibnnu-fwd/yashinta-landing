@@ -27,8 +27,8 @@ class OrganizationsController extends Controller
                     return $data->position;
                 })
                 ->addColumn('period', function ($data) {
-                    if($data->end_date == null) return date('F Y', strtotime($data->start_date)) . ' - sekarang';
-                    
+                    if ($data->end_date == null) return date('F Y', strtotime($data->start_date)) . ' - sekarang';
+
                     return date('F Y', strtotime($data->start_date)) . ' - ' . date('F Y', strtotime($data->end_date));
                 })
                 ->addColumn('action', function ($data) {
@@ -55,7 +55,7 @@ class OrganizationsController extends Controller
             'end_date' => ['nullable'],
         ]);
 
-        try{
+        try {
             $this->organizations->store($request->all());
             return redirect()->route('admin.organizations.index')->with('success', 'Data berhasil ditambahkan');
         } catch (\Throwable $th) {
@@ -79,7 +79,7 @@ class OrganizationsController extends Controller
             'end_date' => ['nullable'],
         ]);
 
-        try{
+        try {
             $this->organizations->update($id, $request->all());
             return redirect()->route('admin.organizations.index')->with('success', 'Data berhasil diubah');
         } catch (\Throwable $th) {
@@ -89,11 +89,7 @@ class OrganizationsController extends Controller
 
     public function destroy($id)
     {
-        try{
-            $this->organizations->destroy($id);
-            return redirect()->route('admin.organizations.index')->with('success', 'Data berhasil dihapus');
-        } catch (\Throwable $th) {
-            return redirect()->route('admin.organizations.index')->with('error', 'Data gagal dihapus');
-        }
+        $this->organizations->destroy($id);
+        return response()->json(true);
     }
 }

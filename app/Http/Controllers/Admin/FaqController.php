@@ -15,11 +15,11 @@ class FaqController extends Controller
         $this->faq = $faq;
     }
 
-    public function index(Request $request){
+    public function index(Request $request)
+    {
         $results = $this->faq->getAll();
 
-        if ($request->ajax())
-        {
+        if ($request->ajax()) {
             return datatables()->of($results)
                 ->addColumn('name', function ($data) {
                     return $data->question;
@@ -81,11 +81,7 @@ class FaqController extends Controller
 
     public function destroy($id)
     {
-        try {
-            $this->faq->delete($id);
-            return redirect()->route('admin.faq.index')->with('success', 'Berhasil menghapus data');
-        } catch (\Throwable $th) {
-            return redirect()->route('admin.faq.index')->with('error', 'Gagal menghapus data');
-        }
+        $this->faq->delete($id);
+        return response()->json(true);
     }
 }

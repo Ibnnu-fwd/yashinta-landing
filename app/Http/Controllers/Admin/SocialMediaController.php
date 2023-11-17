@@ -10,16 +10,16 @@ class SocialMediaController extends Controller
 {
     private $socialMedia;
 
-    public function __construct(SocialMediaInterface $socialMedia){
+    public function __construct(SocialMediaInterface $socialMedia)
+    {
         $this->socialMedia = $socialMedia;
     }
 
     public function index(Request $request)
-    {   
+    {
         $results = $this->socialMedia->getAll();
 
-        if ($request->ajax())
-        {
+        if ($request->ajax()) {
             return datatables()->of($results)
                 ->addColumn('name', function ($data) {
                     return $data->name;
@@ -57,7 +57,7 @@ class SocialMediaController extends Controller
             'link' => ['required'],
         ]);
 
-       
+
         try {
             $this->socialMedia->store($request->all());
             return redirect()->route('admin.social-media.index')->with('success', 'Berhasil menambahkan data');
@@ -93,6 +93,6 @@ class SocialMediaController extends Controller
     public function destroy($id)
     {
         $this->socialMedia->delete($id);
-        return redirect()->route('admin.social-media.index')->with('success', 'Berhasil menghapus data');
+        return response()->json(true);
     }
 }

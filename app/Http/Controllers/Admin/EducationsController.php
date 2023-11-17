@@ -27,8 +27,8 @@ class EducationsController extends Controller
                     return $data->study;
                 })
                 ->addColumn('period', function ($data) {
-                    if($data->end_date == null) return date('F Y', strtotime($data->start_date)) . ' - sekarang';
-                    
+                    if ($data->end_date == null) return date('F Y', strtotime($data->start_date)) . ' - sekarang';
+
                     return date('F Y', strtotime($data->start_date)) . ' - ' . date('F Y', strtotime($data->end_date));
                 })
                 ->addColumn('action', function ($data) {
@@ -95,12 +95,7 @@ class EducationsController extends Controller
 
     public function destroy($id)
     {
-        try {
-            $this->educations->delete($id);
-            return redirect()->route('admin.educations.index')->with('success', 'Berhasil menghapus data');
-        } catch (\Throwable $th) {
-            dd($th->getMessage());
-            return redirect()->route('admin.educations.index')->with('error', 'Gagal menghapus data');
-        }
+        $this->educations->delete($id);
+        return response()->json(true);
     }
 }
