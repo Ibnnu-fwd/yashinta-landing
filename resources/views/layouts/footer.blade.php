@@ -58,12 +58,12 @@
                     <h3 class="ml-11 font-bold text-xl mb-2">
                         Kontak
                     </h3>
-                    <div class="flex items-center gap-x-3">
+                    <a href="https://wa.me/628112654066" class="flex items-center gap-x-3">
                         <img src="{{ asset('asset/whatsapp-color-svgrepo-com.svg') }}" class="w-8 h-8" alt="">
                         <p>
                             Whatsapp: 0811-2654-066
                         </p>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
