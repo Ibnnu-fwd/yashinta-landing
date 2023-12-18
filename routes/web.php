@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\EducationsController;
 use App\Http\Controllers\Admin\ExperiencesController;
 use App\Http\Controllers\Admin\OrganizationsController;
 use App\Http\Controllers\Admin\SocialActivityController;
+use App\Http\Controllers\Admin\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -141,6 +142,16 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
         Route::get('/edit/{id}', [SocialActivityController::class, 'edit'])->name('admin.social-activity.edit');
         Route::post('/update/{id}', [SocialActivityController::class, 'update'])->name('admin.social-activity.update');
         Route::delete('/destroy/{id}', [SocialActivityController::class, 'destroy'])->name('admin.social-activity.destroy');
+    });
+
+    // Testimonial
+    Route::group(['prefix' => 'testimonial'], function () {
+        Route::get('/', [TestimonialController::class, 'index'])->name('admin.testimonial.index');
+        Route::get('/create', [TestimonialController::class, 'create'])->name('admin.testimonial.create');
+        Route::post('/store', [TestimonialController::class, 'store'])->name('admin.testimonial.store');
+        Route::get('/edit/{id}', [TestimonialController::class, 'edit'])->name('admin.testimonial.edit');
+        Route::post('/update/{id}', [TestimonialController::class, 'update'])->name('admin.testimonial.update');
+        Route::delete('/destroy/{id}', [TestimonialController::class, 'destroy'])->name('admin.testimonial.destroy');
     });
 });
 

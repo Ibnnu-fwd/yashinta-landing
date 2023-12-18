@@ -12,8 +12,8 @@
                 @csrf
                 @method('POST')
                 <x-input :value="$socialMedia->name" id="name" label="Jenis" name="name" required />
-                <x-input :value="$socialMedia->link" id="link" label="Jenis" name="link" required />
-                <x-input :value="$socialMedia->username" id="username" label="Jenis" name="username" required />
+                <x-input :value="$socialMedia->link" id="link" label="Tautan" name="link" required />
+                <x-input :value="$socialMedia->username" id="username" label="Nama Akun" name="username" required />
                 <x-input-file id="icon" name="icon" label="Ikon" help="SVG (max. 2MB)" required />
                 <button type="submit" class="bg-primary text-white rounded-md px-4 py-2.5 mt-5 hover:bg-secondary-red">
                     Simpan
