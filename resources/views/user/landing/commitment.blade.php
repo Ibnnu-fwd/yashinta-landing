@@ -1,5 +1,5 @@
 <x-guest-layout>
-    @section('title', 'Profil')
+    @section('title', 'Komitmen')
 
     <div class="bg-gray-50 min-h-screen">
         <!-- Navbar -->
@@ -24,7 +24,7 @@
                     ">
                         <li>
                             <a href="/"
-                                class="block py-2 px-3 text-white bg-primary rounded md:bg-transparent md:text-red-900 md:p-0 hover:underline"
+                                class="block py-2 px-3 text-red-900 rounded md:bg-transparent md:text-red-900 md:p-0 hover:underline"
                                 aria-current="page">Teras</a>
                         </li>
                         <li>
@@ -33,15 +33,15 @@
                         </li>
                         <li>
                             <a href="{{ route('user.landing.commitment') }}"
-                                class="block py-2 px-3 text-red-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Komitmen</a>
+                                class="block py-2 px-3 text-white bg-primary  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Komitmen</a>
                         </li>
                         <li>
                             <a href="{{ route('user.landing.news') }}"
                                 class="block py-2 px-3 text-red-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Berita</a>
                         </li>
                         <li>
-                            <a href="{{ route('user.landing.gallery') }}"
-                                class="block py-2 px-3 text-red-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Galeri</a>
+                            <a href="{{ route('user.landing.testimonial') }}"
+                                class="block py-2 px-3 text-red-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Testimoni</a>
                         </li>
                         <li>
                             <a href="{{ route('user.landing.faq') }}"
@@ -53,28 +53,54 @@
         </nav>
 
         <!-- Commitment -->
-        <section class="flex items-center w-full">
-            <div class="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-20 max-w-7xl">
+        <section class="flex items-center w-full px-4">
+            <div class="relative items-center w-full py-12 mx-auto max-w-2xl">
+                <div class="grid grid-cols-7 gap-6 items-end">
+                    <div class="col-span-3">
+                        <img class="w-full object-cover rounded-2xl" src="{{ asset('asset/hero-komitmen.png') }}"
+                            alt="" width="1310" height="873">
+                    </div>
+                    <div class="col-span-4">
+                        <h1 class="text-xl md:text-4xl font-bold text-black">
+                            VISI MISI
+                        </h1>
+                        <h2 class="text-xl md:text-4xl font-extrabold text-primary">
+                            R.A. YASHINTA<br>SEKARWANGI MEGA
+                        </h2>
+                        <h2 class="text-lg md:text-2xl font-bold text-gray-500">
+                            CALON DPD RI DIY
+                        </h2>
+                    </div>
+                </div>
 
-                <div class="grid grid-cols-2 gap-6 py-12 md:grid-cols-3">
+                <div class="bg-[#ede9df] h-fit mt-12 p-6 rounded-b-2xl">
+                    <p class="text-lg font-extrabold leading-6 text-primary">
+                        VISI
+                    </p>
+                    <p class="mt-2 text-black font-semibold text-md">
+                        Mempertahankan Keistimewaan Daerah Istimewa Yogyakarta sebagai Landasan Utama dalam Mewujudkan
+                        Masyarakat yang Sejahtera, Aman, Rukun, Berbudaya, dan Unggul Melalui Kerja Kolaborasi Lintas
+                        Sektor
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 gap-10 py-12">
                     @foreach ($commitments as $data)
                         <figure>
-                            <img class="w-full bg-gray-200 rounded-2xl shadow-md"
-                                src="{{ asset('storage/commitment/' . $data->thumbnail) }}" alt=""
-                                width="1310" height="873">
-
-                            <p class="mt-5 text-lg font-semibold leading-6 text-black">
-                                {{ $data->title }}
-                            </p>
-                            <p class="mt-3 line-clamp-3 text-gray-500">
-                                {{ str_replace('&nbsp;', ' ', html_entity_decode(strip_tags($data->content))) }}
-                            </p>
-                            <div class="flex gap-3 mt-10 justify-left">
-                                <a href="{{ route('user.landing.commitment.detail', $data->slug) }}"
-                                    class="inline-flex items-center justify-center font-semibold text-primary duration-200 hover:text-red-500 focus:outline-none"
-                                    href="#">
-                                    <span> Selengkapnya &nbsp; → </span>
-                                </a>
+                            <div class="grid grid-cols-6 gap-6">
+                                <div class="col-span-2">
+                                    <img class="w-full object-cover bg-[#ede9df] rounded-2xl shadow-md"
+                                        src="{{ asset('storage/commitment/' . $data->thumbnail) }}" alt=""
+                                        width="1310" height="873">
+                                </div>
+                                <div class="col-span-4">
+                                    <p class="text-lg font-extrabold leading-6 text-primary">
+                                        {{ strtoupper($data->title) }}
+                                    </p>
+                                    <p class="mt-2 text-gray-500 text-md">
+                                        {{ str_replace('&nbsp;', ' ', html_entity_decode(strip_tags($data->content))) }}
+                                    </p>
+                                </div>
                             </div>
                         </figure>
                     @endforeach

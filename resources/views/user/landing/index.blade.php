@@ -39,8 +39,8 @@
                             class="block py-2 px-3 text-white rounded hover:bg-transparent md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Berita</a>
                     </li>
                     <li>
-                        <a href="{{ route('user.landing.gallery') }}"
-                            class="block py-2 px-3 text-white rounded hover:bg-transparent md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Galeri</a>
+                        <a href="{{ route('user.landing.testimonial') }}"
+                            class="block py-2 px-3 text-white rounded hover:bg-transparent md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Testimoni</a>
                     </li>
                     <li>
                         <a href="{{ route('user.landing.faq') }}"
@@ -84,7 +84,7 @@
     <section class="relative flex items-center w-full h-fit bg-gray-50">
         <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
             <h2 class="text-2xl md:text-3xl font-extra-bold text-gray-700">
-                Profil Yashinta
+                Profil Mbak Yashinta
             </h2>
             <p class="mt-4 text-md md:text-lg text-gray-600">
                 {{ $profile->description_landing_page }}
@@ -114,39 +114,103 @@
     <section class="relative flex items-center w-full h-fit bg-[#ffeff2]">
         <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
             <h2 class="text-2xl md:text-3xl font-extra-bold text-primary">
-                Komitmen Yashinta
+                Komitmen Mbak Yashinta
             </h2>
-            @foreach ($commitments as $commitment)
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8 mt-8 md:mt-20">
-                    <div>
+            @foreach ($commitments->take(3) as $commitment)
+                <div class="grid grid-cols-12 gap-4 md:gap-8 mt-8 md:mt-12">
+                    <div class="col-span-4">
+                        <img src="{{ asset('storage/commitment/' . $commitment->thumbnail) }}"
+                            class="bg-[#ede9df] w-full aspect-square object-cover object-center rounded-2xl"
+                            alt="">
+                    </div>
+                    <div class="col-span-8">
                         <h1 class="text-xl lg:text-2xl font-bold text-gray-700 capitalize">
                             {{ $commitment->title }}
                         </h1>
-                        <p class="text-gray-500 mt-2 md:mt-4 text-sm md:text-md line-clamp-3">
-                            {!! Str::limit($commitment->content, 70) !!}
+                        <p id="commitment" class="text-gray-500 mt-2 md:mt-4 text-sm md:text-lg">
+                            {{ str_replace('&nbsp;', ' ', html_entity_decode(strip_tags($commitment->content))) }}
                         </p>
-                        <a href="{{ route('user.landing.commitment.detail', $commitment->slug) }}"
-                            class="flex w-fit text-sm lg:text-md mt-4 md:mt-8 text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none rounded-full px-4 py-2 md:px-4 md:py-2 text-center me-2 mb-2 items-center gap-x-2 md:gap-x-4">
-                            <span>Selengkapnya</span> <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                <g id="SVGRepo_iconCarrier">
-                                    <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
-                                    <path d="M41.9999 24H5.99992" stroke="#ffffff" stroke-width="4"
-                                        stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M30 12L42 24L30 36" stroke="#ffffff" stroke-width="4"
-                                        stroke-linecap="round" stroke-linejoin="round"></path>
-                                </g>
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="col-span-2">
-                        <img src="{{ asset('storage/commitment/' . $commitment->thumbnail) }}"
-                            class="w-full h-[20em] object-cover object-center rounded-2xl" alt="">
                     </div>
                 </div>
             @endforeach
+            <div class="flex justify-center">
+                <a href="{{ route('user.landing.commitment') }}"
+                    class="md:flex w-fit justify-center text-sm lg:text-md mt-0 md:mt-8 text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
+                    rounded-full px-4 py-2 md:px-4 md:py-2 text-center me-2 mb-2 items-center gap-x-2 md:gap-x-4">
+                    <span>Lihat komitmen Lainnya</span> <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
+                            <path d="M41.9999 24H5.99992" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            <path d="M30 12L42 24L30 36" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </g>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="relative flex items-center w-full h-fit bg-gray-50 min-h-screen">
+        <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
+            <h2 class="text-2xl md:text-3xl font-extra-bold text-primary mb-8">
+                Testimoni untuk Mbak Yashinta
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                @foreach ($testimonials->take(2) as $data)
+                    <div class="px-4 py-6 bg-white rounded-2xl">
+                        <p class="text-md">
+                            "{{ $data->text }}"
+                        </p>
+                        <div class="mt-4 grid grid-cols-4 gap-4 items-center">
+                            <img src="{{ asset('storage/testimonial/' . $data->image) }}"
+                                class="w-full aspect-square rounded-full object-cover object-center" alt="">
+                            <p class="col-span-3 text-md text-primary items-center">
+                                {{ $data->name }} <span class="text-gray-400 text-sm"><br>{{ $data->job }}<span>
+                            </p>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            <div class="flex justify-center">
+                <a href="{{ route('user.landing.testimonial') }}"
+                    class="md:flex w-fit justify-center text-sm lg:text-md mt-0 md:mt-8 text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
+                    rounded-full px-4 py-2 md:px-4 md:py-2 text-center me-2 mb-2 items-center gap-x-2 md:gap-x-4">
+                    <span>Lihat testimoni lainnya</span> <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
+                            <path d="M41.9999 24H5.99992" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            <path d="M30 12L42 24L30 36" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </g>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video -->
+    <section class="relative flex items-center w-full h-fit bg-white">
+        <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
+            @php
+                parse_str(parse_url($profile->video_link, PHP_URL_QUERY), $vars);
+                $videoId = $vars['v'];
+            @endphp
+
+            <iframe class="w-full h-[18em] md:h-[25em] max-w-full border border-gray-200 rounded-2xl"
+                src="https://www.youtube.com/embed/{{ $videoId }}?modestbranding=1" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
         </div>
     </section>
 
@@ -206,28 +270,11 @@
         </div>
     </section>
 
-    <!-- Video -->
-    <section class="relative flex items-center w-full h-fit bg-gray-100">
-        <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
-            @php
-                parse_str(parse_url($profile->video_link, PHP_URL_QUERY), $vars);
-                $videoId = $vars['v'];
-            @endphp
-
-            <iframe class="w-full h-[18em] md:h-[25em] max-w-full border border-gray-200 rounded-2xl"
-                src="https://www.youtube.com/embed/{{ $videoId }}?modestbranding=1" title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-        </div>
-    </section>
-
     <!-- Pictures -->
     <section class="relative flex items-center w-full h-fit bg-gray-50">
         <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
             <h2 class="text-2xl md:text-3xl font-extra-bold text-black mb-8">
-                Foto-fotonya Yashinta
+                Galeri Mbak Yashinta
             </h2>
 
 
@@ -275,13 +322,13 @@
     </section>
 
     <!-- News -->
-    <section class="relative flex items-center w-full h-fit bg-gradient-to-br from-[#000] to-[#070707]">
+    <section class="relative flex items-center w-full h-fit bg-gradient-to-br from-[#000] to-[#070707] min-h-screen">
         <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
             <h2 class="text-2xl md:text-3xl font-extra-bold text-white mb-8">
-                Berita Terbaru Yashinta
+                Berita Terbaru Mbak Yashinta
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                @foreach ($news as $data)
+                @foreach ($news->take(2) as $data)
                     <div class="px-4 py-6 bg-white rounded-2xl">
                         <p class="text-gray-400 font-medium text-sm mb-4">
                             {{ date('d F Y', strtotime($data->created_at)) }}
@@ -315,7 +362,7 @@
             </div>
             <div class="flex justify-center">
                 <a href="{{ route('user.landing.news') }}"
-                    class="hidden md:flex w-fit justify-center text-sm lg:text-md mt-0 md:mt-8 text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
+                    class="md:flex w-fit justify-center text-sm lg:text-md mt-0 md:mt-8 text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
                 rounded-full px-4 py-2 md:px-4 md:py-2 text-center me-2 mb-2 items-center gap-x-2 md:gap-x-4">
                     <span>Lihat berita lainnya</span> <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48"
                         fill="none" xmlns="http://www.w3.org/2000/svg">

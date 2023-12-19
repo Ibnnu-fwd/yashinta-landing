@@ -60,7 +60,7 @@
                     </h3>
                     <a href="https://wa.me/628112654066" class="flex items-center gap-x-3">
                         <img src="{{ asset('asset/whatsapp-color-svgrepo-com.svg') }}" class="w-8 h-8" alt="">
-                        <p>
+                        <p class="hover:underline">
                             Whatsapp: 0811-2654-066
                         </p>
                     </a>

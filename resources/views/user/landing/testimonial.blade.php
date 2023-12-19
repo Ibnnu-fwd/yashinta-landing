@@ -1,5 +1,5 @@
 <x-guest-layout>
-    @section('title', 'Galeri')
+    @section('title', 'Testimoni')
 
     @push('css-internal')
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
@@ -30,7 +30,7 @@
                     ">
                         <li>
                             <a href="/"
-                                class="block py-2 px-3 text-white bg-primary rounded md:bg-transparent md:text-red-900 md:p-0 hover:underline"
+                                class="block py-2 px-3 text-primary rounded md:bg-transparent md:text-red-900 md:p-0 hover:underline"
                                 aria-current="page">Teras</a>
                         </li>
                         <li>
@@ -47,8 +47,8 @@
                                 class="block py-2 px-3 text-red-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Berita</a>
                         </li>
                         <li>
-                            <a href="{{ route('user.landing.gallery') }}"
-                                class="block py-2 px-3 text-red-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Galeri</a>
+                            <a href="{{ route('user.landing.testimonial') }}"
+                                class="block py-2 px-3 text-white bg-primary md:text-primary-red md:bg-transparent rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Testimoni</a>
                         </li>
                         <li>
                             <a href="{{ route('user.landing.faq') }}"
@@ -62,22 +62,20 @@
         <!-- News -->
         <section class="relative flex items-center w-full h-fit">
             <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
-                <h2 class="text-2xl md:text-3xl font-extra-bold text-black mb-8">
-                    Foto-fotonya Yashinta
-                </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                    @foreach ($galleries as $data)
-                        <div class="px-4 py-4 bg-white rounded-2xl shadow-sm">
-                            <a href="{{ asset('storage/gallery/' . $data->thumbnail) }}" class="image-popup">
-                                <img src="{{ asset('storage/gallery/' . $data->thumbnail) }}"
-                                    class="w-full h-48 object-cover object-center rounded-md" alt="">
-                            </a>
-                            <h1 class="text-md font-bold leading-snug mt-4">
-                                {{ $data->title }}
-                            </h1>
-                            <p class="text-gray-400 font-medium text-sm">
-                                {{ date('d F Y', strtotime($data->date)) }}
+                    @foreach ($testimonials->take(2) as $data)
+                        <div class="px-4 py-6 bg-white rounded-2xl">
+                            <p class="text-md">
+                                "{{ $data->text }}"
                             </p>
+                            <div class="mt-4 grid grid-cols-4 gap-4 items-center">
+                                <img src="{{ asset('storage/testimonial/' . $data->image) }}"
+                                    class="w-full aspect-square rounded-full object-cover object-center" alt="">
+                                <p class="col-span-3 text-md text-primary items-center">
+                                    {{ $data->name }} <span
+                                        class="text-gray-400 text-sm"><br>{{ $data->job }}<span>
+                                </p>
+                            </div>
                         </div>
                     @endforeach
                 </div>

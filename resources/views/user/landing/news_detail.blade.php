@@ -30,7 +30,7 @@
                     ">
                         <li>
                             <a href="/"
-                                class="block py-2 px-3 text-white bg-primary rounded md:bg-transparent md:text-red-900 md:p-0 hover:underline"
+                                class="block py-2 px-3 text-primary rounded md:bg-transparent md:text-red-900 md:p-0 hover:underline"
                                 aria-current="page">Teras</a>
                         </li>
                         <li>
@@ -43,11 +43,11 @@
                         </li>
                         <li>
                             <a href="{{ route('user.landing.news') }}"
-                                class="block py-2 px-3 text-red-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Berita</a>
+                                class="block py-2 px-3 text-white bg-primary rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Berita</a>
                         </li>
                         <li>
-                            <a href="{{ route('user.landing.gallery') }}"
-                                class="block py-2 px-3 text-red-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Galeri</a>
+                            <a href="{{ route('user.landing.testimonial') }}"
+                                class="block py-2 px-3 text-red-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Testimoni</a>
                         </li>
                         <li>
                             <a href="{{ route('user.landing.faq') }}"

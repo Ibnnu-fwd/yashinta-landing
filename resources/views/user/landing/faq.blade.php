@@ -22,7 +22,7 @@
                     ">
                     <li>
                         <a href="/"
-                            class="block py-2 px-3 text-primary bg-white rounded md:bg-transparent md:text-white md:p-0 "
+                            class="block py-2 px-3 text-white rounded md:bg-transparent md:text-white md:p-0 "
                             aria-current="page">Teras</a>
                     </li>
                     <li>
@@ -38,12 +38,12 @@
                             class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Berita</a>
                     </li>
                     <li>
-                        <a href="{{ route('user.landing.gallery') }}"
-                            class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Galeri</a>
+                        <a href="{{ route('user.landing.testimonial') }}"
+                            class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Testimoni</a>
                     </li>
                     <li>
                         <a href="{{ route('user.landing.faq') }}"
-                            class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">FAQ</a>
+                            class="block py-2 px-3 md:bg-transparent md:text-white text-primary bg-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">FAQ</a>
                     </li>
                 </ul>
             </div>

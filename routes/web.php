@@ -34,7 +34,7 @@ Route::get('profile', [LandingController::class, 'profile'])->name('user.landing
 Route::get('news', [LandingController::class, 'news'])->name('user.landing.news');
 Route::get('news/{slug}', [LandingController::class, 'newsDetail'])->name('user.landing.news.detail');
 Route::get('faq', [LandingController::class, 'faq'])->name('user.landing.faq');
-Route::get('gallery', [LandingController::class, 'gallery'])->name('user.landing.gallery');
+Route::get('testimonial', [LandingController::class, 'testimonial'])->name('user.landing.testimonial');
 Route::get('commitment', [LandingController::class, 'commitment'])->name('user.landing.commitment');
 Route::get('commitment/{slug}', [LandingController::class, 'commitmentDetail'])->name('user.landing.commitment.detail');
 

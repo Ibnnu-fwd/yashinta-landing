@@ -14,6 +14,7 @@ use App\Interfaces\NewsInterface;
 use App\Interfaces\OrganizationsInterface;
 use App\Interfaces\SocialActivityInterface;
 use App\Interfaces\SocialMediaInterface;
+use App\Interfaces\TestimonialInterface;
 use Illuminate\Http\Request;
 
 class LandingController extends Controller
@@ -28,8 +29,9 @@ class LandingController extends Controller
     private $organization;
     private $socialActivity;
     private $faq;
+    private $testimonial;
 
-    public function __construct(ProfileInterface $profile, AspirationInterface $aspiration, CommitmentInterface $commitment, GalleryInterface $gallery, NewsInterface $news, EducationsInterface $education, ExperiencesInterface $experience, OrganizationsInterface $organization, SocialActivityInterface $socialActivity, FaqInterface $faq)
+    public function __construct(ProfileInterface $profile, AspirationInterface $aspiration, CommitmentInterface $commitment, GalleryInterface $gallery, NewsInterface $news, EducationsInterface $education, ExperiencesInterface $experience, OrganizationsInterface $organization, SocialActivityInterface $socialActivity, FaqInterface $faq, TestimonialInterface $testimonial)
     {
         $this->profile        = $profile;
         $this->aspiration     = $aspiration;
@@ -41,6 +43,7 @@ class LandingController extends Controller
         $this->organization   = $organization;
         $this->socialActivity = $socialActivity;
         $this->faq            = $faq;
+        $this->testimonial = $testimonial;
     }
 
     public function index()
@@ -50,6 +53,7 @@ class LandingController extends Controller
             'commitments' => $this->commitment->getAll(),
             'galleries'   => $this->gallery->getAll(),
             'news'        => $this->news->getAll(),
+            'testimonials' => $this->testimonial->getAll(),
         ]);
     }
 
@@ -88,10 +92,10 @@ class LandingController extends Controller
         ]);
     }
 
-    public function gallery()
+    public function testimonial()
     {
-        return view('user.landing.gallery', [
-            'galleries' => $this->gallery->getAll()
+        return view('user.landing.testimonial', [
+            'testimonials' => $this->testimonial->getAll()
         ]);
     }
 
