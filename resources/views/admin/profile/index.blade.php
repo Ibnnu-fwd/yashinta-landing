@@ -71,7 +71,7 @@
                     <x-input label="Subjudul Hero" name="title_landing_page"
                         value="{{ $profile->title_landing_page }}" />
                     <x-input label="Deskripsi Profil" name="description_profile_page"
-                        value="{{ $profile->description_profile_page }}" />
+                        value="{{ $profile->description_landing_page }}" />
                     <div class="grid grid-cols-7 gap-4">
                         <img class="aspect-square w-full object-cover rounded-lg"
                             src="{{ $profile->photo_landing_page != null ? asset('storage/landing/' . $profile->photo_landing_page) : 'https://via.placeholder.com/150' }}"
