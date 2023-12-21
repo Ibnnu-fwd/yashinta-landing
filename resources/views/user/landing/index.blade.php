@@ -84,7 +84,7 @@
     <section class="relative flex items-center w-full h-fit bg-gray-50">
         <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
             <h2 class="text-2xl md:text-3xl font-extra-bold text-gray-700">
-                Profil Mbak Yashinta
+                Profil Yashinta
             </h2>
             <p class="mt-4 text-md md:text-lg text-gray-600">
                 {{ $profile->description_landing_page }}
@@ -114,7 +114,7 @@
     <section class="relative flex items-center w-full h-fit bg-[#ffeff2]">
         <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
             <h2 class="text-2xl md:text-3xl font-extra-bold text-primary">
-                Komitmen Mbak Yashinta
+                Komitmen Yashinta
             </h2>
             @foreach ($commitments->take(3) as $commitment)
                 <div class="grid grid-cols-12 gap-4 md:gap-8 mt-8 md:mt-12">
@@ -158,7 +158,7 @@
     <section class="relative flex items-center w-full h-fit bg-gray-50 min-h-screen">
         <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
             <h2 class="text-2xl md:text-3xl font-extra-bold text-primary mb-8">
-                Testimoni untuk Mbak Yashinta
+                Testimoni
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 @foreach ($testimonials->take(2) as $data)
@@ -274,7 +274,7 @@
     <section class="relative flex items-center w-full h-fit bg-gray-50">
         <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
             <h2 class="text-2xl md:text-3xl font-extra-bold text-black mb-8">
-                Galeri Mbak Yashinta
+                Galeri Yashinta
             </h2>
 
 
@@ -325,7 +325,7 @@
     <section class="relative flex items-center w-full h-fit bg-gradient-to-br from-[#000] to-[#070707] min-h-screen">
         <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
             <h2 class="text-2xl md:text-3xl font-extra-bold text-white mb-8">
-                Berita Terbaru Mbak Yashinta
+                Berita Terbaru Yashinta
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                 @foreach ($news->take(2) as $data)
