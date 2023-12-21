@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\ExperiencesController;
 use App\Http\Controllers\Admin\OrganizationsController;
 use App\Http\Controllers\Admin\SocialActivityController;
 use App\Http\Controllers\Admin\TestimonialController;
+use App\Http\Controllers\Admin\ProgramController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -152,6 +153,16 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
         Route::get('/edit/{id}', [TestimonialController::class, 'edit'])->name('admin.testimonial.edit');
         Route::post('/update/{id}', [TestimonialController::class, 'update'])->name('admin.testimonial.update');
         Route::delete('/destroy/{id}', [TestimonialController::class, 'destroy'])->name('admin.testimonial.destroy');
+    });
+
+    // Program
+    Route::group(['prefix' => 'program'], function () {
+        Route::get('/', [ProgramController::class, 'index'])->name('admin.program.index');
+        Route::get('/create', [ProgramController::class, 'create'])->name('admin.program.create');
+        Route::post('/store', [ProgramController::class, 'store'])->name('admin.program.store');
+        Route::get('/edit/{id}', [ProgramController::class, 'edit'])->name('admin.program.edit');
+        Route::post('/update/{id}', [ProgramController::class, 'update'])->name('admin.program.update');
+        Route::delete('/destroy/{id}', [ProgramController::class, 'destroy'])->name('admin.program.destroy');
     });
 });
 

@@ -67,7 +67,7 @@
                                     FAQ
                                 </p>
                                 <p
-                                    class="max-w-xl mt-4 md:mt-8 lg:mt-6 font-semibold text-white text-xl md:text-2xl lg:text-2xl xl:text-3xl tracking-wide leading-snug">
+                                    class="max-w-xl mb-4 md:mb-0 mt-4 md:mt-8 lg:mt-6 font-semibold text-white text-xl md:text-2xl lg:text-2xl xl:text-3xl tracking-wide leading-snug">
                                     Netizen Bertanya <br>
                                     Yashinta Menjawab
                                 </p>

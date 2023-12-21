@@ -48,7 +48,7 @@
                         </li>
                         <li>
                             <a href="{{ route('user.landing.testimonial') }}"
-                                class="block py-2 px-3 text-white bg-primary md:text-primary-red md:bg-transparent rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Testimoni</a>
+                                class="block py-2 px-3 text-white bg-primary md:text-primary md:bg-transparent rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Testimoni</a>
                         </li>
                         <li>
                             <a href="{{ route('user.landing.faq') }}"
@@ -59,11 +59,11 @@
             </div>
         </nav>
 
-        <!-- News -->
+        <!-- Testimonials -->
         <section class="relative flex items-center w-full h-fit">
             <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                    @foreach ($testimonials->take(2) as $data)
+                    @foreach ($testimonials as $data)
                         <div class="px-4 py-6 bg-white rounded-2xl">
                             <p class="text-md">
                                 "{{ $data->text }}"

@@ -33,7 +33,7 @@
                         </li>
                         <li>
                             <a href="{{ route('user.landing.commitment') }}"
-                                class="block py-2 px-3 text-white bg-primary  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Komitmen</a>
+                                class="block py-2 px-3 text-white bg-primary md:bg-white md:text-primary  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:underline text-md md:p-0">Komitmen</a>
                         </li>
                         <li>
                             <a href="{{ route('user.landing.news') }}"
@@ -54,26 +54,27 @@
 
         <!-- Commitment -->
         <section class="flex items-center w-full px-4">
-            <div class="relative items-center w-full py-12 mx-auto max-w-2xl">
-                <div class="grid grid-cols-7 gap-6 items-end">
+            <div class="relative items-center w-full py-6 mt-6 mx-auto max-w-2xl">
+                <div class="grid grid-cols-7 gap-4 md:gap-6 items-end">
                     <div class="col-span-3">
                         <img class="w-full object-cover rounded-2xl" src="{{ asset('asset/hero-komitmen.png') }}"
                             alt="" width="1310" height="873">
                     </div>
                     <div class="col-span-4">
-                        <h1 class="text-xl md:text-4xl font-bold text-black">
+                        <h1 class="text-lg md:text-4xl font-bold text-black">
                             VISI MISI
                         </h1>
-                        <h2 class="text-xl md:text-4xl font-extrabold text-primary">
+                        <h2 class="text-lg md:text-4xl font-extrabold text-primary">
                             R.A. YASHINTA<br>SEKARWANGI MEGA
                         </h2>
-                        <h2 class="text-lg md:text-2xl font-bold text-gray-500">
+                        <h2 class="text-md md:text-2xl font-bold text-gray-500">
                             CALON DPD RI DIY
                         </h2>
                     </div>
                 </div>
 
-                <div class="bg-[#ede9df] h-fit mt-12 p-6 rounded-b-2xl">
+                <div style="background-image: url('{{ asset('asset/box-visi.png') }}'); background-size: cover; background-position: right bottom; background-repeat: no-repeat;"
+                    class="h-fit mt-12 p-6 rounded-b-2xl">
                     <p class="text-lg font-extrabold leading-6 text-primary">
                         VISI
                     </p>
@@ -105,9 +106,38 @@
                         </figure>
                     @endforeach
                 </div>
-
             </div>
         </section>
 
+        @if ($programs->count() > 0)
+            <!-- Program -->
+            <section class="flex items-center w-full px-4 bg-[#ffeff2]">
+                <div class="relative items-center w-full mx-auto max-w-2xl py-6">
+                    <div class="grid grid-cols-7 gap-4 md:gap-6 items-end">
+                        <div class="col-span-4">
+                            <h2 class="text-lg md:text-2xl font-bold text-primary">
+                                PROGRAM
+                            </h2>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 py-6">
+                        @foreach ($programs as $data)
+                            <div class="px-4 py-6 bg-white rounded-2xl">
+                                <h1 class="text-lg font-bold leading-snug mb-4">
+                                    {{ $data->title }}
+                                </h1>
+                                <img src="{{ asset('storage/program/' . $data->image) }}"
+                                    class="w-full aspect-video object-cover object-center rounded-md mb-4"
+                                    alt="">
+                                <div class="text-md">
+                                    {{ str_replace('&nbsp;', ' ', html_entity_decode(strip_tags($data->description))) }}
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </section>
+        @endif
     </div>
 </x-guest-layout>

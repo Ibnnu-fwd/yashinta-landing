@@ -23,7 +23,7 @@
                     ">
                     <li>
                         <a href="/"
-                            class="block py-2 px-3 text-white bg-transparent rounded md:bg-transparent md:text-white md:p-0 hover:underline"
+                            class="block py-2 px-3 text-primary bg-white rounded md:bg-transparent md:text-white md:p-0 hover:underline"
                             aria-current="page">Teras</a>
                     </li>
                     <li>
@@ -53,11 +53,11 @@
 
     <!-- Hero -->
     <section class="relative flex items-center w-full h-fit hero-pattern z-0">
-        <div class="relative items-center w-full px-0 mx-auto md:px-12 lg:px-0 max-w-2xl">
+        <div class="relative items-center w-full px-4 mx-auto md:px-12 lg:px-0 max-w-2xl">
             <div class="relative flex-col items-start m-auto align-middle">
                 <div class="grid gap-6 grid-cols-2 md:gap-24 xl:gap-20">
-                    <div class="order-0 block w-full h-fit">
-                        <img class="object-contain object-center mx-auto lg:ml-auto sm:h-[25em] md:h-[22em] lg:h-[22em] xl:h-[22em] md:absolute md:bottom-0 md:left-0"
+                    <div class="order-0 flex w-full h-full items-end">
+                        <img class=" object-contain object-center mx-auto lg:ml-auto sm:h-[25em] md:h-[22em] lg:h-[22em] xl:h-[22em] md:absolute md:bottom-0 md:left-0"
                             alt="hero" src="{{ asset('asset/hero-landing.png') }}">
                     </div>
                     <div class="relative items-center gap-6 mt-auto mb-auto mr-auto md:inline-flex">
@@ -69,7 +69,7 @@
                                     <br>Mega
                                 </p>
                                 <p
-                                    class="max-w-xl mt-4 md:mt-8 lg:mt-6 font-semibold text-white text-sm md:text-lg lg:text-xl tracking-wide">
+                                    class="max-w-xl mt-4 mb-4 sm:mb-0 md:mt-8 lg:mt-6 font-semibold text-white text-sm md:text-lg lg:text-xl tracking-wide">
                                     {{ $profile->title_landing_page }}
                                 </p>
                             </div>
@@ -135,7 +135,7 @@
             @endforeach
             <div class="flex justify-center">
                 <a href="{{ route('user.landing.commitment') }}"
-                    class="md:flex w-fit justify-center text-sm lg:text-md mt-0 md:mt-8 text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
+                    class="flex w-fit justify-center text-sm lg:text-md mt-8 text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
                     rounded-full px-4 py-2 md:px-4 md:py-2 text-center me-2 mb-2 items-center gap-x-2 md:gap-x-4">
                     <span>Lihat komitmen Lainnya</span> <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -178,7 +178,7 @@
             </div>
             <div class="flex justify-center">
                 <a href="{{ route('user.landing.testimonial') }}"
-                    class="md:flex w-fit justify-center text-sm lg:text-md mt-0 md:mt-8 text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
+                    class="flex w-fit justify-center text-sm lg:text-md mt-8 text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
                     rounded-full px-4 py-2 md:px-4 md:py-2 text-center me-2 mb-2 items-center gap-x-2 md:gap-x-4">
                     <span>Lihat testimoni lainnya</span> <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -238,7 +238,7 @@
                             placeholder="No. Telepon (opsional)">
                         <select id="default" name="city"
                             class="bg-gray-50 border-none text-gray-500 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 mb-3">
-                            <option disabled selected>Kabupaten</option>
+                            <option disabled selected>Kabupaten/Kota</option>
                             <option value="Kabupaten Kulon Progo">Kabupaten Kulon Progo</option>
                             <option value="Kabupaten Bantul">Kabupaten Bantul</option>
                             <option value="Kabupaten Gunung Kidul">Kabupaten Gunung Kidul</option>
@@ -362,7 +362,7 @@
             </div>
             <div class="flex justify-center">
                 <a href="{{ route('user.landing.news') }}"
-                    class="md:flex w-fit justify-center text-sm lg:text-md mt-0 md:mt-8 text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
+                    class="flex w-fit justify-center text-sm lg:text-md mt-0 md:mt-8 text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
                 rounded-full px-4 py-2 md:px-4 md:py-2 text-center me-2 mb-2 items-center gap-x-2 md:gap-x-4">
                     <span>Lihat berita lainnya</span> <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
