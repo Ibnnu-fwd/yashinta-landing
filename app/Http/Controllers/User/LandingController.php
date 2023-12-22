@@ -16,6 +16,7 @@ use App\Interfaces\SocialActivityInterface;
 use App\Interfaces\SocialMediaInterface;
 use App\Interfaces\TestimonialInterface;
 use App\Interfaces\ProgramInterface;
+use App\Interfaces\ProfileSectionInterface;
 use Illuminate\Http\Request;
 
 class LandingController extends Controller
@@ -32,8 +33,9 @@ class LandingController extends Controller
     private $faq;
     private $testimonial;
     private $program;
+    private $profileSection;
 
-    public function __construct(ProfileInterface $profile, AspirationInterface $aspiration, CommitmentInterface $commitment, GalleryInterface $gallery, NewsInterface $news, EducationsInterface $education, ExperiencesInterface $experience, OrganizationsInterface $organization, SocialActivityInterface $socialActivity, FaqInterface $faq, TestimonialInterface $testimonial, ProgramInterface $program)
+    public function __construct(ProfileInterface $profile, AspirationInterface $aspiration, CommitmentInterface $commitment, GalleryInterface $gallery, NewsInterface $news, EducationsInterface $education, ExperiencesInterface $experience, OrganizationsInterface $organization, SocialActivityInterface $socialActivity, FaqInterface $faq, TestimonialInterface $testimonial, ProgramInterface $program, ProfileSectionInterface $profileSection)
     {
         $this->profile        = $profile;
         $this->aspiration     = $aspiration;
@@ -47,6 +49,7 @@ class LandingController extends Controller
         $this->faq            = $faq;
         $this->testimonial = $testimonial;
         $this->program = $program;
+        $this->profileSection = $profileSection;
     }
 
     public function index()
@@ -69,6 +72,7 @@ class LandingController extends Controller
             'experiences'   => $this->experience->getAll(),
             'organizations' => $this->organization->getAll(),
             'socials'       => $this->socialActivity->getAll(),
+            'profileSections' => $this->profileSection->getAll()
         ]);
     }
 

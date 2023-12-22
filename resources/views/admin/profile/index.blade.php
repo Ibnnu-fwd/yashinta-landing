@@ -10,7 +10,7 @@
             <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
 
                 <div class="mb-4">
-                    <h2 class="font-semibold text-sm">Profil</h2>
+                    <h2 class="font-semibold text-sm">Pengaturan Profil</h2>
                     <hr class="my-2">
 
                     <x-input label="Judul" name="title_profile_page" value="{{ $profile->title_profile_page }}" />
@@ -52,19 +52,26 @@
                                 value="{{ $profile->photo_organizations }}" />
                         </div>
                     </div>
-                    <div class="grid grid-cols-7 gap-4 mb-1">
-                        <img class="aspect-square w-full object-cover rounded-lg"
-                            src="{{ $profile->photo_social_activities != null ? asset('storage/social_activities/' . $profile->photo_social_activities) : 'https://via.placeholder.com/150' }}"
-                            alt="">
-                        <div class="col-span-6">
-                            <x-input-file label="Foto Bagian Aktivitas Sosial" name="photo_social_activities"
-                                value="{{ $profile->photo_social_activities }}" />
-                        </div>
-                    </div>
+                    <a href="{{ route('admin.profile-section.index') }}"
+                        class="flex w-fit justify-center text-sm text-white bg-black hover:bg-primary focus:ring-4 focus:outline-none 
+                    rounded-full px-4 py-2 md:px-4 md:py-2 text-center me-2 mb-2 items-center gap-x-2 md:gap-x-4">
+                        <span>Profile Section</span> <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
+                                <path d="M41.9999 24H5.99992" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                                <path d="M30 12L42 24L30 36" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </g>
+                        </svg>
+                    </a>
                 </div>
 
                 <div class="mb-4">
-                    <h2 class="font-semibold text-sm">Beranda</h2>
+                    <h2 class="font-semibold text-sm">Pengaturan Beranda</h2>
                     <hr class="my-2">
 
                     <x-input label="Judul Hero" name="name" value="{{ $profile->name }}" />

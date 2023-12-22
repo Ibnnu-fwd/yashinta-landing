@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\OrganizationsController;
 use App\Http\Controllers\Admin\SocialActivityController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\ProgramController;
+use App\Http\Controllers\Admin\ProfileSectionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -163,6 +164,16 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
         Route::get('/edit/{id}', [ProgramController::class, 'edit'])->name('admin.program.edit');
         Route::post('/update/{id}', [ProgramController::class, 'update'])->name('admin.program.update');
         Route::delete('/destroy/{id}', [ProgramController::class, 'destroy'])->name('admin.program.destroy');
+    });
+
+    // Profile Section
+    Route::group(['prefix' => 'profile-section'], function () {
+        Route::get('/', [ProfileSectionController::class, 'index'])->name('admin.profile-section.index');
+        Route::get('/create', [ProfileSectionController::class, 'create'])->name('admin.profile-section.create');
+        Route::post('/store', [ProfileSectionController::class, 'store'])->name('admin.profile-section.store');
+        Route::get('/edit/{id}', [ProfileSectionController::class, 'edit'])->name('admin.profile-section.edit');
+        Route::post('/update/{id}', [ProfileSectionController::class, 'update'])->name('admin.profile-section.update');
+        Route::delete('/destroy/{id}', [ProfileSectionController::class, 'destroy'])->name('admin.profile-section.destroy');
     });
 });
 

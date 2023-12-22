@@ -2,23 +2,23 @@
 <section class="relative flex items-center w-full h-auto hero-pattern">
     <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-4xl py-0">
         <div class="relative flex-col items-start m-auto align-middle">
-            <div class="grid gap-6 grid-cols-2 xl:gap-4">
-                <div class="order-0 w-fit">
+            <div class="grid gap-3 grid-cols-4 xl:gap-4">
+                <div class="col-span-1 md:col-span-2 order-0 w-fit">
                     <img class="object-contain object-center md:mx-auto lg:ml-auto -translate-x-20 md:-translate-x-0 translate-y-8 md:translate-y-0 h-full absolute bottom-0 left-0 md:w-fit"
                         alt="hero" src="{{ asset('asset/socmed-photo.png') }}">
                 </div>
-                <div class="relative items-center gap-6 mt-auto mb-auto mr-auto m-auto md:inline-flex">
+                <div
+                    class="col-span-3 md:col-span-2 relative items-center gap-6 mt-auto mb-auto md:mr-auto md:m-auto md:inline-flex">
                     <div
-                        class="max-w-xl text-center lg:text-left md:text-behind md:text-xl py-8 md:py-20 -ml-4 lg:-ml-6">
-                        <div>
+                        class="max-w-xl flex justify-end text-center lg:text-left md:text-behind md:text-xl py-8 md:py-20 -ml-4 lg:-ml-6">
+                        <div class="justify-end">
                             <p class="text-white font-bold text-2xl md:text-4xl xl:text-4xl leading-none">
                                 Media Sosial
                             </p>
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6 md:mt-12">
                                 @foreach ($socialMedia as $data)
                                     <a href="{{ $data->link }}" target="_blank"
-                                        class="text-md md:text-md text-gray-700 bg-white hover:bg-gradient-to-bl focus:outline-none 
-                rounded-full w-full px-4 md:px-5 py-2.5 text-center flex items-center gap-x-2 md:gap-x-2">
+                                        class="text-md md:text-md text-gray-700 bg-white hover:bg-gradient-to-bl focus:outline-none rounded-full w-full px-4 md:px-5 py-2.5 text-center flex items-center gap-x-2 md:gap-x-2">
                                         <img src="{{ asset('storage/social-media/' . $data->icon) }}" class="w-5 h-5"
                                             alt="">
                                         <span
