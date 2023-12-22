@@ -64,7 +64,7 @@
             <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                     @foreach ($testimonials as $data)
-                        <div class="px-4 py-6 bg-white rounded-2xl">
+                        <div class="px-4 py-6 bg-white rounded-2xl shadow-md">
                             <p class="text-md">
                                 "{{ $data->text }}"
                             </p>

@@ -54,7 +54,7 @@
 
         <!-- Profile -->
         <section class="relative flex items-center w-full h-fit">
-            <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
+            <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl">
                 <img src="{{ asset('storage/profile/' . $data->photo_profile_page) }}"
                     class="w-full h-auto rounded-2xl mb-8" alt="">
                 <h1 class="text-xl md:text-3xl font-bold text-black mb-4 leading-snug">
@@ -68,17 +68,17 @@
 
         <!-- Section 0 -->
         <section class="relative flex items-center w-full h-fit">
-            <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-12">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6">
+                <div class="grid grid-cols-1 gap-8 mb-8">
                     <p class="md:text-lg italic">
                         “Saya bangga punya warisan kontribusi untuk Jogja dari keluarga saya. Tapi saya akan lebih
                         bangga
                         ketika bisa melanjutkannya.”
                     </p>
-                    <img src="{{ asset('storage/educations/' . $profile->photo_educations) }}"
-                        class="w-full h-[12em] rounded-2xl object-center object-cover" alt="">
+                    <img src="https://via.placeholder.com/150"
+                        class="w-full h-[18em] rounded-2xl object-center object-cover" alt="">
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 gap-8">
                     <p class="md:text-lg">
                         Lahir pada 25 Agustus 1996, R.A. Yashinta Sekarwangi Mega, atau Mbak Yashinta adalah keturunan
                         dari
@@ -86,27 +86,27 @@
                         kebanggaan
                         akan warisan budaya keluarganya.
                     </p>
-                    <img src="{{ asset('storage/educations/' . $profile->photo_educations) }}"
-                        class="w-full h-[12em] rounded-2xl object-center object-cover" alt="">
+                    <img src="https://via.placeholder.com/150"
+                        class="w-full h-[18em] rounded-2xl object-center object-cover" alt="">
                 </div>
             </div>
         </section>
 
         <!-- Section 1 -->
         <section class="relative flex items-center w-full h-fit">
-            <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-12">
+            <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6">
                 <h2 class="text-xl md:text-3xl font-bold text-red-900 mb-4 leading-snug">
                     Mimpi itu Berawal dari Ilmu
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                    <img src="https://via.placeholder.com/150"
-                        class="w-full h-[12em] rounded-2xl object-center object-cover" alt="">
+                <div class="grid grid-cols-1 gap-8 mb-8">
                     <p class="md:text-lg italic">
                         “Pendidikan membuka akses menuju jutaan kesempatan bagi generasi muda. Tapi sebelum itu, kita
                         perlu memastikan semua orang, tanpa terkecuali, bisa mengakses pendidikan itu sendiri.”
                     </p>
+                    <img src="https://via.placeholder.com/150"
+                        class="w-full h-[18em] rounded-2xl object-center object-cover" alt="">
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 gap-8">
                     <p class="md:text-lg">
                         Berawal dari kegiatan ekstra mengajar anak-anak kurang mampu semasa sekolah di Binus School
                         Simprug (2012-2014), Mbak Yashinta memulai mimpi besar untuk anak muda di Yogyakarta dan
@@ -119,19 +119,19 @@
 
         <!-- Section 2 -->
         <section class="relative flex items-center w-full h-fit">
-            <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-12">
+            <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6">
                 <h2 class="text-xl md:text-3xl font-bold text-red-900 mb-4 leading-snug">
                     Belajar dari Realita untuk Aksi Nyata
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div class="grid grid-cols-1 gap-8 mb-8">
                     <p class="md:text-lg italic">
                         “Anak muda perlu meletakkan dirinya sebagai aktor utama pembangunan Indonesia. Tidak abai dengan
                         politik adalah langkah awal mewujudkannya.”
                     </p>
                     <img src="https://via.placeholder.com/150"
-                        class="w-full h-[12em] rounded-2xl object-center object-cover" alt="">
+                        class="w-full h-[18em] rounded-2xl object-center object-cover" alt="">
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 gap-8">
                     <p class="md:text-lg">
                         Mbak Yashinta kemudian memupuk ilmu di Fakultas Ilmu Sosial dan Ilmu Politik Universitas Gadjah
                         Mada (Fisipol UGM) pada tahun 2014.
@@ -147,19 +147,19 @@
 
         <!-- Section 3 -->
         <section class="relative flex items-center w-full h-fit">
-            <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-12">
+            <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6">
                 <h2 class="text-xl md:text-3xl font-bold text-red-900 mb-4 leading-snug">
                     Membina Relasi, Membangun Kolaborasi
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                    <img src="https://via.placeholder.com/150"
-                        class="w-full h-[12em] rounded-2xl object-center object-cover" alt="">
+                <div class="grid grid-cols-1 gap-8 mb-8">
                     <p class="md:text-lg italic">
                         “Anak muda tidak perlu takut untuk berkarya dan berdampak. Dengan harmoni dan dedikasi,
                         Yogyakarta yang nyaman dan lestari ada di tangan kita.”
                     </p>
+                    <img src="https://via.placeholder.com/150"
+                        class="w-full h-[18em] rounded-2xl object-center object-cover" alt="">
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 gap-8">
                     <p class="md:text-lg">
                         Mbak Yashinta percaya bahwa berjejaring dengan tokoh-tokoh inspiratif amat penting. Lewat
                         kepengurusan di Keluarga Alumni Mahasiswa Hubungan Internasional UGM (KAHIGAMA) hingga saat ini,
@@ -171,19 +171,19 @@
 
         <!-- Section 4 -->
         <section class="relative flex items-center w-full h-fit">
-            <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-12">
+            <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6">
                 <h2 class="text-xl md:text-3xl font-bold text-red-900 mb-4 leading-snug">
                     Sejahtera di Indonesia, Diakui Dunia
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div class="grid grid-cols-1 gap-8 mb-8">
                     <p class="md:text-lg italic">
                         “Membawa pengalaman dunia ke panggung lokal, saya siap mengawal kesejahteraan Yogyakarta agar
                         menjadi bagian tak terpisahkan dari kemajuan bangsa.”
                     </p>
                     <img src="https://via.placeholder.com/150"
-                        class="w-full h-[12em] rounded-2xl object-center object-cover" alt="">
+                        class="w-full h-[18em] rounded-2xl object-center object-cover" alt="">
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 gap-8">
                     <p class="md:text-lg">
                         Mbak Yashinta membekali diri dengan pengalaman kerja di Kementerian Luar Negeri RI (2015),
                         Direktorat Perundingan Bilateral Kementerian Perdagangan RI (2018-2019), dan Direktorat
@@ -198,20 +198,20 @@
         <!-- Section 5 -->
         <section class="relative flex items-center w-full h-fit">
             <div
-                class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-12 border-b border-primary">
+                class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 border-b border-primary">
                 <h2 class="text-xl md:text-3xl font-bold text-red-900 mb-4 leading-snug">
                     Dari Yogyakarta untuk Indonesia
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                    <img src="https://via.placeholder.com/150"
-                        class="w-full h-[12em] rounded-2xl object-center object-cover" alt="">
+                <div class="grid grid-cols-1 gap-8 mb-8">
                     <p class="md:text-lg italic">
                         “Angan-angan Yogyakarta dan Indonesia ada di tangan anak muda, terutama anak muda yang berani,
                         anak muda yang bersuara, dan anak muda yang berjuang. Bersama-sama demi masa depan emas, dari
                         Yogyakarta untuk Indonesia.”
                     </p>
+                    <img src="https://via.placeholder.com/150"
+                        class="w-full h-[18em] rounded-2xl object-center object-cover" alt="">
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 gap-8">
                     <p class="md:text-lg">
                         Pada [tanggal lolos seleksi DPD], Mbak Yashinta secara resmi terdaftar sebagai Calon DPD RI
                         Dapil DIY. Sebagai calon termuda, Mbak Yashinta siap menapaki panggung nasional untuk membawa
@@ -228,7 +228,7 @@
                 <h2 class="text-xl md:text-3xl font-bold text-red-900 mb-4 leading-snug">
                     Pendidikan
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 gap-8">
                     <div class="space-y-4">
                         @foreach ($educations as $education)
                             <div>
@@ -258,7 +258,7 @@
                     </div>
                     <div>
                         <img src="{{ asset('storage/educations/' . $profile->photo_educations) }}"
-                            class="w-full h-[25em] rounded-2xl object-center object-cover" alt="">
+                            class="w-full h-[18em] rounded-2xl object-center object-cover" alt="">
                     </div>
                 </div>
             </div>
@@ -271,7 +271,7 @@
                 <h2 class="text-xl md:text-3xl font-bold text-red-900 mb-4 leading-snug">
                     Pengalaman Kerja
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 gap-8">
                     <div class="space-y-4">
                         @foreach ($experiences as $data)
                             <div>
@@ -297,7 +297,7 @@
                     </div>
                     <div>
                         <img src="{{ asset('storage/experiences/' . $profile->photo_experiences) }}"
-                            class="w-full h-[25em] rounded-2xl object-center object-cover" alt="">
+                            class="w-full h-[18em] rounded-2xl object-center object-cover" alt="">
                     </div>
                 </div>
             </div>
@@ -310,7 +310,7 @@
                 <h2 class="text-xl md:text-3xl font-bold text-red-900 mb-4 leading-snug">
                     Organisasi
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 gap-8">
                     <div class="space-y-4">
                         @foreach ($organizations as $data)
                             <div>
@@ -336,7 +336,7 @@
                     </div>
                     <div>
                         <img src="{{ asset('storage/organizations/' . $profile->photo_organizations) }}"
-                            class="w-full h-[25em] rounded-2xl object-center object-cover" alt="">
+                            class="w-full h-[18em] rounded-2xl object-center object-cover" alt="">
                     </div>
                 </div>
             </div>
@@ -348,7 +348,7 @@
                 <h2 class="text-xl md:text-3xl font-bold text-red-900 mb-4 leading-snug">
                     Kegiatan Sosial
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 gap-8">
                     <div class="space-y-4">
                         @foreach ($socials as $data)
                             <div> --}}
@@ -362,7 +362,7 @@
                     </div>
                     <div>
                         <img src="{{ asset('storage/social_activities/' . $profile->photo_social_activities) }}"
-                            class="w-full h-[25em] rounded-2xl object-center object-cover" alt="">
+                            class="w-full h-[18em] rounded-2xl object-center object-cover" alt="">
                     </div>
                 </div>
             </div>
