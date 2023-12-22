@@ -155,7 +155,7 @@
     </section>
 
     <!-- Testimonial -->
-    <section class="relative flex items-center w-full h-fit bg-gray-50 min-h-screen">
+    <section class="relative flex items-center w-full h-fit bg-gray-50">
         <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6 md:py-16">
             <h2 class="text-2xl md:text-3xl font-extra-bold text-primary mb-8">
                 Testimoni
