@@ -2,13 +2,13 @@
 <section class="relative flex items-center w-full h-auto hero-pattern">
     <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-4xl py-0">
         <div class="relative flex-col items-start m-auto align-middle">
-            <div class="grid gap-3 grid-cols-4 xl:gap-4">
-                <div class="col-span-1 md:col-span-2 order-0 w-fit">
+            <div class="grid gap-3 md:grid-cols-2 grid-cols-4 xl:gap-4">
+                <div class="col-span-1 md:col-span-1 order-0 w-fit">
                     <img class="object-contain object-center md:mx-auto lg:ml-auto -translate-x-20 md:-translate-x-0 translate-y-8 md:translate-y-0 h-full absolute bottom-0 left-0 md:w-fit"
                         alt="hero" src="{{ asset('asset/socmed-photo.png') }}">
                 </div>
                 <div
-                    class="col-span-3 md:col-span-2 relative items-center gap-6 mt-auto mb-auto md:m-auto md:inline-flex">
+                    class="col-span-3 md:col-span-1 relative items-center gap-6 mt-auto mb-auto md:m-auto md:inline-flex">
                     <div
                         class="max-w-xl flex justify-end text-center lg:text-left md:text-behind md:text-xl py-8 md:py-20 -ml-4 lg:-ml-6">
                         <div class="justify-end">
