@@ -137,7 +137,7 @@
                 <a href="{{ route('user.landing.commitment') }}"
                     class="flex w-fit justify-center text-sm lg:text-md mt-8 text-white bg-gradient-to-br from-[#cb0e26] to-[#ec1a35] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
                     rounded-full px-4 py-2 md:px-4 md:py-2 text-center me-2 mb-2 items-center gap-x-2 md:gap-x-4">
-                    <span>Lihat komitmen Lainnya</span> <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48"
+                    <span>Lihat komitmen lainnya</span> <svg class="h-4 sm:h-4 md:h-4" viewBox="0 0 48 48"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
