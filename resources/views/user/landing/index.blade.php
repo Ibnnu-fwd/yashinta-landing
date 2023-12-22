@@ -162,7 +162,7 @@
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 @foreach ($testimonials->take(2) as $data)
-                    <div class="px-4 py-6 bg-white rounded-2xl">
+                    <div class="px-4 py-6 bg-white rounded-2xl shadow-md">
                         <p class="text-md">
                             "{{ $data->text }}"
                         </p>
