@@ -116,7 +116,7 @@
                     <div class="grid grid-cols-7 gap-4 md:gap-6 items-end">
                         <div class="col-span-4">
                             <h2 class="text-lg md:text-2xl font-bold text-primary">
-                                PROGRAM
+                                PROGRAM KERJA
                             </h2>
                         </div>
                     </div>

@@ -3,7 +3,7 @@
     <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-4xl py-0">
         <div class="relative flex-col items-start m-auto align-middle">
             <div class="grid gap-3 md:grid-cols-2 grid-cols-4 xl:gap-4">
-                <div class="col-span-1 md:col-span-1 order-0 w-fit">
+                <div class="col-span-1 order-0 w-fit">
                     <img class="object-contain object-center md:mx-auto lg:ml-auto -translate-x-20 md:-translate-x-0 translate-y-8 md:translate-y-0 h-full absolute bottom-0 left-0 md:w-fit"
                         alt="hero" src="{{ asset('asset/socmed-photo.png') }}">
                 </div>
@@ -61,7 +61,7 @@
                     <a href="https://wa.me/628112654066" class="flex items-center gap-x-3">
                         <img src="{{ asset('asset/whatsapp-color-svgrepo-com.svg') }}" class="w-8 h-8" alt="">
                         <p class="hover:underline">
-                            Whatsapp: 0811-2654-066
+                            0811-2654-066
                         </p>
                     </a>
                 </div>
