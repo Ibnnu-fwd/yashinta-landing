@@ -7,8 +7,7 @@
                     <img class="object-contain object-center md:mx-auto lg:ml-auto -translate-x-20 md:-translate-x-0 translate-y-8 md:translate-y-0 h-full absolute bottom-0 left-0 md:w-fit"
                         alt="hero" src="{{ asset('asset/socmed-photo.png') }}">
                 </div>
-                <div
-                    class="col-span-3 md:col-span-1 relative items-center gap-6 mt-auto mb-auto md:m-auto md:inline-flex">
+                <div class="col-span-3 md:col-span-1 relative items-center gap-6 mt-auto mb-auto md:inline-flex">
                     <div
                         class="max-w-xl flex justify-end text-center lg:text-left md:text-behind md:text-xl py-8 md:py-20 -ml-4 lg:-ml-6">
                         <div class="justify-end">
