@@ -85,7 +85,7 @@
             <div
                 class="{{ $loop->iteration % 2 == 0 ? 'bg-gray-50' : 'bg-[#ffeff2]' }} py-16 relative items-center w-full  px-8 lg:px-0">
                 <div class="mx-auto md:px-12 lg:px-0 max-w-2xl">
-                    <h1 class="font-bold text-lg md:text-xl capitalize">
+                    <h1 class="font-bold text-lg md:text-xl">
                         {{ $loop->iteration }}. {{ $data->question }}
                     </h1>
                     <div class="md:text-lg mt-2">

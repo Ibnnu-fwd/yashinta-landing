@@ -69,26 +69,30 @@
         @foreach ($profileSections as $data)
             <!-- Section 1 -->
             <section class="relative flex items-center w-full h-fit">
-                <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl py-6">
+                <div
+                    class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-2xl {{ $data->title ? 'py-6' : 'py-3' }}">
                     @if ($data->title)
                         <h2 class="text-xl md:text-3xl font-bold text-red-900 mb-4 leading-snug">
                             {{ $data->title }}
                         </h2>
                     @endif
-                    <div class="grid grid-cols-1 gap-8 mb-8">
-                        @if ($data->quotes)
-                            <p class="md:text-lg italic">
-                                “{{ $data->quotes }}”
-                            </p>
-                        @endif
-                        @if ($data->image)
-                            <img src="{{ asset('storage/profile/' . $data->image) }}"
-                                class="w-full aspect-[672/278] rounded-2xl object-center object-cover" alt="">
-                        @endif
-                    </div>
+                    @if ($data->quotes || $data->image)
+                        <div class="grid grid-cols-1 gap-6">
+                            @if ($data->quotes)
+                                <p class="md:text-lg italic">
+                                    “{{ $data->quotes }}”
+                                </p>
+                            @endif
+                            @if ($data->image)
+                                <img src="{{ asset('storage/profile/' . $data->image) }}"
+                                    class="w-full aspect-[672/278] rounded-2xl object-center object-cover"
+                                    alt="">
+                            @endif
+                        </div>
+                    @endif
                     <div class="grid grid-cols-1">
                         @if ($data->content)
-                            <div class="text-md md:text-lg">
+                            <div class="text-md md:text-lg mt-6">
                                 {!! $data->content !!}
                             </div>
                         @endif
