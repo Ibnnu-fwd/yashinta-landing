@@ -27,8 +27,16 @@
     </div>
 
     @push('js-internal')
+        <script src="https://cdn.ckeditor.com/ckeditor5/29.0.0/classic/ckeditor.js"></script>
         <script>
             $(function() {
+                ClassicEditor
+                    .create(document.querySelector('#content'))
+                    .catch(error => {
+                        console.error(error);
+                    });
+                $('#content').val(`{!! $profileSections->content !!}`);
+
                 @if ($profileSections->image)
                     $('#image').parent().append(
                         `<a href="{{ asset('storage/profile/' . $profileSections->image) }}" target="_blank" class="hover:text-secondary-red block mt-2">

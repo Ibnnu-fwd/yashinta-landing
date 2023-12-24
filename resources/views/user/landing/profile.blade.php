@@ -83,14 +83,14 @@
                         @endif
                         @if ($data->image)
                             <img src="{{ asset('storage/profile/' . $data->image) }}"
-                                class="w-full h-[18em] rounded-2xl object-center object-cover" alt="">
+                                class="w-full aspect-[672/278] rounded-2xl object-center object-cover" alt="">
                         @endif
                     </div>
-                    <div class="grid grid-cols-1 gap-8">
+                    <div class="grid grid-cols-1">
                         @if ($data->content)
-                            <p class="md:text-lg">
-                                {{ $data->content }}
-                            </p>
+                            <div class="text-md md:text-lg">
+                                {!! $data->content !!}
+                            </div>
                         @endif
                     </div>
                 </div>

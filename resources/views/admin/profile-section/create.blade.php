@@ -24,4 +24,16 @@
             </form>
         </div>
     </div>
+
+    @push('js-internal')
+        {{-- ckeditor --}}
+        <script src="https://cdn.ckeditor.com/ckeditor5/29.0.0/classic/ckeditor.js"></script>
+        <script>
+            ClassicEditor
+                .create(document.querySelector('#content'))
+                .catch(error => {
+                    console.error(error);
+                });
+        </script>
+    @endpush
 </x-app-layout>
