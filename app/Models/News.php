@@ -17,6 +17,14 @@ class News extends Model
         'content',
         'thumbnail',
         'author',
+        'commitment_id',
+        'tag',
+        'category',
         'published_date',
     ];
+
+    public function commitmentRelated()
+    {
+        return $this->belongsTo(Commitment::class, 'commitment_id');
+    }
 }

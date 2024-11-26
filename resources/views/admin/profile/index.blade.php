@@ -1,5 +1,5 @@
 <x-app-layout>
-    @section('title', 'Pengaturan Profil')
+    @section('title', 'Pengaturan')
     <div class="max-w-full">
         <form action={{ route('admin.profile.update') }} method="POST" enctype="multipart/form-data">
             @csrf
@@ -71,20 +71,20 @@
                 </div>
 
                 <div class="mb-4">
-                    <h2 class="font-semibold text-sm">Pengaturan Beranda</h2>
+                    <h2 class="font-semibold text-sm">Pengaturan Teras</h2>
                     <hr class="my-2">
 
                     <x-input label="Judul Hero" name="name" value="{{ $profile->name }}" />
                     <x-input label="Subjudul Hero" name="title_landing_page"
                         value="{{ $profile->title_landing_page }}" />
-                    <x-input label="Deskripsi Profil di Beranda" name="description_landing_page"
+                    <x-input label="Deskripsi Profil di Teras" name="description_landing_page"
                         value="{{ $profile->description_landing_page }}" />
                     <div class="grid grid-cols-7 gap-4">
                         <img class="aspect-square w-full object-cover rounded-lg"
                             src="{{ $profile->photo_landing_page != null ? asset('storage/landing/' . $profile->photo_landing_page) : 'https://via.placeholder.com/150' }}"
                             alt="">
                         <div class="col-span-6">
-                            <x-input-file label="Foto Hero Beranda" name="photo_landing_page"
+                            <x-input-file label="Foto Hero Teras" name="photo_landing_page"
                                 value="{{ $profile->photo_landing_page }}" />
                         </div>
                     </div>
@@ -114,6 +114,22 @@
                             <x-input-file label="Foto Hero FAQ" name="photo_faq_page"
                                 value="{{ $profile->photo_faq_page }}" />
                         </div>
+                    </div>
+                    <div class="grid grid-cols-7 gap-4 mb-1">
+                        <img class="aspect-square w-full object-cover rounded-lg"
+                            src="{{ $profile->photo_banner != null ? asset('storage/banner/' . $profile->photo_banner) : 'https://via.placeholder.com/150' }}"
+                            alt="">
+                        <div class="col-span-6">
+                            <x-input-file label="Foto Banner" name="photo_banner"
+                                value="{{ $profile->photo_banner }}" />
+                        </div>
+                    </div>
+                    <div class="mb-1">
+                        <label class="inline-flex items-center cursor-pointer">
+                            <input name="is_banner_active" type="checkbox" {{ $profile->is_banner_active ? 'checked' : '' }} :value={{$profile->is_banner_active}} class="sr-only peer">
+                            <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring peer-focus:ring-primary rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                            <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Tampilkan Banner</span>
+                        </label>
                     </div>
                     <x-input label="video_link" name="video_link" value="{{ $profile->video_link }}" />
                 </div>

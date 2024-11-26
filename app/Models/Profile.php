@@ -26,6 +26,8 @@ class Profile extends Model
         'photo_organizations',
         'photo_social_activities',
         'photo_profile_on_landing',
+        'photo_banner',
+        'is_banner_active',
         'video_link'
     ];
 }

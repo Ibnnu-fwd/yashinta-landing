@@ -4,6 +4,7 @@
     'label' => '',
     'type' => '',
     'id' => '',
+    'placeholder' => '',
     'required' => false,
     'name' => '',
 ])
@@ -13,9 +14,9 @@
         {{ $label }} {!! $required ? '<span class="text-primary-red">*</span>' : '' !!}
     </label>
 
-    <input class='text-sm block mt-1 w-full p-2 border border-stone rounded-md shadow-sm' type="{{ $type }}"
+    <input class='text-sm block mt-1 w-full p-2 border border-stone rounded-md shadow-sm placeholder-gray-300' type="{{ $type }}"
         value="{{ $value }}" name="{{ $name }}" id="{{ $id }}"
-        {{ $disabled ? 'disabled' : '' }} />
+        {{ $disabled ? 'disabled' : '' }} placeholder="{{ $placeholder }}"/>
 
     @error($name)
         <small class="text-sm text-primary-red space-y-1">

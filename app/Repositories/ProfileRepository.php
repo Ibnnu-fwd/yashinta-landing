@@ -34,6 +34,8 @@ class ProfileRepository implements ProfileInterface
                 'photo_organizations'      => null,
                 'photo_social_activities'  => null,
                 'photo_profile_on_landing' => null,
+                'photo_banner' => null,
+                'is_banner_active' => false,
                 'video_link' => 'https://.youtube.com/'
             ]);
         }
@@ -134,6 +136,17 @@ class ProfileRepository implements ProfileInterface
                 Storage::delete('public/profile/' . $profile->photo_profile_on_landing);
             }
         }
+
+        if (isset($data['photo_banner'])) {
+            $filename = uniqid() . '.' . $data['photo_banner']->extension();
+            $data['photo_banner']->storeAs('public/banner', $filename);
+            $data['photo_banner'] = $filename;
+
+            if ($profile->photo_banner != null) {
+                Storage::delete('public/banner/' . $profile->photo_banner);
+            }
+        }
+        $data['is_banner_active'] = isset($data['is_banner_active']) && $data['is_banner_active'] === "on" ? 1 : 0;
 
         $profile->update($data);
         return $profile;

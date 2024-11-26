@@ -43,6 +43,7 @@ require __DIR__.'/../vendor/autoload.php';
 | to this client's browser, allowing them to enjoy our application.
 |
 */
+setlocale(LC_TIME, 'id_ID.UTF-8');
 
 $app = require_once __DIR__.'/../bootstrap/app.php';
 

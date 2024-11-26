@@ -1,10 +1,10 @@
 <x-app-layout>
-    @section('title', 'Berita')
+    @section('title', 'Pantau')
 
     <div class="max-w-full">
         <div class="flex justify-between items-center mb-5">
             <h1 class="font-semibold text-lg">
-                Berita
+                Pantau
             </h1>
             <a href="{{ route('admin.news.create') }}"
                 class="bg-primary text-white rounded-lg px-4 py-2 hover:bg-secondary-red">

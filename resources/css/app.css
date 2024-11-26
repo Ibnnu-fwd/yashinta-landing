@@ -44,3 +44,46 @@ input[type=file]::file-selector-button {
     color: white;
     @apply bg-gray-700 hover:bg-secondary-red py-2;
 }
+
+#DataTables_Table_0_wrapper > div.top {
+    @apply flex justify-between items-center px-2 bg-gray-200 p-2
+}
+
+#DataTables_Table_0_wrapper > div.top > div.top-right {
+    @apply flex flex-row gap-2 items-center
+}
+
+#DataTables_Table_0_wrapper > div.top > div.top-right > div.dt-buttons > button.dt-button.buttons-excel.buttons-html5 {
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    line-height: 1.5rem;
+    padding: 5px;
+    background-color: transparent;
+    color: inherit;
+}
+
+.custom-content {
+    color: #1a1a1a; /* Darker gray */
+    font-size: 1rem;
+    line-height: 1.75;
+    @apply text-justify;
+}
+
+.custom-content p,
+.custom-content h1,
+.custom-content h2 {
+    margin: 0;
+    padding: 0;
+    text-align: inherit;
+}
+
+.custom-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional */
+}
+
+.custom-content a {
+    color: #3182ce;
+    text-decoration: underline;
+}

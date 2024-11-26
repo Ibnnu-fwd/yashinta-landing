@@ -4,15 +4,17 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Interfaces\NewsInterface;
+use App\Interfaces\CommitmentInterface;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
     private $news;
 
-    public function __construct(NewsInterface $news)
+    public function __construct(NewsInterface $news, CommitmentInterface $commitment)
     {
         $this->news = $news;
+        $this->commitment = $commitment;
     }
 
     public function index(Request $request)
@@ -48,7 +50,9 @@ class NewsController extends Controller
 
     public function create()
     {
-        return view('admin.news.create');
+        return view('admin.news.create', [
+            'commitments' => $this->commitment->getAll()
+        ]);
     }
 
     public function store(Request $request)
@@ -59,6 +63,9 @@ class NewsController extends Controller
             'thumbnail' => ['required', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
             'author' => ['required'],
             'published_date' => ['required'],
+            'category' => ['required'],
+            'commitment_id' => ['nullable'],
+            'tag' => ['nullable']
         ]);
 
         $this->news->store($request->all());
@@ -68,7 +75,8 @@ class NewsController extends Controller
     public function edit($id)
     {
         return view('admin.news.edit', [
-            'news' => $this->news->getById($id)
+            'news' => $this->news->getById($id),
+            'commitments' => $this->commitment->getAll()
         ]);
     }
 
@@ -80,6 +88,9 @@ class NewsController extends Controller
             'thumbnail' => ['image', 'mimes:jpeg,png,jpg', 'max:2048'],
             'author' => ['required'],
             'published_date' => ['required'],
+            'category' => ['required'],
+            'commitment_id' => ['nullable'],
+            'tag' => ['nullable']
         ]);
 
         try {

@@ -17,7 +17,34 @@ class AspirationController extends Controller
 
     public function index(Request $request)
     {
-        if ($request->ajax()) {
+        if ($request->ajax() && $request->input('filter') == 'last_30_days') {
+            return datatables()
+                ->of($this->aspiration->getLast30Days())
+                ->addColumn('name', function ($data) {
+                    return $data->name;
+                })
+                ->addColumn('city', function ($data) {
+                    return $data->city;
+                })
+                ->addColumn('phone_number', function ($data) {
+                    if ($data->phone_number !=null){
+                        return $data->phone_number;
+                    }
+                    else
+                        return '-';
+                })
+                ->addColumn('message', function ($data) {
+                    return view('admin.aspiration.column.content', compact('data'));
+                })
+                ->addColumn('created_at', function ($data) {
+                    return date('d F Y H:i', strtotime($data->created_at));
+                })
+                ->addColumn('action', function ($data) {
+                    return view('admin.aspiration.column.action', compact('data'));
+                })
+                ->addIndexColumn()
+                ->make(true);
+        } elseif ($request->ajax() && $request->input('filter') == 'all') {
             return datatables()
                 ->of($this->aspiration->getAll())
                 ->addColumn('name', function ($data) {
@@ -54,5 +81,11 @@ class AspirationController extends Controller
         return view('admin.aspiration.show', [
             'aspiration' => $this->aspiration->getById($id),
         ]);
+    }
+
+    public function destroy($id)
+    {
+        $this->aspiration->delete($id);
+        return response()->json(true);
     }
 }

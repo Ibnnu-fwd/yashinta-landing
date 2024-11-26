@@ -22,6 +22,60 @@
                     <span class="ms-3 text-sm">Dashboard</span>
                 </a>
             </li>
+            
+            <li>
+                <a href="{{ route('admin.aspiration.index') }}"
+                    class="{{ request()->routeIs('admin.aspiration.*') ? 'bg-gray-100' : '' }} flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100  group">
+                    <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75  group-hover:text-gray-900"
+                        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M13.0867 21.3877L13.6288 20.4718C14.0492 19.7614 14.2595 19.4062 14.5972 19.2098C14.9349 19.0134 15.36 19.0061 16.2104 18.9915C17.4658 18.9698 18.2531 18.8929 18.9134 18.6194C20.1386 18.1119 21.1119 17.1386 21.6194 15.9134C22 14.9946 22 13.8297 22 11.5V10.5C22 7.22657 22 5.58985 21.2632 4.38751C20.8509 3.71473 20.2853 3.14908 19.6125 2.7368C18.4101 2 16.7734 2 13.5 2H10.5C7.22657 2 5.58985 2 4.38751 2.7368C3.71473 3.14908 3.14908 3.71473 2.7368 4.38751C2 5.58985 2 7.22657 2 10.5V11.5C2 13.8297 2 14.9946 2.3806 15.9134C2.88807 17.1386 3.86144 18.1119 5.08658 18.6194C5.74689 18.8929 6.53422 18.9698 7.78958 18.9915C8.63992 19.0061 9.06509 19.0134 9.40279 19.2098C9.74049 19.4063 9.95073 19.7614 10.3712 20.4718L10.9133 21.3877C11.3965 22.204 12.6035 22.204 13.0867 21.3877ZM16 12C16.5523 12 17 11.5523 17 11C17 10.4477 16.5523 10 16 10C15.4477 10 15 10.4477 15 11C15 11.5523 15.4477 12 16 12ZM13 11C13 11.5523 12.5523 12 12 12C11.4477 12 11 11.5523 11 11C11 10.4477 11.4477 10 12 10C12.5523 10 13 10.4477 13 11ZM8 12C8.55228 12 9 11.5523 9 11C9 10.4477 8.55228 10 8 10C7.44772 10 7 10.4477 7 11C7 11.5523 7.44772 12 8 12Z"
+                                fill="#0f0f0f"></path>
+                        </g>
+                    </svg>
+                    <span class="flex-1 ms-3 whitespace-nowrap text-sm">Aspirasi</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ route('admin.citizen-contact.index') }}"
+                    class="{{ request()->routeIs('admin.citizen-contact.*') ? 'bg-gray-100' : '' }} flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100  group">
+                    <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75  group-hover:text-gray-900"
+                        fill="#0f0f0f" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path
+                                d="M4,21a1,1,0,0,0,1,1H19a1,1,0,0,0,1-1V3a1,1,0,0,0-1-1H5A1,1,0,0,0,4,3ZM12,7.5a2,2,0,1,1-2,2A2,2,0,0,1,12,7.5ZM8.211,16.215a4,4,0,0,1,7.578,0A.993.993,0,0,1,14.83,17.5H9.18A1,1,0,0,1,8.211,16.215Z">
+                            </path>
+                        </g>
+                    </svg>
+
+                    <span class="flex-1 ms-3 whitespace-nowrap text-sm">Kontak Masyarakat</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ route('admin.agenda.index') }}"
+                    class="{{ request()->routeIs('admin.agenda.*') ? 'bg-gray-100' : '' }} flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100  group">
+                    <svg class="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75  group-hover:text-gray-900"
+                        viewBox="0 0 489 489">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <g>
+                                <path
+                                    d="M438.5,489c23.3,0,42.2-18.9,42.2-42.2V42.2c0-23.3-18.9-42.2-42.2-42.2h-63.8v252.3c0,6.5-7.7,9.9-12.5,5.6l-42.6-38.4 c-2.8-2.6-7.2-2.6-10,0L267,257.9c-4.8,4.3-12.5,0.9-12.5-5.6V0H101C77.7,0,58.8,18.9,58.8,42.2v53H38.6 c-16.7,0-30.3,13.6-30.3,30.3s13.6,30.3,30.3,30.3h20.2v58.4H38.6c-16.7,0-30.3,13.6-30.3,30.3c0,16.7,13.6,30.3,30.3,30.3h20.2 v58.4H38.6c-16.7,0-30.3,13.6-30.3,30.3c0,16.7,13.6,30.3,30.3,30.3h20.2v53c0,23.3,18.9,42.2,42.2,42.2L438.5,489L438.5,489z">
+                                </path>
+                            </g>
+                        </g>
+                    </svg>
+                    <span class="flex-1 ms-3 whitespace-nowrap text-sm">Agenda</span>
+                </a>
+            </li>
 
             <li>
                 <a href="{{ route('admin.commitment.index') }}"
@@ -99,25 +153,10 @@
                                 fill="#0f0f0f"></path>
                         </g>
                     </svg>
-                    <span class="flex-1 ms-3 whitespace-nowrap text-sm">Berita</span>
+                    <span class="flex-1 ms-3 whitespace-nowrap text-sm">Pantau</span>
                 </a>
             </li>
-            <li>
-                <a href="{{ route('admin.aspiration.index') }}"
-                    class="{{ request()->routeIs('admin.aspiration.*') ? 'bg-gray-100' : '' }} flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100  group">
-                    <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75  group-hover:text-gray-900"
-                        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M13.0867 21.3877L13.6288 20.4718C14.0492 19.7614 14.2595 19.4062 14.5972 19.2098C14.9349 19.0134 15.36 19.0061 16.2104 18.9915C17.4658 18.9698 18.2531 18.8929 18.9134 18.6194C20.1386 18.1119 21.1119 17.1386 21.6194 15.9134C22 14.9946 22 13.8297 22 11.5V10.5C22 7.22657 22 5.58985 21.2632 4.38751C20.8509 3.71473 20.2853 3.14908 19.6125 2.7368C18.4101 2 16.7734 2 13.5 2H10.5C7.22657 2 5.58985 2 4.38751 2.7368C3.71473 3.14908 3.14908 3.71473 2.7368 4.38751C2 5.58985 2 7.22657 2 10.5V11.5C2 13.8297 2 14.9946 2.3806 15.9134C2.88807 17.1386 3.86144 18.1119 5.08658 18.6194C5.74689 18.8929 6.53422 18.9698 7.78958 18.9915C8.63992 19.0061 9.06509 19.0134 9.40279 19.2098C9.74049 19.4063 9.95073 19.7614 10.3712 20.4718L10.9133 21.3877C11.3965 22.204 12.6035 22.204 13.0867 21.3877ZM16 12C16.5523 12 17 11.5523 17 11C17 10.4477 16.5523 10 16 10C15.4477 10 15 10.4477 15 11C15 11.5523 15.4477 12 16 12ZM13 11C13 11.5523 12.5523 12 12 12C11.4477 12 11 11.5523 11 11C11 10.4477 11.4477 10 12 10C12.5523 10 13 10.4477 13 11ZM8 12C8.55228 12 9 11.5523 9 11C9 10.4477 8.55228 10 8 10C7.44772 10 7 10.4477 7 11C7 11.5523 7.44772 12 8 12Z"
-                                fill="#0f0f0f"></path>
-                        </g>
-                    </svg>
-                    <span class="flex-1 ms-3 whitespace-nowrap text-sm">Aspirasi</span>
-                </a>
-            </li>
+
             <li>
                 <a href="{{ route('admin.educations.index') }}"
                     class="{{ request()->routeIs('admin.educations.*') ? 'bg-gray-100' : '' }} flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100  group">

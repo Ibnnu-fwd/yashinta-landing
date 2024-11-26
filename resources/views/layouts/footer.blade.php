@@ -36,7 +36,7 @@
 </section>
 
 <!-- Address -->
-<section class="relative flex items-center w-full h-auto bg-gray-100">
+<section class="relative flex items-center w-full h-auto bg-[#E7EEF3]">
     <div class="relative items-center w-full px-6 mx-auto md:px-12 lg:px-0 max-w-4xl py-6 md:py-28">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             <div>
@@ -47,7 +47,7 @@
                     <a href="https://maps.app.goo.gl/ckfvkTThHmtiSBwo9" class="flex items-center gap-x-3">
                         <img src="{{ asset('asset/location-svgrepo-com.svg') }}" class="w-8 h-8" alt="">
                         <p class="hover:underline">
-                            Jl. Ring Road Utara, Nanggulan, Maguoharjo, Kec. Depok, Kabupaten Sleman, Daerah Istimewa
+                            Jl. Ring Road Utara, Nanggulan, Maguwoharjo, Kec. Depok, Kabupaten Sleman, Daerah Istimewa
                             Yogyakarta 55281
                         </p>
                     </a>
@@ -61,7 +61,7 @@
                     <a href="https://wa.me/628112654066" class="flex items-center gap-x-3">
                         <img src="{{ asset('asset/whatsapp-color-svgrepo-com.svg') }}" class="w-8 h-8" alt="">
                         <p class="hover:underline">
-                            0811-2654-066
+                            WhatsApp: 0811-2654-066
                         </p>
                     </a>
                 </div>

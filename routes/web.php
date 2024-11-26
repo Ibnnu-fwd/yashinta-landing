@@ -16,6 +16,8 @@ use App\Http\Controllers\Admin\SocialActivityController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\ProgramController;
 use App\Http\Controllers\Admin\ProfileSectionController;
+use App\Http\Controllers\Admin\AgendaController;
+use App\Http\Controllers\Admin\CitizenContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,8 +34,10 @@ use Illuminate\Support\Facades\Route;
 // User
 Route::get('/', [LandingController::class, 'index'])->name('user.landing.index');
 Route::post('/store-aspiration', [LandingController::class, 'storeAspiration'])->name('user.aspiration.store');
+Route::post('/store-citizen-contact', [LandingController::class, 'storeCitizenContact'])->name('user.citizen-contact.store');
 Route::get('profile', [LandingController::class, 'profile'])->name('user.landing.profile');
 Route::get('news', [LandingController::class, 'news'])->name('user.landing.news');
+Route::get('/news/search', [LandingController::class, 'searchNews'])->name('user.landing.news.search');
 Route::get('news/{slug}', [LandingController::class, 'newsDetail'])->name('user.landing.news.detail');
 Route::get('faq', [LandingController::class, 'faq'])->name('user.landing.faq');
 Route::get('testimonial', [LandingController::class, 'testimonial'])->name('user.landing.testimonial');
@@ -83,6 +87,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
     // Aspiration
     Route::group(['prefix' => 'aspiration'], function () {
         Route::get('/', [AspirationController::class, 'index'])->name('admin.aspiration.index');
+        Route::delete('/destroy/{id}', [AspirationController::class, 'destroy'])->name('admin.aspiration.destroy');
         Route::get('/show/{id}', [AspirationController::class, 'show'])->name('admin.aspiration.show');
     });
 
@@ -174,6 +179,22 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
         Route::get('/edit/{id}', [ProfileSectionController::class, 'edit'])->name('admin.profile-section.edit');
         Route::post('/update/{id}', [ProfileSectionController::class, 'update'])->name('admin.profile-section.update');
         Route::delete('/destroy/{id}', [ProfileSectionController::class, 'destroy'])->name('admin.profile-section.destroy');
+    });
+
+    // Agenda
+    Route::group(['prefix' => 'agenda'], function () {
+        Route::get('/', [AgendaController::class, 'index'])->name('admin.agenda.index');
+        Route::get('/create', [AgendaController::class, 'create'])->name('admin.agenda.create');
+        Route::post('/store', [AgendaController::class, 'store'])->name('admin.agenda.store');
+        Route::get('/edit/{id}', [AgendaController::class, 'edit'])->name('admin.agenda.edit');
+        Route::post('/update/{id}', [AgendaController::class, 'update'])->name('admin.agenda.update');
+        Route::delete('/destroy/{id}', [AgendaController::class, 'destroy'])->name('admin.agenda.destroy');
+    });
+
+    //Citizen Contact
+    Route::group(['prefix' => 'citizen-contact'], function () {
+        Route::get('/', [CitizenContactController::class, 'index'])->name('admin.citizen-contact.index');
+        Route::delete('/destroy/{id}', [CitizenContactController::class, 'destroy'])->name('admin.citizen-contact.destroy');
     });
 });
 

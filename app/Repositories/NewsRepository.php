@@ -20,6 +20,11 @@ class NewsRepository implements NewsInterface
         return $this->news->orderBy('published_date', 'desc')->get();
     }
 
+    public function paginate($number)
+    {
+        return $this->news->orderBy('published_date', 'desc')->paginate($number);
+    }
+
     public function getById($id)
     {
         return $this->news->find($id);
@@ -34,6 +39,31 @@ class NewsRepository implements NewsInterface
         $data['slug'] = $this->generateSlug($data['title']);
 
         return $this->news->create($data);
+    }
+
+    public function search($query, $filters)
+    {
+        $queryBuilder = $this->news->query();
+
+        // Basic search by title or content
+        if ($query) {
+            $queryBuilder->where(function ($q) use ($query) {
+                $q->where('title', 'like', "%{$query}%")
+                ->orWhere('tag', 'like', "%{$query}%")
+                ->orWhereHas('commitmentRelated', function ($q) use ($query) {
+                    $q->where('title', 'like', "%{$query}%");
+                });
+            });
+        }
+    
+        // Apply category filter if it exists
+        if (!empty($filters)) {
+            foreach ($filters as $field => $value) {
+                $queryBuilder->where($field, $value);
+            }
+        }
+    
+        return $queryBuilder->orderBy('published_date', 'desc')->paginate(10);
     }
 
     private function generateSlug($title)
