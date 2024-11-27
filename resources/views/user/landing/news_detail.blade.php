@@ -80,9 +80,11 @@
                     {!! $data->content !!}
                 </div>
                 <div class="text-gray-500 text-xs mt-5 pt-6 border-t flex flex-wrap gap-2">
-                    <a href="{{route('user.landing.commitment.detail', ['slug' => $data->commitmentRelated->slug])}}">
-                        <p class="py-2 px-4 rounded-full bg-secondary text-white hover:underline">#{{$data->commitmentRelated->title}}</p>
-                    </a>
+                    @if($data->commitmentRelated)
+                        <a href="{{route('user.landing.commitment.detail', ['slug' => $data->commitmentRelated->slug])}}">
+                            <p class="py-2 px-4 rounded-full bg-secondary text-white hover:underline">#{{$data->commitmentRelated->title}}</p>
+                        </a>
+                    @endif
                     @if($data->tag)
                         @foreach(explode(',', $data->tag) as $tag)
                             <p class="py-2 px-4 rounded-full bg-gray-200 text-gray-700">
