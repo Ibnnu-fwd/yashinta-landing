@@ -163,7 +163,7 @@
                                         </div>
                                     </div>
                                 @endforeach
-                            @else
+                            @elseif(!$upcomingAgendas || !$pastAgendas)
                                 <div class="w-full py-4 px-2.5 bg-box-red-secondary rounded-lg">
                                     Belum ada agenda
                                 </div>
