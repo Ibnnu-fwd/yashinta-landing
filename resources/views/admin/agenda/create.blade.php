@@ -9,7 +9,7 @@
         <div class="max-w-2xl">
             <form action="{{ route('admin.agenda.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <x-input id="title" label="Judul" name="title" required placeholder="Isi judul kegiatan (maks. 30 karakter)"/>
+                <x-input id="title" label="Judul" name="title" required placeholder="Isi judul kegiatan (maks. 100 karakter)"/>
                 <x-input id="location" label="Lokasi" name="location" required placeholder="Isi lokasi kegiatan (maks. 50 karakter)"/>
                 <div class="mb-4">
                     <div class="flex">

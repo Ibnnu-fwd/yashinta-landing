@@ -66,7 +66,7 @@ class AgendaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => ['required', 'max:30'],
+            'title' => ['required', 'max:100'],
             'location' => ['required', 'max:30'],
             'color' => ['required'],
             'start_date' => ['required'],
@@ -93,7 +93,7 @@ class AgendaController extends Controller
     public function update($id, Request $request)
     {
         $this->validate($request, [
-            'title' => ['required', 'max:30'],
+            'title' => ['required', 'max:100'],
             'location' => ['required', 'max:50'],
             'color' => ['required'],
             'start_date' => ['required'],
