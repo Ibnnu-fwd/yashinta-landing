@@ -67,7 +67,7 @@
                             R.A. YASHINTA<br>SEKARWANGI MEGA
                         </h2>
                         <h2 class="text-md md:text-2xl font-bold text-gray-500">
-                            CALON DPD RI DIY
+                            DPD RI DIY
                         </h2>
                     </div>
                 </div>
